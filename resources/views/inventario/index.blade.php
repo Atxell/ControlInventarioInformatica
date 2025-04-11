@@ -41,4 +41,58 @@
         {{ $equipos->links() }}
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Selector de tipo
+        const tipoSelect = document.getElementById('tipo_id');
+        const marcaSelect = document.getElementById('marca_id');
+        const modeloSelect = document.getElementById('modelo_id');
+
+        tipoSelect.addEventListener('change', function() {
+            const tipoId = this.value;
+            
+            // Resetear selects dependientes
+            marcaSelect.innerHTML = '<option value="">Seleccionar...</option>';
+            marcaSelect.disabled = true;
+            modeloSelect.innerHTML = '<option value="">Seleccionar...</option>';
+            modeloSelect.disabled = true;
+
+            if (tipoId) {
+                fetch(`/marcas?tipo_id=${tipoId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        marcaSelect.disabled = false;
+                        data.forEach(marca => {
+                            const option = document.createElement('option');
+                            option.value = marca.id;
+                            option.textContent = marca.nombre;
+                            marcaSelect.appendChild(option);
+                        });
+                    });
+            }
+        });
+
+        // Selector de marca
+        marcaSelect.addEventListener('change', function() {
+            const marcaId = this.value;
+            
+            modeloSelect.innerHTML = '<option value="">Seleccionar...</option>';
+            modeloSelect.disabled = true;
+
+            if (marcaId) {
+                fetch(`/modelos?marca_id=${marcaId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        modeloSelect.disabled = false;
+                        data.forEach(modelo => {
+                            const option = document.createElement('option');
+                            option.value = modelo.id;
+                            option.textContent = modelo.nombre;
+                            modeloSelect.appendChild(option);
+                        });
+                    });
+            }
+        });
+    });
+</script>
 </x-app-layout>

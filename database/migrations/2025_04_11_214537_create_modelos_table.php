@@ -11,19 +11,21 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tipos_equipo', function (Blueprint $table) {
+        Schema::create('modelos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre'); // Ej: Laptop, Desktop, Impresora
-            $table->text('descripcion')->nullable();
+            $table->string('nombre'); // Ej: "ProBook 450", "Inspiron 15"
+            $table->foreignId('marca_id')->constrained('marcas'); // Relación
             $table->timestamps();
+            
+            $table->unique(['nombre', 'marca_id']); // Evita duplicados por marca
         });
     }
 
     /**
      * Reverse the migrations.
      */
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('tipos_equipo');
+        Schema::dropIfExists('modelos');
     }
 };

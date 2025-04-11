@@ -31,6 +31,9 @@ Route::middleware(['auth'])->group(function () {
         ->parameters(['inventario' => 'equipo']); // Cambia el nombre del parámetro
 });
 
+Route::get('/marcas', [InventarioController::class, 'getMarcas'])->name('marcas.by.tipo');
+Route::get('/modelos', [InventarioController::class, 'getModelos'])->name('modelos.by.marca');
+
 // Rutas de perfil
 Route::middleware('auth')->group(function () {
     Route::get('/perfil', [ProfileController::class, 'edit'])->name('profile.edit');
