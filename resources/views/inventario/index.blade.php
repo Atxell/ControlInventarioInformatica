@@ -3,7 +3,7 @@
     <h2>Inventario de Equipos</h2>
     
     <div class="mb-4">
-        <x-search-bar :route="route('inventario.index')" />
+         <x-search-bar :route="route('inventario.index')" />
     </div>
 
     <div class="table-responsive">

@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\InventarioController;
 
 Route::get('/', function () {
     return redirect()->route('login');
@@ -22,6 +23,12 @@ Route::middleware(['auth', 'check.permission:cat_roles'])->group(function() {
 // Rutas para usuarios - Versión simplificada
 Route::middleware(['auth', 'check.permission:cat_usuarios'])->group(function() {
     Route::resource('users', UserController::class);
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource('inventario', InventarioController::class)
+        ->except(['show']) // Excluye show si no lo necesitas
+        ->parameters(['inventario' => 'equipo']); // Cambia el nombre del parámetro
 });
 
 // Rutas de perfil

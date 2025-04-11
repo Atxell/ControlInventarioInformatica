@@ -45,7 +45,7 @@ class CatalogosSeeder extends Seeder
             ['name' => 'delete_roles', 'display_name' => 'Eliminar Roles', 'description' => 'Eliminar roles'],
             ['name' => 'create_usuarios', 'display_name' => 'Alta Users', 'description' => 'Crear Usuarios'],
             ['name' => 'edit_usuaios', 'display_name' => 'Edit Users', 'description' => 'Modificar Usuarios'],
-            ['name' => 'delete_usuarios', 'display_name' => 'Eliminar Users', 'description' => 'Eliminar Usuarios']
+            ['name' => 'delete_usuarios', 'display_name' => 'Eliminar', 'description' => 'Eliminar Usuarios']
             ,
             // Agrega más permisos según necesites
         ];
