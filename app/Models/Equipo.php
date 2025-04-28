@@ -18,7 +18,7 @@ class Equipo extends Model
 
     public function tipo()
     {
-        return $this->belongsTo(TipoEquipo::class);
+        return $this->belongsTo(TipoEquipo::class, 'tipo_id');
     }
 
      public function marca()
