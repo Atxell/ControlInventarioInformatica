@@ -9,20 +9,25 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('catsistemasoperativos', function (Blueprint $table) {
-            $table->id();
-            $table->string('nombre');
+        Schema::create('procesadores', function (Blueprint $table) {
+            $table->id(); 
+            $table->string('marca', 50);
+            $table->string('tipo', 50);
+            $table->string('generacion', 10);
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('catsistemasoperativos');
+        Schema::table('CatProcesadores', function (Blueprint $table) {
+            //
+        });
     }
 };

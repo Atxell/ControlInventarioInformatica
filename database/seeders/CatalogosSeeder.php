@@ -25,19 +25,19 @@ class CatalogosSeeder extends Seeder
             DB::table('catmarcas')->insert([
                 [
                     'nombre' => 'Dell',
-                    'tipodeequipo_id' => 1,
+                    'tipo_equipo_id' => 1,
                     'created_at' => now(),
                     'updated_at' => now()
                 ],
                 [
                     'nombre' => 'HP',
-                    'tipodeequipo_id' => 1,
+                    'tipo_equipo_id' => 1,
                     'created_at' => now(),
                     'updated_at' => now()
                 ]
             ]);
         }
-
+        /*
         $permisos = [
             ['name' => 'view_roles', 'display_name' => 'Ver Roles', 'description' => 'Ver listado de roles'],
             ['name' => 'create_roles', 'display_name' => 'Crear Roles', 'description' => 'Crear nuevos roles'],
@@ -55,7 +55,7 @@ class CatalogosSeeder extends Seeder
                 ['name' => $permiso['name']],
                 $permiso
             );
-        }
+        }*/
 
         // 2. Crear roles básicos
         $adminRole = Role::firstOrCreate(

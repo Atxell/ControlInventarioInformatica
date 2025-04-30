@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('catdiscosduros', function (Blueprint $table) {
             $table->id();
+            $table->string('Capacidad');
+            $table->string('Tipo');
             $table->timestamps();
         });
     }

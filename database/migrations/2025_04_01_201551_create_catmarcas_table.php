@@ -9,13 +9,15 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('catmarcas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');  // Columna faltante
-            $table->unsignedBigInteger('tipodeequipo_id'); // Columna faltante
+            $table->string('nombre');
+            $table->unsignedBigInteger('tipo_equipo_id'); // Nombre consistente
             $table->timestamps();
+            
+            $table->foreign('tipo_equipo_id')->references('id')->on('cattipodeequipo');
         });
     }
 

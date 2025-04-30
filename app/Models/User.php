@@ -80,14 +80,12 @@ class User extends Authenticatable
 
     public function hasPermission($permission)
     {
-        // Si el permiso es un string (nombre)
         if (is_string($permission)) {
             return $this->roles->flatMap(function($role) {
                 return $role->permissions;
             })->contains('name', $permission);
         }
         
-        // Si es una instancia de Permission
         if ($permission instanceof Permission) {
             return $this->roles->flatMap(function($role) {
                 return $role->permissions;

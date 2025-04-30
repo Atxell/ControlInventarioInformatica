@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('catmemorias', function (Blueprint $table) {
             $table->id();
+            $table->string('Capacidad');
+            $table->string('Frecuencia');
+            $table->string('Generación');
             $table->timestamps();
         });
     }

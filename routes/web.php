@@ -41,4 +41,21 @@ Route::middleware('auth')->group(function () {
     Route::delete('/perfil', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware(['auth'])->group(function() {
+    
+    // Ruta principal del inventario (usa tu permiso 'inventario')
+    Route::middleware(['check.permission:inventario'])->group(function() {
+        
+        // Ruta para el controlador de tipos/marcas/modelos (usa 'catalogos')
+        Route::middleware(['check.permission:catalogos'])->prefix('control')->group(function() {
+            Route::get('/tipos', [ControlController::class, 'indexTipos'])->name('control.tipos');
+            Route::post('/tipos', [ControlController::class, 'storeTipo'])->name('control.tipos.store');
+            // Agrega más rutas según necesites
+        });
+        
+        // Ruta para equipos (usa 'inventario')
+        Route::resource('equipos', EquipoController::class);
+    });
+});
+
 require __DIR__.'/auth.php';
