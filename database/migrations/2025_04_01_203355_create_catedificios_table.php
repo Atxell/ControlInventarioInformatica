@@ -9,18 +9,23 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('catedificios', function (Blueprint $table) {
+        Schema::create('CatEdificios', function (Blueprint $table) {
             $table->id();
+            $table->string('NombreEdificio', 100);
+            $table->string('Direccion', 200)->nullable();
+            $table->string('Referencia', 200)->nullable();
+            $table->boolean('Activo')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('catedificios');
     }

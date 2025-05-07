@@ -11,9 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('catzonas', function (Blueprint $table) {
+        Schema::create('CatZonas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('EdificioID')->constrained('CatEdificios');
+            $table->string('NombreZona', 100);
+            $table->string('Descripcion', 200)->nullable();
+            $table->integer('Piso')->nullable();
+            $table->boolean('Activo')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

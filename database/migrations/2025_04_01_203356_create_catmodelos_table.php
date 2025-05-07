@@ -6,21 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
         Schema::create('catmodelos', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
             $table->timestamps();
+            $table->unsignedBigInteger('marca_id');
+            $table->foreign('marca_id')->references('id')->on('catmarcas');
         });
     }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('catmodelos');
     }

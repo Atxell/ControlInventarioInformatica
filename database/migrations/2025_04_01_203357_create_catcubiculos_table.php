@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('catcubiculos', function (Blueprint $table) {
+        Schema::create('CatCubiculos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('ZonaID')->constrained('CatZonas');
+            $table->string('NombreCubiculo', 50);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
