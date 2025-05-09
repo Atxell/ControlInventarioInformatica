@@ -12,7 +12,6 @@ return new class extends Migration
     public function up()
     {
         Schema::table('equipos', function (Blueprint $table) {
-            // Primero agregar las columnas sin restricción foránea
             $table->unsignedBigInteger('tipo_id')->after('id');
             $table->unsignedBigInteger('marca_id')->after('tipo_id');
             $table->unsignedBigInteger('modelo_id')->after('marca_id');
@@ -22,7 +21,6 @@ return new class extends Migration
             $table->string('serial')->unique()->after('codigo_activo');
         });
 
-        // Luego agregar las restricciones foráneas por separado
         Schema::table('equipos', function (Blueprint $table) {
             $table->foreign('tipo_id')->references('id')->on('cattipodeequipo');
             $table->foreign('marca_id')->references('id')->on('catmarcas');
@@ -35,7 +33,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
         Schema::table('equipos', function (Blueprint $table) {
             //

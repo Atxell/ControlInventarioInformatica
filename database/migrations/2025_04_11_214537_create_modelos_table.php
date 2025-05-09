@@ -13,18 +13,17 @@ return new class extends Migration
     {
         Schema::create('modelos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre'); // Ej: "ProBook 450", "Inspiron 15"
-            $table->foreignId('marca_id')->constrained('catmarcas'); // Relación
+            $table->string('nombre');
+            $table->foreignId('marca_id')->constrained('catmarcas');
             $table->timestamps();
-            
-            $table->unique(['nombre', 'marca_id']); // Evita duplicados por marca
+            $table->unique(['nombre', 'marca_id']);
         });
     }
 
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('modelos');
     }

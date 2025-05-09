@@ -11,7 +11,6 @@ return new class extends Migration
      */
     public function up()
     {
-        // Verificación adicional de existencia de tabla
         if (!Schema::hasTable('permission_role')) {
             Schema::disableForeignKeyConstraints();
             
@@ -20,7 +19,6 @@ return new class extends Migration
                 $table->foreignId('role_id')->constrained()->onDelete('cascade');
                 $table->primary(['permission_id', 'role_id']);
                 
-                // Opcional: índice adicional para búsquedas inversas
                 $table->index(['role_id', 'permission_id']);
             });
             

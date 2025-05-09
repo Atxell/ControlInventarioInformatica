@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('estados_equipo', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre'); // Ej: Activo, En reparación, Baja
-            $table->string('color')->default('#6c757d'); // Color para visualización
+            $table->string('nombre');
+            $table->string('color')->default('#6c757d');
             $table->timestamps();
         });
         
         Schema::create('ubicaciones', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre'); // Ej: Oficina Central, Sucursal Norte
+            $table->string('nombre');
             $table->text('direccion')->nullable();
             $table->timestamps();
         });

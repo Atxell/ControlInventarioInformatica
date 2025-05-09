@@ -12,12 +12,10 @@ return new class extends Migration
     public function up()
 {
     /*Schema::disableForeignKeyConstraints();
-    
     Schema::dropIfExists('permission_role');
     Schema::dropIfExists('usuario_roles');
     Schema::dropIfExists('permissions');
     Schema::dropIfExists('roles');
-    
     Schema::enableForeignKeyConstraints();*/
 }
 

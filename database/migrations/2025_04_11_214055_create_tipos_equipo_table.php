@@ -7,16 +7,16 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
 
-    public function up(): void
+    public function up()
     {
         Schema::create('tipos_equipo', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre')->unique(); // Ej: "Laptop", "Impresora"
+            $table->string('nombre')->unique();
             $table->timestamps();
         });
     }
 
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('tipos_equipo');
     }

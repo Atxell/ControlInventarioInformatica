@@ -13,13 +13,9 @@ return new class extends Migration
     {
         Schema::create('datoscomputadora', function (Blueprint $table) {
             $table->id();
-            
-            // Relaciones con catálogos (ESTAS DEBEN EXISTIR PREVIAMENTE)
             $table->foreignId('tipo_equipo_id')->constrained('cattipodeequipo');
             $table->foreignId('marca_id')->constrained('catmarcas');
             $table->foreignId('modelo_id')->constrained('catmodelos');
-            
-            // Campos originales que mencionaste
             $table->string('sistemaoperativo');
             $table->boolean('licenciaoriginal')->default(false);
             $table->string('versionOffice')->nullable();
@@ -35,7 +31,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('datoscomputadora');
     }

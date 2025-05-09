@@ -12,16 +12,11 @@ return new class extends Migration
     public function up()
     {
         Schema::disableForeignKeyConstraints();
-        
         Schema::create('usuario_roles', function (Blueprint $table) {
             $table->foreignId('usuario_id')->constrained('users')->onDelete('cascade');
-            
-            // Cambia 'rol_id' por 'role_id' para mantener consistencia
             $table->foreignId('role_id')->constrained('roles')->onDelete('cascade');
-            
             $table->primary(['usuario_id', 'role_id']);
         });
-        
         Schema::enableForeignKeyConstraints();
     }
     /**

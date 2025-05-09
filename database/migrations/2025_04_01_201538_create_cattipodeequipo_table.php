@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('cattipodeequipo', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); // Columna requerida por el seeder
-            // $table->string('name'); // Usa esta si prefieres inglés
+            $table->string('name');
             $table->timestamps();
         });
     }
