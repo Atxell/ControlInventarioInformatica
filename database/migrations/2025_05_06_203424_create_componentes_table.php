@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('capacidad')->nullable();
             $table->string('velocidad')->nullable();
             $table->string('tipo')->nullable();  
+            $table->foreignId('ubicacion_id')->constrained('ubicacion')->onDelete('cascade');
             $table->timestamps();
         });
     }

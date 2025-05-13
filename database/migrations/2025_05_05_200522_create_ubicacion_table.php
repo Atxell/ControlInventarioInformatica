@@ -9,12 +9,11 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('estados_equipo', function (Blueprint $table) {
+        Schema::create('ubicacion', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('color')->default('#6c757d');
+            $table->string('codigo');
             $table->timestamps();
         });
     }
@@ -22,8 +21,8 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('estados_equipo');
+        Schema::dropIfExists('ubicacion');
     }
 };

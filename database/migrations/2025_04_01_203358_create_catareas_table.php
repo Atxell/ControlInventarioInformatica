@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('catareas', function (Blueprint $table) {
             $table->id();
+            $table->string('NombreArea', 100);
             $table->timestamps();
         });
     }
