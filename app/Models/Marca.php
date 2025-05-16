@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class Marca extends Model {
+     protected $table = 'catmarcas';
     protected $fillable = ['nombre', 'tipo_equipo_id'];
     
     public function tipo() {

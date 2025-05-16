@@ -13,17 +13,23 @@ return new class extends Migration
     {
         Schema::create('datoscomputadora', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre')->unique();
             $table->foreignId('tipo_equipo_id')->constrained('cattipodeequipo');
             $table->foreignId('marca_id')->constrained('catmarcas');
             $table->foreignId('modelo_id')->constrained('catmodelos');
-            $table->string('sistemaoperativo');
-            $table->boolean('licenciaoriginal')->default(false);
-            $table->string('versionOffice')->nullable();
-            $table->string('nombre')->unique();
+            
+            $table->foreignId('sistema_operativo_id')
+                ->nullable()
+                ->constrained('catsistemasoperativos')
+                ->after('version_office_id');
+
+            $table->boolean('licenciaoriginal')
+                ->default(false);
+
+            $table->foreignId('version_office_id')->constrained('catversionesdeoffice');
             $table->string('MAC')->unique()->nullable();
             $table->string('ip')->unique()->nullable();
-            $table->string('estado');
-            
+            $table->foreignId('estado_id')->constrained('estados_equipo');
             $table->timestamps();
         });
     }

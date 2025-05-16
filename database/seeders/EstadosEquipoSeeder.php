@@ -20,5 +20,6 @@ class EstadosEquipoSeeder extends Seeder
             ['nombre' => 'En mantenimiento', 'color' => '#ffc107'],
             ['nombre' => 'Dañado', 'color' => '#dc3545'],
         ]);
+        $this->command->info('Estados creados exitosamente!');
     }
 }

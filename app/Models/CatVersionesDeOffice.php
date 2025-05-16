@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class CatVersionesDeOffice extends Model
 {
-    //
+    protected $table = 'catversionesdeoffice';
+    protected $fillable = ['nombre'];
 }

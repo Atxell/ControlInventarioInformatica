@@ -18,11 +18,19 @@ class DatabaseSeeder extends Seeder
             CatalogosSeeder::class,
             EstadosEquipoSeeder::class,
             PermissionSeeder::class,
+            CatVersionesOfficeSeeder::class,
+            CatSistemasOperativosSeeder::class,
+            CatTipoEquipoSeeder::class,
+            CatMarcasSeeder::class,
+            CatModelosSeeder::class,
+            DatosComputadoraSeeder::class,
         ]);
 
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'password' => '12345678',
         ]);
+        $this->command->info('Inicializacion de los seeders correcta!');
     }
 }

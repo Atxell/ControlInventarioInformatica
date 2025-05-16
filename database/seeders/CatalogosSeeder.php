@@ -13,15 +13,15 @@ class CatalogosSeeder extends Seeder
     public function run()
     {
         // Verificar y crear tipos de equipo primero
-        if (DB::table('cattipodeequipo')->count() == 0) {
+        /*if (DB::table('cattipodeequipo')->count() == 0) {
             DB::table('cattipodeequipo')->insert([
                 ['name' => 'Laptop', 'created_at' => now(), 'updated_at' => now()],
                 ['name' => 'Desktop', 'created_at' => now(), 'updated_at' => now()],
             ]);
-        }
+        }*/
     
         // Insertar marcas si no existen
-        if (DB::table('catmarcas')->count() == 0) {
+        /*if (DB::table('catmarcas')->count() == 0) {
             DB::table('catmarcas')->insert([
                 [
                     'nombre' => 'Dell',
@@ -36,7 +36,8 @@ class CatalogosSeeder extends Seeder
                     'updated_at' => now()
                 ]
             ]);
-        }
+        }*/
+        
         /*
         $permisos = [
             ['name' => 'view_roles', 'display_name' => 'Ver Roles', 'description' => 'Ver listado de roles'],
@@ -74,7 +75,7 @@ class CatalogosSeeder extends Seeder
         $userRole->permissions()->sync(
             Permission::whereIn('name', ['view_roles'])->pluck('id')->toArray()
         );
-
+        $this->command->info('Catalogos creados exitosamente!');
 
 
     }
