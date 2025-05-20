@@ -10,20 +10,20 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up()
-{
-    /*Schema::disableForeignKeyConstraints();
-    Schema::dropIfExists('permission_role');
-    Schema::dropIfExists('usuario_roles');
-    Schema::dropIfExists('permissions');
-    Schema::dropIfExists('roles');
-    Schema::enableForeignKeyConstraints();*/
-}
+    {
+        Schema::create('Diputados', function (Blueprint $table) {
+            $table->id(); 
+            $table->string('nombre');
+        });
+    }
 
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
-        //
+        Schema::table('Diputados', function (Blueprint $table) {
+            //
+        });
     }
 };

@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('NombreEdificio', 100);
             $table->string('Direccion', 200)->nullable();
-            $table->string('Referencia', 200)->nullable();
             $table->boolean('Activo')->default(true);
             $table->timestamps();
             $table->softDeletes();

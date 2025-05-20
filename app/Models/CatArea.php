@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CatEdificios extends Model
+class CatArea extends Model
 {
-    protected $table = 'catedificios';
+    protected $table = 'catareas';
     //
 }

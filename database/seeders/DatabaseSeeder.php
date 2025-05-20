@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
             CatMarcasSeeder::class,
             CatModelosSeeder::class,
             DatosComputadoraSeeder::class,
+            UbicacionesSeeder::class,
+            AsignacionesComputadorasSeeder::class,
         ]);
 
         User::factory()->create([

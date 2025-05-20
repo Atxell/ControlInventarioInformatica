@@ -59,4 +59,16 @@ class DatosComputadora extends Model
     {
         return $this->belongsTo(\App\Models\CatSistemaOperativo::class, 'sistema_operativo_id');
     }
+   
+    public function asignaciones()
+    {
+        return $this->hasMany(AsignacionComputadora::class, 'computadora_id');
+    }
+
+    public function asignacionActual()
+    {
+        return $this->hasOne(AsignacionComputadora::class, 'computadora_id')
+                    ->whereNull('fecha_retiro')
+                    ->latest();
+    }
 }
