@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('computadora_ram', function (Blueprint $table) {
+       /* Schema::create('computadora_ram', function (Blueprint $table) {
             $table->foreignId('computadora_id')->constrained('datoscomputadora')->onDelete('cascade');
             $table->foreignId('componente_id')->constrained('componentes')->onDelete('cascade');
             $table->primary(['computadora_id', 'componente_id']);
-        });
+        });*/
     }
 
     /**

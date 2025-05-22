@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ubicacion', function (Blueprint $table) {
+        /*Schema::create('ubicacion', function (Blueprint $table) {
             $table->id();
             $table->string('codigo')->unique(); // Código único de ubicación
             $table->foreignId('cubiculo_id')->constrained('CatCubiculos'); // Relación directa al cubiculo
@@ -32,7 +32,7 @@ return new class extends Migration
             
             $table->timestamps();
             $table->softDeletes();
-        });
+        });*/   
     }
 
     /**

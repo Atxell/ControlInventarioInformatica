@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('Frecuencia');
             $table->string('Generación');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

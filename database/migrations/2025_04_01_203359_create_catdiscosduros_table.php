@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('Capacidad');
             $table->string('Tipo');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             DiscosDuroSeeder::class,
             MemoriaSeeder::class,
             ProcesadoresSeeder::class,
+            ComponenteComputadoraSeeder::class,
         ]);
 
         User::factory()->create([

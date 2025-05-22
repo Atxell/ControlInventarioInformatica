@@ -8,24 +8,28 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('componentes', function (Blueprint $table) {
-            $table->id(); 
-            $table->foreignId('computadora_id')->constrained('datoscomputadora')->onDelete('cascade');
-            $table->string('tipo_componente'); 
-            $table->string('modelo');
-            $table->string('especificaciones')->nullable();
-            $table->string('numero_serie')->unique()->nullable();
-            $table->string('generacion')->nullable();
-            $table->string('capacidad')->nullable();
-            $table->string('velocidad')->nullable();
-            $table->string('tipo')->nullable();  
-            $table->foreignId('ubicacion_id')->constrained('ubicacion')->onDelete('cascade');
+        Schema::create('componente_computadora', function (Blueprint $table) {
+            $table->id();
+            
+            // Relación con la computadora (única)
+            $table->foreignId('computadora_id')
+                    ->unique() 
+                    ->constrained('datoscomputadora')
+                   // Esto asegura que cada computadora solo tenga un registro aquí
+                    ->onDelete('cascade');
+            
+            // Relaciones con los componentes
+            $table->foreignId('procesador_id')->constrained('procesadores');
+            $table->foreignId('disco_duro_id')->constrained('catdiscosduros');
+            $table->foreignId('memoria_id')->constrained('catmemorias');
+            
+            // Puedes agregar campos adicionales si necesitas
             $table->timestamps();
         });
     }
     
     public function down()
     {
-        Schema::dropIfExists('componentes');
+        Schema::dropIfExists('componente_computadora');
     }
 };

@@ -71,4 +71,9 @@ class DatosComputadora extends Model
                     ->whereNull('fecha_retiro')
                     ->latest();
     }
+    
+    public function componentes()
+    {
+        return $this->hasOne(ComponenteComputadora::class);
+    }
 }
