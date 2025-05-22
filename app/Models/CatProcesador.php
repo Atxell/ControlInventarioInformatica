@@ -2,18 +2,19 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class CatDiscosDuros extends Model
+class CatProcesador extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'catdiscosduros';
+    protected $table = 'procesadores';
     protected $fillable = [
-        'Capacidad',
-        'Tipo'
+        'marca',
+        'tipo',
+        'generacion'
     ];
 
     protected $dates = ['deleted_at'];

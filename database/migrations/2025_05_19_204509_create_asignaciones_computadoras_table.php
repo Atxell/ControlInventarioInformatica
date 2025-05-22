@@ -42,6 +42,8 @@ return new class extends Migration
             $table->index('computadora_id');
             $table->index('diputado_id');
             $table->index('cubiculo_id');
+
+            $table->unique(['computadora_id', 'fecha_retiro']);
         });
     }
 

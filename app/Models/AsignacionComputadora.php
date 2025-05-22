@@ -57,4 +57,21 @@ class AsignacionComputadora extends Model
     {
         return $query->where('ubicacion_id', $ubicacionId);
     }
+    
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($model) {
+            if (is_null($model->fecha_retiro)) {
+                $exists = static::where('computadora_id', $model->computadora_id)
+                    ->whereNull('fecha_retiro')
+                    ->exists();
+                    
+                if ($exists && !$model->isDirty('fecha_retiro')) {
+                    throw new \Exception('Esta computadora ya tiene una asignación activa');
+                }
+            }
+        });
+    }
 }
