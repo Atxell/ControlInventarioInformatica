@@ -9,6 +9,7 @@ class DatosComputadora extends Model
     protected $table = 'datoscomputadora';
     
     protected $fillable = [
+        'Num_inv',
         'nombre',
         'tipo_equipo_id',
         'marca_id',

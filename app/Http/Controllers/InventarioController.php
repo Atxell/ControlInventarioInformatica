@@ -33,29 +33,12 @@ class InventarioController extends Controller
             $search = $request->search;
             $query->where(function($q) use ($search) {
                 $q->where('nombre', 'like', "%$search%")
-                  ->orWhere('mac', 'like', "%$search%")
-                  ->orWhere('ip', 'like', "%$search%")
-                  ->orWhereHas('tipoEquipo', function($q) use ($search) {
-                      $q->where('nombre', 'like', "%$search%");
-                  })
-                  ->orWhereHas('marca', function($q) use ($search) {
-                      $q->where('nombre', 'like', "%$search%");
-                  })
-                  ->orWhereHas('modelo', function($q) use ($search) {
-                      $q->where('nombre', 'like', "%$search%");
-                  })
-                  ->orWhereHas('asignacionActual.diputado', function($q) use ($search) {
-                      $q->where('nombre_completo', 'like', "%$search%");
-                  })
-                  ->orWhereHas('asignacionActual.cubiculo', function($q) use ($search) {
-                      $q->where('nombre', 'like', "%$search%")
-                        ->orWhere('codigo', 'like', "%$search%");
-                  });
+                ->orWhere('num_inv', 'like', "%$search%"); // Nueva línea agregada
             });
         }
 
         // Filtros avanzados
-        if ($request->has('tipo_equipo_id')) {
+        /*if ($request->has('tipo_equipo_id')) {
             $query->where('tipo_equipo_id', $request->tipo_equipo_id);
         }
 
@@ -65,7 +48,7 @@ class InventarioController extends Controller
 
         if ($request->has('estado')) {
             $query->where('estado', $request->estado);
-        }
+        }*/
 
         if ($request->has('con_diputado')) {
             $query->whereHas('asignacionActual', function($q) {
@@ -101,6 +84,7 @@ class InventarioController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
+            'num_inv' => 'required|string|unique:datoscomputadora,num_inv|max:20',
             'nombre' => 'required|unique:datoscomputadora|max:50',
             'tipo_equipo_id' => 'required|exists:cattipodeequipo,id',
             'marca_id' => 'required|exists:catmarcas,id',
@@ -166,6 +150,7 @@ class InventarioController extends Controller
     public function update(Request $request, DatosComputadora $computadora)
     {
         $validated = $request->validate([
+            'num_inv' => 'required|string|max:20|unique:datoscomputadora,num_inv,'.$computadora->id,
             'nombre' => 'required|unique:datoscomputadora,nombre,'.$computadora->id,
             'tipo_equipo_id' => 'required|exists:cattipodeequipo,id',
             'marca_id' => 'required|exists:catmarcas,id',

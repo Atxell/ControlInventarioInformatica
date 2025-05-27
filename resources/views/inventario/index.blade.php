@@ -9,7 +9,7 @@
             <div class="md:col-span-2">
                 <x-search-input 
                     name="search" 
-                    placeholder="Buscar por nombre, MAC, IP, diputado..." 
+                    placeholder="Buscar por número de inventario o nombre" 
                     value="{{ request('search') }}"
                 />
             </div>
@@ -71,6 +71,7 @@
             <table class="min-w-full divide-y divide-gray-200">
                 <thead class="bg-gray-50">
                     <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Inventario</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tipo</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Marca/Modelo</th>
@@ -84,7 +85,10 @@
                     @forelse($computadoras as $computadora)
                     <tr class="hover:bg-gray-50">
                         <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="font-medium text-gray-900">{{ $computadora->nombre }}</div>
+                            {{ $computadora->Num_inv }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-500">{{ $computadora->nombre }}</div>
                             <div class="text-sm text-gray-500">
                                 {{ $computadora->ip ?? 'Sin IP' }} / {{ $computadora->mac ?? 'Sin MAC' }}
                             </div>

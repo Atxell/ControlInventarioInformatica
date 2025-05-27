@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('datoscomputadora', function (Blueprint $table) {
             $table->id();
+            $table->string('Num_inv')->unique();
             $table->string('nombre')->unique();
             $table->foreignId('tipo_equipo_id')->constrained('cattipodeequipo');
             $table->foreignId('marca_id')->constrained('catmarcas');

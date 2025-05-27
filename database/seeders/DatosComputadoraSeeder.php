@@ -15,6 +15,7 @@ class DatosComputadoraSeeder extends Seeder
     {
         $computadoras = [
             [
+                'Num_inv' => '000001',
                 'nombre' => 'EQUIPO-ADMIN-01',
                 'tipo_equipo_id' => 1, // Laptop
                 'marca_id' => 1,      // Dell
@@ -26,6 +27,7 @@ class DatosComputadoraSeeder extends Seeder
                 'ip' => '192.168.1.100',
                 'estado_id' => 1,
             ],[
+                'Num_inv' => '000002',
                 'nombre' => 'EQUIPO-VENTAS-02',
                 'tipo_equipo_id' => 1, // Laptop
                 'marca_id' => 2,       // HP
@@ -37,6 +39,7 @@ class DatosComputadoraSeeder extends Seeder
                 'ip' => '192.168.1.101',
                 'estado_id' => 1,
             ],[
+                'Num_inv' => '000003',
                 'nombre' => 'EQUIPO-CONTAB-03',
                 'tipo_equipo_id' => 2, // Desktop
                 'marca_id' => 3,       // Lenovo
@@ -48,6 +51,7 @@ class DatosComputadoraSeeder extends Seeder
                 'ip' => '192.168.1.102',
                 'estado_id' => 1,
             ],[
+                'Num_inv' => '000004',
                 'nombre' => 'EQUIPO-DESARROLLO-04',
                 'tipo_equipo_id' => 1, // Laptop
                 'marca_id' => 4,       // Apple
@@ -60,6 +64,7 @@ class DatosComputadoraSeeder extends Seeder
                 'estado_id' => 1,
             ],
             [
+                'Num_inv' => '000005',
                 'nombre' => 'EQUIPO-SOPORTE-05',
                 'tipo_equipo_id' => 1, // Laptop
                 'marca_id' => 1,       // Dell
