@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('CatEdificios', function (Blueprint $table) {
             $table->id();
             $table->string('NombreEdificio', 100);
-            $table->string('Direccion', 200)->nullable();
-            $table->boolean('Activo')->default(true);
+            //$table->string('Direccion', 200)->nullable();
+            //$table->boolean('Activo')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });

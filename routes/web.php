@@ -29,6 +29,9 @@ Route::middleware(['auth'])->group(function () {
         ->parameters(['inventario' => 'equipo']);
 });
 
+Route::resource('inventario', 'App\Http\Controllers\InventarioController')
+    ->names('inventario');
+    
 Route::get('/marcas', [InventarioController::class, 'getMarcas'])->name('marcas.by.tipo');
 Route::get('/modelos', [InventarioController::class, 'getModelos'])->name('modelos.by.marca');
 

@@ -2,141 +2,240 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Equipo;
+use App\Models\DatosComputadora;
 use App\Models\TipoEquipo;
 use App\Models\Marca;
 use App\Models\Modelo;
-use App\Models\EstadoEquipo;
+use App\Models\CatVersionesDeOffice;
+use App\Models\CatSistemaOperativo;
+use App\Models\AsignacionComputadora;
+use App\Models\Diputado;
+use App\Models\CatCubiculos;
 use Illuminate\Http\Request;
 
 class InventarioController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Equipo::query()->with(['tipo', 'marca', 'modelo', 'estado', 'user']);
-        
+        $query = DatosComputadora::query()
+            ->with([
+                'tipoEquipo',
+                'marca',
+                'modelo',
+                'versionOffice',
+                'sistemaOperativo',
+                'asignacionActual.diputado',
+                'asignacionActual.cubiculo'
+            ]);
+
+        // Búsqueda general
         if ($request->has('search')) {
             $search = $request->search;
             $query->where(function($q) use ($search) {
-                $q->where('codigo_activo', 'like', "%$search%")
-                  ->orWhere('serial', 'like', "%$search%")
-                  ->orWhereHas('modelo', function($q) use ($search) {
+                $q->where('nombre', 'like', "%$search%")
+                  ->orWhere('mac', 'like', "%$search%")
+                  ->orWhere('ip', 'like', "%$search%")
+                  ->orWhereHas('tipoEquipo', function($q) use ($search) {
                       $q->where('nombre', 'like', "%$search%");
                   })
                   ->orWhereHas('marca', function($q) use ($search) {
                       $q->where('nombre', 'like', "%$search%");
                   })
-                  ->orWhereHas('user', function($q) use ($search) {
-                      $q->where('name', 'like', "%$search%");
+                  ->orWhereHas('modelo', function($q) use ($search) {
+                      $q->where('nombre', 'like', "%$search%");
+                  })
+                  ->orWhereHas('asignacionActual.diputado', function($q) use ($search) {
+                      $q->where('nombre_completo', 'like', "%$search%");
+                  })
+                  ->orWhereHas('asignacionActual.cubiculo', function($q) use ($search) {
+                      $q->where('nombre', 'like', "%$search%")
+                        ->orWhere('codigo', 'like', "%$search%");
                   });
             });
         }
-        
-        // Filtros adicionales
-        if ($request->has('tipo_id')) {
-            $query->where('tipo_id', $request->tipo_id);
+
+        // Filtros avanzados
+        if ($request->has('tipo_equipo_id')) {
+            $query->where('tipo_equipo_id', $request->tipo_equipo_id);
         }
-        
-        if ($request->has('estado_id')) {
-            $query->where('estado_id', $request->estado_id);
+
+        if ($request->has('marca_id')) {
+            $query->where('marca_id', $request->marca_id);
         }
+
+        if ($request->has('estado')) {
+            $query->where('estado', $request->estado);
+        }
+
+        if ($request->has('con_diputado')) {
+            $query->whereHas('asignacionActual', function($q) {
+                $q->whereNotNull('diputado_id');
+            });
+        }
+
+        $computadoras = $query->paginate(10)->withQueryString();
         
-        $equipos = $query->paginate(10)->withQueryString();
         $tipos = TipoEquipo::all();
-        $estados = EstadoEquipo::all();
-        
-        return view('inventario.index', compact('equipos', 'tipos', 'estados'));
+        $marcas = Marca::all();
+        $estados = ['activo', 'mantenimiento', 'baja'];
+
+        return view('inventario.index', compact('computadoras', 'tipos', 'marcas', 'estados'));
     }
 
     public function create()
     {
         $tipos = TipoEquipo::all();
-        $estados = EstadoEquipo::all();
-        
-        return view('inventario.create', compact('tipos', 'estados'));
+        $marcas = Marca::all();
+        $modelos = Modelo::all();
+        $versiones = CatVersionesDeOffice::all();
+        $sistemas = CatSistemaOperativo::all();
+        $diputados = Diputado::where('activo', true)->get();
+        $cubiculos = CatCubiculos::all();
+
+        return view('inventario.create', compact(
+            'tipos', 'marcas', 'modelos', 'versiones', 
+            'sistemas', 'diputados', 'cubiculos'
+        ));
     }
 
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'codigo_activo' => 'required|unique:equipos|max:50',
-            'tipo_id' => 'required|exists:tipos_equipo,id',
-            'marca_id' => 'required|exists:marcas,id',
-            'modelo_id' => 'required|exists:modelos,id',
-            'serial' => 'required|unique:equipos|max:100',
-            'estado_id' => 'required|exists:estados_equipo,id',
-            'fecha_compra' => 'nullable|date',
-            'garantia' => 'nullable|integer|min:0'
+            'nombre' => 'required|unique:datoscomputadora|max:50',
+            'tipo_equipo_id' => 'required|exists:cattipodeequipo,id',
+            'marca_id' => 'required|exists:catmarcas,id',
+            'modelo_id' => 'required|exists:catmodelos,id',
+            'version_office_id' => 'required|exists:catversionesdeoffice,id',
+            'sistema_operativo_id' => 'required|exists:catsistemasoperativos,id',
+            'licenciaoriginal' => 'boolean',
+            'mac' => 'nullable|unique:datoscomputadora|max:17',
+            'ip' => 'nullable|unique:datoscomputadora|max:15',
+            'estado' => 'required|in:activo,mantenimiento,baja',
+            'diputado_id' => 'nullable|exists:diputados,id',
+            'cubiculo_id' => 'nullable|exists:cat_cubiculos,id'
         ]);
 
-        Equipo::create($validated + [
-            'user_id' => auth()->id(),
-            'codigo_activo' => $this->generarCodigoActivo($request->tipo_id)
-        ]);
+        // Crear computadora
+        $computadora = DatosComputadora::create($validated);
+
+        // Crear asignación inicial si hay diputado o ubicación
+        if ($request->diputado_id || $request->cubiculo_id) {
+            AsignacionComputadora::create([
+                'computadora_id' => $computadora->id,
+                'diputado_id' => $request->diputado_id,
+                'cubiculo_id' => $request->cubiculo_id,
+                'fecha_asignacion' => now()
+            ]);
+        }
 
         return redirect()->route('inventario.index')
-            ->with('success', 'Equipo registrado exitosamente');
+            ->with('success', 'Computadora registrada exitosamente');
     }
 
-    public function show(Equipo $equipo)
+    public function show(DatosComputadora $computadora)
     {
-        $equipo->load(['tipo', 'marca', 'modelo', 'estado', 'user']);
-        return view('inventario.show', compact('equipo'));
+        $computadora->load([
+            'tipoEquipo',
+            'marca',
+            'modelo',
+            'versionOffice',
+            'sistemaOperativo',
+            'asignaciones.diputado',
+            'asignaciones.cubiculo'
+        ]);
+
+        return view('inventario.show', compact('computadora'));
     }
 
-    public function edit(Equipo $equipo)
+    public function edit(DatosComputadora $computadora)
     {
         $tipos = TipoEquipo::all();
-        $marcas = Marca::where('tipo_equipo_id', $equipo->tipo_id)->get();
-        $modelos = Modelo::where('marca_id', $equipo->marca_id)->get();
-        $estados = EstadoEquipo::all();
-        
-        return view('inventario.edit', compact('equipo', 'tipos', 'marcas', 'modelos', 'estados'));
+        $marcas = Marca::all();
+        $modelos = Modelo::where('marca_id', $computadora->marca_id)->get();
+        $versiones = CatVersionesDeDeOffice::all();
+        $sistemas = CatSistemaOperativo::all();
+        $diputados = Diputado::where('activo', true)->get();
+        $cubiculos = CatCubiculos::all();
+
+        return view('inventario.edit', compact(
+            'computadora', 'tipos', 'marcas', 'modelos', 
+            'versiones', 'sistemas', 'diputados', 'cubiculos'
+        ));
     }
 
-    public function update(Request $request, Equipo $equipo)
+    public function update(Request $request, DatosComputadora $computadora)
     {
         $validated = $request->validate([
-            'tipo_id' => 'required|exists:tipos_equipo,id',
-            'marca_id' => 'required|exists:marcas,id',
-            'modelo_id' => 'required|exists:modelos,id',
-            'estado_id' => 'required|exists:estados_equipo,id',
-            'fecha_compra' => 'nullable|date',
-            'garantia' => 'nullable|integer|min:0',
-            'serial' => 'required|unique:equipos,serial,'.$equipo->id
+            'nombre' => 'required|unique:datoscomputadora,nombre,'.$computadora->id,
+            'tipo_equipo_id' => 'required|exists:cattipodeequipo,id',
+            'marca_id' => 'required|exists:catmarcas,id',
+            'modelo_id' => 'required|exists:catmodelos,id',
+            'version_office_id' => 'required|exists:catversionesdeoffice,id',
+            'sistema_operativo_id' => 'required|exists:catsistemasoperativos,id',
+            'licenciaoriginal' => 'boolean',
+            'mac' => 'nullable|unique:datoscomputadora,mac,'.$computadora->id,
+            'ip' => 'nullable|unique:datoscomputadora,ip,'.$computadora->id,
+            'estado' => 'required|in:activo,mantenimiento,baja'
         ]);
 
-        $equipo->update($validated);
+        $computadora->update($validated);
 
         return redirect()->route('inventario.index')
-            ->with('success', 'Equipo actualizado exitosamente');
+            ->with('success', 'Computadora actualizada exitosamente');
     }
 
-    public function destroy(Equipo $equipo)
+    public function destroy(DatosComputadora $computadora)
     {
-        $equipo->delete();
+        $computadora->delete();
         
         return redirect()->route('inventario.index')
-            ->with('success', 'Equipo eliminado correctamente');
+            ->with('success', 'Computadora eliminada correctamente');
     }
 
     // Métodos para AJAX
-    public function getMarcas(Request $request)
-    {
-        return Marca::where('tipo_equipo_id', $request->tipo_id)->get();
-    }
-
     public function getModelos(Request $request)
     {
         return Modelo::where('marca_id', $request->marca_id)->get();
     }
 
-    // Generar código de activo automático
-    protected function generarCodigoActivo($tipo_id)
+    public function getAsignacionActual(Request $request)
     {
-        $tipo = TipoEquipo::find($tipo_id);
-        $count = Equipo::where('tipo_id', $tipo_id)->count() + 1;
-        
-        return strtoupper(substr($tipo->nombre, 0, 3)) . '-' . str_pad($count, 4, '0', STR_PAD_LEFT);
+        $computadora = DatosComputadora::find($request->computadora_id);
+        return response()->json([
+            'asignacion' => $computadora->asignacionActual,
+            'diputados' => Diputado::where('activo', true)->get(),
+            'cubiculos' => CatCubiculos::all()
+        ]);
+    }
+
+    public function updateAsignacion(Request $request, DatosComputadora $computadora)
+    {
+        $request->validate([
+            'diputado_id' => 'nullable|exists:diputados,id',
+            'cubiculo_id' => 'nullable|exists:cat_cubiculos,id',
+            'notas' => 'nullable|string'
+        ]);
+
+        // Finalizar asignación actual si existe
+        if ($computadora->asignacionActual) {
+            $computadora->asignacionActual->update([
+                'fecha_retiro' => now(),
+                'notas' => $request->notas_retiro ?? 'Cambio de asignación'
+            ]);
+        }
+
+        // Crear nueva asignación si hay datos
+        if ($request->diputado_id || $request->cubiculo_id) {
+            AsignacionComputadora::create([
+                'computadora_id' => $computadora->id,
+                'diputado_id' => $request->diputado_id,
+                'cubiculo_id' => $request->cubiculo_id,
+                'fecha_asignacion' => now(),
+                'notas' => $request->notas
+            ]);
+        }
+
+        return redirect()->back()
+            ->with('success', 'Asignación actualizada correctamente');
     }
 }

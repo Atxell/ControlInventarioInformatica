@@ -15,9 +15,10 @@ class UbicacionesSeeder extends Seeder
     {
         // 1. Crear edificios
         $edificios = [
-            ['NombreEdificio' => 'Edificio Principal', 'Direccion' => 'Av. Constitución #100'],
-            ['NombreEdificio' => 'Edificio Legislativo', 'Direccion' => 'Calle Hidalgo #45'],
-            ['NombreEdificio' => 'Edificio Administrativo', 'Direccion' => 'Av. Juárez #200'],
+            ['NombreEdificio' => 'A'],
+            ['NombreEdificio' => 'B'],
+            ['NombreEdificio' => 'C'],
+            ['NombreEdificio' => 'D'],
         ];
 
         foreach ($edificios as $edificio) {
@@ -28,16 +29,18 @@ class UbicacionesSeeder extends Seeder
         $zonas = [
             // Edificio Principal
             ['EdificioID' => 1, 'Planta' => 'A'],
-            ['EdificioID' => 1, 'Planta' => 'A'],
-            ['EdificioID' => 1, 'Planta' => 'C'],
+            ['EdificioID' => 1, 'Planta' => 'B'],
             
             // Edificio Legislativo
-            ['EdificioID' => 2, 'Planta' => 'B'],
             ['EdificioID' => 2, 'Planta' => 'A'],
             
             // Edificio Administrativo
-            ['EdificioID' => 3, 'Planta' => 'B'],
             ['EdificioID' => 3, 'Planta' => 'A'],
+            ['EdificioID' => 3, 'Planta' => 'S'],
+
+
+            ['EdificioID' => 4, 'Planta' => 'A'],
+            ['EdificioID' => 4, 'Planta' => 'B'],
         ];
 
         foreach ($zonas as $zona) {

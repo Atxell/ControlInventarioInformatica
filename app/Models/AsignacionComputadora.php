@@ -41,6 +41,15 @@ class AsignacionComputadora extends Model
             'nombre' => 'En tránsito'
         ]);
     }
+
+    public function cubiculo()
+    {
+        return $this->belongsTo(CatCubiculos::class, 'cubiculo_id')
+               ->withDefault([
+                   'nombre' => 'Sin ubicación',
+                   'codigo' => 'N/A'
+               ]);
+    }
     
     // Scopes útiles
     public function scopeActivas($query)
