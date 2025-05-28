@@ -37,7 +37,7 @@ class DatosComputadoraSeeder extends Seeder
                 'version_office_id' => 2, // Office 2019
                 'mac' => '00:A1:B2:C3:D4:E5',
                 'ip' => '192.168.1.101',
-                'estado_id' => 1,
+                'estado_id' => 2,
             ],[
                 'Num_inv' => '000003',
                 'nombre' => 'EQUIPO-CONTAB-03',

@@ -33,7 +33,6 @@ class AsignacionesComputadorasSeeder extends Seeder
             'diputado_id' => 2,
             'cubiculo_id' => 2,
             'fecha_asignacion' => now()->subYear(),
-            'fecha_retiro' => now()->subMonth(),
             'notas' => 'Equipo dado de baja'
         ]);
     }

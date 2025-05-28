@@ -14,19 +14,6 @@
                 />
             </div>
             
-            <!-- Filtro por tipo -->
-            <div>
-                <x-select-input 
-                    name="tipo_equipo_id" 
-                    label="Tipo de equipo"
-                    :options="$tipos" 
-                    optionValue="id" 
-                    optionLabel="nombre"
-                    :selected="request('tipo_equipo_id')"
-                    withEmpty
-                />
-            </div>
-            
             <!-- Filtro por estado -->
             <div>
                 <x-select-input 
@@ -45,23 +32,7 @@
             </div>
             
             <!-- Filtros adicionales -->
-            <div class="flex items-center space-x-4">
-                <x-checkbox 
-                    name="con_diputado" 
-                    label="Con diputado asignado"
-                    :checked="request('con_diputado')"
-                />
-                
-                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                    Filtrar
-                </button>
-                
-                @if(request()->hasAny(['search', 'tipo_equipo_id', 'estado', 'con_diputado']))
-                    <a href="{{ route('inventario.index') }}" class="text-gray-500 hover:text-gray-700">
-                        Limpiar
-                    </a>
-                @endif
-            </div>
+            
         </form>
     </div>
 
@@ -90,11 +61,15 @@
                         <td class="px-6 py-4 whitespace-nowrap">
                             <div class="text-sm text-gray-500">{{ $computadora->nombre }}</div>
                             <div class="text-sm text-gray-500">
-                                {{ $computadora->ip ?? 'Sin IP' }} / {{ $computadora->mac ?? 'Sin MAC' }}
+                               {{ $computadora->MAC  }} / {{ $computadora->ip ?: 'Sin IP' }} 
                             </div>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
-                            {{ $computadora->tipoEquipo->nombre }}
+                            @if($computadora->tipoEquipo)
+                                {{ $computadora->TipoEquipo->name }}
+                            @else
+                                <span class="text-gray-400">Sin tipo</span>
+                            @endif
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
                             <div class="font-medium">{{ $computadora->marca->nombre }}</div>
@@ -106,10 +81,10 @@
                         <td class="px-6 py-4 whitespace-nowrap">
                             @if($computadora->asignacionActual)
                                 <div class="font-medium">
-                                    {{ $computadora->asignacionActual->diputado->nombre_completo ?? 'Sin diputado' }}
+                                    {{ $computadora->asignacionActual->diputado->nombre ?? 'Sin diputado' }}
                                 </div>
                                 <div class="text-sm text-gray-500">
-                                    {{ $computadora->asignacionActual->cubiculo->nombre ?? 'Sin ubicación' }}
+                                    {{ $computadora->asignacionActual->cubiculo->NombreCubiculo ?? 'Sin ubicación' }}
                                 </div>
                             @else
                                 <span class="text-gray-400">No asignada</span>
@@ -117,14 +92,15 @@
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
                             @php
+                                $estado = strtolower($computadora->EstadoEquipo->nombre ?? '');
                                 $badgeClasses = [
                                     'activo' => 'bg-green-100 text-green-800',
-                                    'mantenimiento' => 'bg-yellow-100 text-yellow-800',
+                                    'mantenimiento' => 'bg-yellow-100 text-yellow-800', 
                                     'baja' => 'bg-red-100 text-red-800'
                                 ];
                             @endphp
-                            <span class="px-2 py-1 text-xs rounded-full {{ $badgeClasses[$computadora->estado] ?? 'bg-gray-100' }}">
-                                {{ ucfirst($computadora->estado) }}
+                            <span class="px-2 py-1 text-xs rounded-full {{ $badgeClasses[$estado] ?? 'bg-gray-100 text-gray-800' }}">
+                                {{ $estado ? ucfirst($estado) : 'Sin estado' }}
                             </span>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
