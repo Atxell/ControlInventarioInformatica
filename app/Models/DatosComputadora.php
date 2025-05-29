@@ -75,6 +75,6 @@ class DatosComputadora extends Model
     
     public function componentes()
     {
-        return $this->hasOne(ComponenteComputadora::class);
+        return $this->hasOne(ComponenteComputadora::class, 'computadora_id');
     }
 }

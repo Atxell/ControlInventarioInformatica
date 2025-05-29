@@ -12,7 +12,7 @@
                     placeholder="Buscar por número de inventario o nombre" 
                     value="{{ request('search') }}"
                 />
-            </div>
+            </div>  
             
             <!-- Filtro por estado -->
             <div>
@@ -115,6 +115,9 @@
                                title="Editar">
                                 <i class="fas fa-edit"></i>
                             </a>
+                            <button class="btn btn-info" onclick="mostrarComponentes({{ $componente->id }})">
+                                Ver Componentes
+                            </button>
                             @endcan
                         </td>
                     </tr>
@@ -134,6 +137,7 @@
         </div>
     </div>
 </div>
+
 
 @push('scripts')
 <script>

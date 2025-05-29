@@ -116,7 +116,7 @@ class InventarioController extends Controller
             ->with('success', 'Computadora registrada exitosamente');
     }
 
-    public function show(DatosComputadora $computadora)
+   public function show(DatosComputadora $computadora)
     {
         $computadora->load([
             'tipoEquipo',
@@ -125,7 +125,10 @@ class InventarioController extends Controller
             'versionOffice',
             'sistemaOperativo',
             'asignaciones.diputado',
-            'asignaciones.cubiculo'
+            'asignaciones.cubiculo',
+            'componentes.procesador',
+            'componentes.discoDuro',
+            'componentes.memoria'
         ]);
 
         return view('inventario.show', compact('computadora'));

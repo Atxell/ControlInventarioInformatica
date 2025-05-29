@@ -59,11 +59,6 @@ class ComponenteComputadoraSeeder extends Seeder
     }*/
     public function run()
     {
-        // Obtener todos los componentes disponibles
-       // $procesadores = CatProcesador::all();
-        //$discos = CatDiscosDuros::all();
-        //$memorias = CatMemorias::all();
-
             ComponenteComputadora::create([
                 'computadora_id' => 1,
                 'procesador_id' => 1,

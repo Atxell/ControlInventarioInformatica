@@ -19,7 +19,7 @@ class ComponenteComputadora extends Model
     // Relaciones
     public function computadora()
     {
-        return $this->belongsTo(DatosComputadora::class);
+        return $this->belongsTo(DatosComputadora::class, 'computadora_id');
     }
 
     public function procesador()
