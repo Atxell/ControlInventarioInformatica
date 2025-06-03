@@ -28,7 +28,7 @@
                     </div>
                 </header>
             @endisset
-
+            @stack('scripts')
             <!-- Page Content -->
             <main>
                 {{ $slot }}

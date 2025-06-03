@@ -116,22 +116,15 @@ class InventarioController extends Controller
             ->with('success', 'Computadora registrada exitosamente');
     }
 
-   public function show(DatosComputadora $computadora)
-    {
+    public function show(DatosComputadora $computadora) {
+        // Carga SOLO las relaciones de componentes
         $computadora->load([
-            'tipoEquipo',
-            'marca',
-            'modelo',
-            'versionOffice',
-            'sistemaOperativo',
-            'asignaciones.diputado',
-            'asignaciones.cubiculo',
             'componentes.procesador',
             'componentes.discoDuro',
             'componentes.memoria'
         ]);
 
-        return view('inventario.show', compact('computadora'));
+        return view('inventario.modal-show', compact('computadora'));
     }
 
     public function edit(DatosComputadora $computadora)
@@ -225,5 +218,52 @@ class InventarioController extends Controller
 
         return redirect()->back()
             ->with('success', 'Asignación actualizada correctamente');
+    }
+
+
+    public function getComponentes($id)
+    {
+        try {
+            $computadora = DatosComputadora::with([
+                'componentes.procesador',
+                'componentes.discoDuro',
+                'componentes.memoria'
+            ])->findOrFail($id);
+
+
+            \Log::info('Datos cargados:', [
+                'componentes' => $computadora->componentes,
+                'procesador' => $computadora->componentes->procesador,
+                'disco' => $computadora->componentes->discoDuro,
+                'memoria' => $computadora->componentes->memoria
+            ]);
+
+
+            return response()->json([
+                'nombre' => $computadora->nombre,
+                'componentes' => [
+                    'procesador' => [
+                        'marca' => optional($computadora->componentes->procesador)->marca,
+                        'tipo' => optional($computadora->componentes->procesador)->tipo,
+                        'generacion' => optional($computadora->componentes->procesador)->generacion
+                    ],
+                    'disco' => [
+                        'capacidad' => optional($computadora->componentes->discoDuro)->Capacidad,
+                        'tipo' => optional($computadora->componentes->discoDuro)->Tipo
+                    ],
+                    'memoria' => [
+                        'capacidad' => optional($computadora->componentes->memoria)->Capacidad,
+                        'frecuencia' => optional($computadora->componentes->memoria)->Frecuencia,
+                        'generacion' => optional($computadora->componentes->memoria)->Generación
+                    ]
+                ]
+            ]);
+
+        } catch (\Exception $e) {
+            \Log::error("Error en getComponentes: " . $e->getMessage());
+            return response()->json([
+                'error' => 'Error al cargar componentes'
+            ], 500);
+        }
     }
 }

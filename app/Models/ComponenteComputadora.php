@@ -24,16 +24,16 @@ class ComponenteComputadora extends Model
 
     public function procesador()
     {
-        return $this->belongsTo(Procesador::class);
+        return $this->belongsTo(CatProcesador::class, 'procesador_id');
     }
 
     public function discoDuro()
     {
-        return $this->belongsTo(DiscoDuro::class);
+        return $this->belongsTo(CatDiscosDuros::class, 'disco_duro_id');
     }
 
     public function memoria()
     {
-        return $this->belongsTo(Memoria::class);
+        return $this->belongsTo(CatMemorias::class, 'memoria_id');
     }
 }

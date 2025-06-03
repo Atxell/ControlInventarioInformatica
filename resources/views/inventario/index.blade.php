@@ -102,22 +102,20 @@
                             <span class="px-2 py-1 text-xs rounded-full {{ $badgeClasses[$estado] ?? 'bg-gray-100 text-gray-800' }}">
                                 {{ $estado ? ucfirst($estado) : 'Sin estado' }}
                             </span>
+                            
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
-                            <a href="{{ route('inventario.show', $computadora) }}" 
-                               class="text-blue-600 hover:text-blue-900"
-                               title="Ver detalles">
+                            <button onclick="openModal({{ $computadora->id }})" class="text-blue-600 hover:text-blue-900">
                                 <i class="fas fa-eye"></i>
-                            </a>
+                            </button>
+                            
                             @can('inventario.edit')
                             <a href="{{ route('inventario.edit', $computadora) }}" 
                                class="text-yellow-600 hover:text-yellow-900"
                                title="Editar">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <button class="btn btn-info" onclick="mostrarComponentes({{ $componente->id }})">
-                                Ver Componentes
-                            </button>
+                            <button onclick="openModal({{ $computadora->id }})">
                             @endcan
                         </td>
                     </tr>
@@ -134,13 +132,86 @@
         <!-- Paginación -->
         <div class="bg-white px-4 py-3 border-t border-gray-200 sm:px-6">
             {{ $computadoras->links() }}
+            
+            
         </div>
     </div>
 </div>
 
 
+<!-- Modal para mostrar detalles -->
+<div id="computerModal2" class="fixed inset-0 z-50 hidden overflow-y-auto">
+    <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <!-- Fondo del modal -->
+        <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+            <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+        </div>
+        
+        <!-- Contenido del modal -->
+        <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-4">Componentes de {{ $computadora->nombre }}</h3>
+                
+                @if($computadora->componentes)
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <!-- Procesador -->
+                        <div class="bg-gray-50 p-3 rounded">
+                            <h4 class="font-semibold">Procesador</h4>
+                            <p>{{ $computadora->componentes->procesador->modelo ?? 'No especificado' }}</p>
+                        </div>
+                        
+                        <!-- Disco Duro -->
+                        <div class="bg-gray-50 p-3 rounded">
+                            <h4 class="font-semibold">Disco Duro</h4>
+                            <p>{{ $computadora->componentes->discoDuro->modelo ?? 'No especificado' }}</p>
+                        </div>
+                        
+                        <!-- Memoria -->
+                        <div class="bg-gray-50 p-3 rounded">
+                            <h4 class="font-semibold">Memoria RAM</h4>
+                            <p>{{ $computadora->componentes->memoria->capacidad ?? 'No especificado' }}</p>
+                        </div>
+                    </div>
+                @else
+                    <p class="text-red-500">Esta computadora no tiene componentes registrados.</p>
+                @endif
+            </div>
+            <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                <button type="button" onclick="closeModal()" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal Container (vacío, sin Blade) -->
+<div id="computerModal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+    <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <!-- Fondo -->
+        <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+            <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+        </div>
+        
+        <!-- Contenido dinámico -->
+        <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
+            <div class="p-4" id="modalContent">
+                <!-- AJAX cargará aquí: procesador, disco, memoria -->
+            </div>
+            <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                <button onclick="closeModal()" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 @push('scripts')
 <script>
+
 document.addEventListener('DOMContentLoaded', function() {
     // Selector de marca dinámico
     const tipoSelect = document.getElementById('tipo_equipo_id');
@@ -191,6 +262,74 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+ 
+
+
+// Asegúrate que este código esté en tu archivo JavaScript principal
+// o entre <script> tags ANTES de que se rendericen los botones
+
+function openModal(computerId) {
+    const modal = document.getElementById('computerModal');
+    const modalContent = document.getElementById('modalContent');
+    
+    // Mostrar loader
+    modalContent.innerHTML = `
+        <div class="flex justify-center items-center h-40">
+            <svg class="animate-spin h-8 w-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+        </div>
+    `;
+    
+    modal.classList.remove('hidden');
+    
+    fetch(`/inventario/${computerId}/componentes`)
+    .then(response => response.json())
+    .then(data => {
+        modalContent.innerHTML = `
+            <h3 class="text-xl font-bold mb-4">Componentes de ${data.nombre}</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Procesador -->
+                <div class="bg-gray-50 p-3 rounded">
+                    <h4 class="font-semibold">Procesador</h4>
+                    <p><span class="font-medium">Marca:</span> ${data.componentes.procesador.marca || 'N/A'}</p>
+                    <p><span class="font-medium">Tipo:</span> ${data.componentes.procesador.tipo || 'N/A'}</p>
+                    <p><span class="font-medium">Generación:</span> ${data.componentes.procesador.generacion || 'N/A'}</p>
+                </div>
+                
+                <!-- Disco Duro -->
+                <div class="bg-gray-50 p-3 rounded">
+                    <h4 class="font-semibold">Disco Duro</h4>
+                    <p><span class="font-medium">Capacidad:</span> ${data.componentes.disco.capacidad || 'N/A'}</p>
+                    <p><span class="font-medium">Tipo:</span> ${data.componentes.disco.tipo || 'N/A'}</p>
+                </div>
+                
+                <!-- Memoria -->
+                <div class="bg-gray-50 p-3 rounded">
+                    <h4 class="font-semibold">Memoria RAM</h4>
+                    <p><span class="font-medium">Capacidad:</span> ${data.componentes.memoria.capacidad || 'N/A'}</p>
+                    <p><span class="font-medium">Frecuencia:</span> ${data.componentes.memoria.frecuencia || 'N/A'}</p>
+                    <p><span class="font-medium">Generación:</span> ${data.componentes.memoria.generacion || 'N/A'}</p>
+                </div>
+            </div>
+        `;
+    })
+    .catch(error => {
+        modalContent.innerHTML = `
+            <div class="text-red-500 p-4">
+                Error al cargar componentes. 
+                <button onclick="openModal(${computerId})" class="text-blue-500">Reintentar</button>
+            </div>
+        `;
+    });
+}
+
+function closeModal() {
+    document.getElementById('computerModal').classList.add('hidden');
+}
+
+
 </script>
 @endpush
 </x-app-layout>

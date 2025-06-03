@@ -25,12 +25,15 @@ Route::middleware(['auth', 'check.permission:cat_usuarios'])->group(function() {
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('inventario', InventarioController::class)
-        ->except(['show'])
         ->parameters(['inventario' => 'equipo']);
 });
+Route::get('/inventario/{id}/componentes', [InventarioController::class, 'getComponentes'])
+     ->name('inventario.componentes');
+     
 
-Route::resource('inventario', 'App\Http\Controllers\InventarioController')
+/*Route::resource('inventario', 'App\Http\Controllers\InventarioController')
     ->names('inventario');
+Route::get('/inventario/{id}', [InventarioController::class, 'show']);*/
     
 Route::get('/marcas', [InventarioController::class, 'getMarcas'])->name('marcas.by.tipo');
 Route::get('/modelos', [InventarioController::class, 'getModelos'])->name('modelos.by.marca');
