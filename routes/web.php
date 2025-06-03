@@ -31,6 +31,15 @@ Route::get('/inventario/{id}/componentes', [InventarioController::class, 'getCom
      ->name('inventario.componentes');
      
 
+ Route::get('/operador', [InventarioController::class, 'operador'])
+        ->name('inventario.operador');
+
+Route::get('/marcas', function(Request $request) {
+    return response()->json(
+        \App\Models\Marca::where('tipo_equipo_id', $request->tipo_id)->get()
+    );
+});
+
 /*Route::resource('inventario', 'App\Http\Controllers\InventarioController')
     ->names('inventario');
 Route::get('/inventario/{id}', [InventarioController::class, 'show']);*/

@@ -1,0 +1,72 @@
+=== Nombre de equipo ===
+DESKTOP-I9CA29F
+
+=== Sistema operativo ===
+Windows 11 10.0.22631
+
+=== Arquitectura ===
+AMD64
+
+=== Dirección MAC ===
+aa:54:a9:53:a6:4c
+
+=== Dirección IP ===
+172.16.0.2
+
+=== Grupo de trabajo ===
+WORKGROUP
+
+=== Procesador ===
+Intel64 Family 6 Model 142 Stepping 12, GenuineIntel
+
+=== Fabricante ===
+HP
+
+=== Modelo ===
+HP Laptop 15-dw1xxx
+
+=== Discos físicos ===
+Modelo: NVMe INTEL HBRPEKNX0101AH
+Tamaño: 238.47 GB
+Interfaz: SCSI
+Serial: 0000_0000_0100_0000_E4D2_5C65_AC61_5401.
+
+Modelo: NVMe INTEL HBRPEKNX0101AHO
+Tamaño: 13.41 GB
+Interfaz: SCSI
+Serial: 5CD2_E465_AC61_0100.
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 168.37 GB
+Espacio usado: 140.30 GB
+Espacio libre: 28.07 GB
+Porcentaje usado: 83.3%
+
+Dispositivo: D:\
+Punto de montaje: D:\
+Sistema de archivos: FAT32
+Espacio total: 57.72 GB
+Espacio usado: 0.01 GB
+Espacio libre: 57.71 GB
+Porcentaje usado: 0.0%
+
+
+=== Memoria RAM ===
+Total: 15.81 GB
+Disponible: 7.47 GB
+Usada: 8.34 GB
+Porcentaje usado: 52.7%
+Slots: {'Slots totales': 2, 'Slots usados': 2, 'Slots libres': 0, 'Total memoria instalada': '16.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '8.00 GB', 'Velocidad': '3200 MHz', 'Fabricante': 'Micron Technology', 'Tipo': 0}, {'Módulo': 2, 'Capacidad': '8.00 GB', 'Velocidad': '2667 MHz', 'Fabricante': 'Patriot Memory (PDP Systems)', 'Tipo': 0}]}
+
+=== Microsoft Office ===
+Office O365ProPlusRetail (Click-to-Run)
+

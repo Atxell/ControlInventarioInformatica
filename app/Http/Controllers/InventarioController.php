@@ -11,6 +11,10 @@ use App\Models\CatSistemaOperativo;
 use App\Models\AsignacionComputadora;
 use App\Models\Diputado;
 use App\Models\CatCubiculos;
+use App\Models\CatProcesador;
+use App\Models\CatDiscosDuros;
+use App\Models\CatMemorias;
+use App\Models\EstadoEquipo;
 use Illuminate\Http\Request;
 
 class InventarioController extends Controller
@@ -265,5 +269,27 @@ class InventarioController extends Controller
                 'error' => 'Error al cargar componentes'
             ], 500);
         }
+    }
+
+    public function operador()
+    {
+        $tipos = TipoEquipo::all();
+        $marcas = Marca::all();
+        $modelos = Modelo::all();
+        $versiones = CatVersionesDeOffice::all();
+        $sistemas = CatSistemaOperativo::all();
+        $diputados = Diputado::all();
+        $cubiculos = CatCubiculos::all();
+
+        $procesadores = CatProcesador::all(); 
+        $discos = CatDiscosDuros::all(); 
+        $memorias = CatMemorias::all();
+         $estados = EstadoEquipo::all();
+
+        return view('inventario.operador', compact(
+            'tipos', 'marcas', 'modelos', 'versiones', 
+            'sistemas', 'diputados', 'cubiculos', 'procesadores',
+            'discos', 'memorias', 'estados'
+        ));
     }
 }
