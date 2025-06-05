@@ -21,6 +21,10 @@ class DatosComputadora extends Model
         'ip',
         'estado_id'
     ];
+    
+    protected $attributes = [
+    'num_inv' => 'Num_inv',
+    ];
 
     protected $casts = [
         'licenciaoriginal' => 'boolean',

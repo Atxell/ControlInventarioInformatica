@@ -31,14 +31,33 @@ Route::get('/inventario/{id}/componentes', [InventarioController::class, 'getCom
      ->name('inventario.componentes');
      
 
- Route::get('/operador', [InventarioController::class, 'operador'])
-        ->name('inventario.operador');
+Route::get('/operador', [InventarioController::class, 'operador'])
+    ->name('inventario.operador')
+    ->middleware(['auth', 'check.permission:inventario']);
+
+
+Route::middleware(['auth'])->group(function () {
+    // Ruta store con permiso específico
+    Route::post('/inventario', [InventarioController::class, 'store'])
+        ->name('inventario.store')
+        ->middleware('check.permission:inventario'); // Permiso específico
+    
+    // Resource con permisos específicos para cada acción
+    Route::resource('inventario', InventarioController::class)
+        ->parameters(['inventario' => 'equipo'])
+        ->middleware([
+            'check.permission:inventario' // index, show
+        ]);
+});
 
 Route::get('/marcas', function(Request $request) {
     return response()->json(
         \App\Models\Marca::where('tipo_equipo_id', $request->tipo_id)->get()
     );
 });
+Route::get('/marcas', [InventarioController::class, 'getMarcasByTipo']);
+Route::get('/modelos', [InventarioController::class, 'getModelos']);
+Route::get('/marcas', [InventarioController::class, 'getMarcas']);
 
 /*Route::resource('inventario', 'App\Http\Controllers\InventarioController')
     ->names('inventario');

@@ -87,6 +87,9 @@ class InventarioController extends Controller
 
     public function store(Request $request)
     {
+        \Log::info('Iniciando store()');
+        \Log::info('Datos recibidos:', $request->all());
+        try {
         $validated = $request->validate([
             'num_inv' => 'required|string|unique:datoscomputadora,num_inv|max:20',
             'nombre' => 'required|unique:datoscomputadora|max:50',
@@ -98,10 +101,11 @@ class InventarioController extends Controller
             'licenciaoriginal' => 'boolean',
             'mac' => 'nullable|unique:datoscomputadora|max:17',
             'ip' => 'nullable|unique:datoscomputadora|max:15',
-            'estado' => 'required|in:activo,mantenimiento,baja',
+            'estado_id' => 'required|exists:estados_equipo,id',
             'diputado_id' => 'nullable|exists:diputados,id',
-            'cubiculo_id' => 'nullable|exists:cat_cubiculos,id'
+            'cubiculo_id' => 'nullable|exists:catcubiculos,id'
         ]);
+
 
         // Crear computadora
         $computadora = DatosComputadora::create($validated);
@@ -118,6 +122,15 @@ class InventarioController extends Controller
 
         return redirect()->route('inventario.index')
             ->with('success', 'Computadora registrada exitosamente');
+        } catch (\ValidationException $e) {
+            \Log::error("Error de validación: " . print_r($e->errors(), true));
+            return back()->withErrors($e->errors())->withInput();
+        } catch (\Exception $e) {
+            \Log::error("Error general: " . $e->getMessage());
+            return back()->withInput()->withErrors([
+                'error' => 'Error inesperado: ' . $e->getMessage()
+            ]);
+        }
     }
 
     public function show(DatosComputadora $computadora) {
@@ -292,4 +305,15 @@ class InventarioController extends Controller
             'discos', 'memorias', 'estados'
         ));
     }
+    public function getMarcasByTipo(Request $request)
+    {
+        return Marca::where('tipo_equipo_id', $request->tipo_id)->get();    
+    }
+    public function getMarcas(Request $request)
+    {
+        // Depuración básica
+        logger("Tipo ID recibido: " . $request->tipo_id);
+        return Marca::where('tipo_equipo_id', $request->tipo_id)->get();
+    }
+
 }

@@ -251,7 +251,6 @@
                                    name="mac" 
                                    value="{{ old('mac') }}"
                                    placeholder="00:00:00:00:00:00"
-                                   pattern="^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$"
                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('mac') border-red-500 @enderror">
                             @error('mac')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -292,9 +291,7 @@
                                     required>
                                 <option value="">Seleccionar estado...</option>
                                 @foreach($estados as $estado)
-                                    <option value="{{ $estado->id }}" {{ old('estado_id') == $estado->id ? 'selected' : '' }}>
-                                        {{ $estado->nombre }}
-                                    </option>
+                                    <option value="{{ $estado->id }}">{{ $estado->nombre }}</option>
                                 @endforeach
                             </select>
                             @error('estado_id')
@@ -345,7 +342,7 @@
                         Cancelar
                     </a>
                     <button type="submit" 
-                            class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-200">
+                            class="px-6 py-2 bg-blue-600 text-black rounded-md hover:bg-blue-700 transition duration-200">
                         Registrar Computadora
                     </button>
                 </div>
@@ -355,6 +352,7 @@
 </div>
 
 @push('scripts')
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const tipoSelect = document.getElementById('tipo_equipo_id');
@@ -372,7 +370,7 @@ document.addEventListener('DOMContentLoaded', function() {
         modeloSelect.disabled = true;
 
         if (tipoId) {
-            fetch(`/api/marcas?tipo_id=${tipoId}`)
+            fetch(`/marcas?tipo_id=${tipoId}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -400,7 +398,7 @@ document.addEventListener('DOMContentLoaded', function() {
         modeloSelect.disabled = true;
 
         if (marcaId) {
-            fetch(`/api/modelos?marca_id=${marcaId}`)
+            fetch(`/modelos?marca_id=${marcaId}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -444,6 +442,34 @@ document.addEventListener('DOMContentLoaded', function() {
             this.setCustomValidity('');
         }
     });
+});
+
+document.getElementById('computerForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    console.log("Formulario interceptado - Validando datos...");
+    
+    // Validar campos requeridos manualmente
+    let isValid = true;
+    const requiredFields = [
+        'num_inv', 'nombre', 'tipo_equipo_id', 'marca_id', 'modelo_id',
+        'procesador_id', 'disco_duro_id', 'memoria_id', 
+        'sistema_operativo_id', 'version_office_id', 'estado_id'
+    ];
+    
+    requiredFields.forEach(field => {
+        const element = document.querySelector(`[name="${field}"]`);
+        if (!element.value) {
+            console.error(`Campo requerido vacío: ${field}`);
+            isValid = false;
+        }
+    });
+    
+    if (isValid) {
+        console.log("Todos los campos requeridos están llenos. Enviando formulario...");
+        this.submit();
+    } else {
+        alert("Por favor complete todos los campos requeridos");
+    }
 });
 </script>
 @endpush
