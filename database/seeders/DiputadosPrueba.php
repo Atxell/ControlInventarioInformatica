@@ -15,10 +15,7 @@ class DiputadosPrueba extends Seeder
     public function run()
     {
        DB::table('Diputados')->insert([
-            ['nombre' => 'Facundo Fernandez De La Cruz'],
-            ['nombre' => 'Ramon Ortiz Avila'],
-            ['nombre' => 'Jose Antonio Hernandez'],
-            ['nombre' => 'Maria Socorro Felix '],
+            ['nombre' => 'Vacio'],
         ]);
     }
 }

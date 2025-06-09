@@ -13,7 +13,7 @@ class CatTipoEquipoSeeder extends Seeder
      */
     public function run()
     {
-        $tipos = ['Laptop', 'Desktop', 'Servidor'];
+        $tipos = ['Computadora Portátil', 'Computadora de escritorio'];
         
         foreach ($tipos as $tipo) {
             TipoEquipo::create(['name' => $tipo]);

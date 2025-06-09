@@ -17,25 +17,55 @@ class CatMarcasSeeder extends Seeder
          $marcas = [
             [
                 'nombre' => 'Dell',
-                'tipo_equipo_id' => $tipoEquipoId,
+                'tipo_equipo_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'nombre' => 'HP',
-                'tipo_equipo_id' => $tipoEquipoId,
+                'tipo_equipo_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'nombre' => 'Lenovo',
-                'tipo_equipo_id' => $tipoEquipoId,
+                'tipo_equipo_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'nombre' => 'Apple',
-                'tipo_equipo_id' => $tipoEquipoId,
+                'nombre' => 'LANIX',
+                'tipo_equipo_id' => 2,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'nombre' => 'ACCER',
+                'tipo_equipo_id' => 2,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+             [
+                'nombre' => 'Dell',
+                'tipo_equipo_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'nombre' => 'HP',
+                'tipo_equipo_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'nombre' => 'Lenovo',
+                'tipo_equipo_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'nombre' => 'ACER',
+                'tipo_equipo_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now()
             ]

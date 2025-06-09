@@ -14,9 +14,11 @@ class CatSistemasOperativosSeeder extends Seeder
     public function run()
     {
         $sistemas = [
-            ['nombre' => 'Windows 10 Pro'],
-            ['nombre' => 'Windows 11 Pro'],
-            ['nombre' => 'Ubuntu 22.04 LTS'],
+            ['nombre' => 'Windows 8.1'],
+            ['nombre' => 'Windows 8'],
+            ['nombre' => 'Windows 7'],
+            ['nombre' => 'Windows 10'],
+            ['nombre' => 'Windows 11'],
         ];
 
         foreach ($sistemas as $sistema) {

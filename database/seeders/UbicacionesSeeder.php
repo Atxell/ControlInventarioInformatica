@@ -28,19 +28,19 @@ class UbicacionesSeeder extends Seeder
         // 2. Crear zonas por edificio
         $zonas = [
             // Edificio Principal
-            ['EdificioID' => 1, 'Planta' => 'A'],
-            ['EdificioID' => 1, 'Planta' => 'B'],
+            ['EdificioID' => 1, 'Planta' => 'A'],//1
+            ['EdificioID' => 1, 'Planta' => 'B'],//2
             
             // Edificio Legislativo
-            ['EdificioID' => 2, 'Planta' => 'A'],
+            ['EdificioID' => 2, 'Planta' => 'A'],//3
             
             // Edificio Administrativo
-            ['EdificioID' => 3, 'Planta' => 'A'],
-            ['EdificioID' => 3, 'Planta' => 'S'],
+            ['EdificioID' => 3, 'Planta' => 'A'],//4
+            ['EdificioID' => 3, 'Planta' => 'S'],//5
 
 
-            ['EdificioID' => 4, 'Planta' => 'A'],
-            ['EdificioID' => 4, 'Planta' => 'B'],
+            ['EdificioID' => 4, 'Planta' => 'A'],//6
+            ['EdificioID' => 4, 'Planta' => 'B'],//7
         ];
 
         foreach ($zonas as $zona) {
@@ -50,12 +50,26 @@ class UbicacionesSeeder extends Seeder
         // 3. Crear cubículos por zona
         $cubiculos = [
             // Planta Baja - Edificio Principal
-            ['ZonaID' => 1, 'NombreCubiculo' => 'Recepción', 'codigo' => 'ED1-PB-001'],
-            ['ZonaID' => 1, 'NombreCubiculo' => 'Sala de Espera', 'codigo' => 'ED1-PB-002'],
+            ['ZonaID' => 1, 'NombreCubiculo' => '01', 'codigo' => 'ED1-PB-001'],
+            ['ZonaID' => 1, 'NombreCubiculo' => '02', 'codigo' => 'ED1-PB-002'],
+            ['ZonaID' => 1, 'NombreCubiculo' => '03', 'codigo' => 'ED1-PB-003'],
+            ['ZonaID' => 1, 'NombreCubiculo' => '04', 'codigo' => 'ED1-PB-004'],
+            ['ZonaID' => 1, 'NombreCubiculo' => '05', 'codigo' => 'ED1-PB-005'],
+            ['ZonaID' => 1, 'NombreCubiculo' => '06', 'codigo' => 'ED1-PB-006'],
+            ['ZonaID' => 1, 'NombreCubiculo' => '07', 'codigo' => 'ED1-PB-007'],
+            ['ZonaID' => 1, 'NombreCubiculo' => '08', 'codigo' => 'ED1-PB-008'],
+            ['ZonaID' => 1, 'NombreCubiculo' => '09', 'codigo' => 'ED1-PB-009'],
+            ['ZonaID' => 1, 'NombreCubiculo' => '10', 'codigo' => 'ED1-PB-010'],
+            ['ZonaID' => 1, 'NombreCubiculo' => '11', 'codigo' => 'ED1-PB-011'],
+            ['ZonaID' => 1, 'NombreCubiculo' => '12', 'codigo' => 'ED1-PB-012'],
+            ['ZonaID' => 1, 'NombreCubiculo' => '13', 'codigo' => 'ED1-PB-013'],
+            ['ZonaID' => 1, 'NombreCubiculo' => '14', 'codigo' => 'ED1-PB-014'],
+            ['ZonaID' => 1, 'NombreCubiculo' => '15', 'codigo' => 'ED1-PB-015'],
+            ['ZonaID' => 1, 'NombreCubiculo' => '16', 'codigo' => 'ED1-PB-016'],
             
             // Primer Piso - Edificio Principal
-            ['ZonaID' => 2, 'NombreCubiculo' => 'Oficina 101', 'codigo' => 'ED1-P1-101'],
-            ['ZonaID' => 2, 'NombreCubiculo' => 'Oficina 102', 'codigo' => 'ED1-P1-102'],
+            ['ZonaID' => 2, 'NombreCubiculo' => '01', 'codigo' => 'ED1-P1-101'],
+            ['ZonaID' => 2, 'NombreCubiculo' => '02', 'codigo' => 'ED1-P1-102'],
             
             // Salón de Sesiones - Edificio Legislativo
             ['ZonaID' => 3, 'NombreCubiculo' => 'Cabina Presidencial', 'codigo' => 'ED2-SS-001'],

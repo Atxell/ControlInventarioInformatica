@@ -14,11 +14,10 @@ class CatVersionesOfficeSeeder extends Seeder
     public function run()
     {
     $versiones = [
-            ['nombre' => 'Microsoft Office 2010'],
             ['nombre' => 'Microsoft Office 2013'],
             ['nombre' => 'Microsoft Office 2016'],
-            ['nombre' => 'Microsoft Office 2019'],
             ['nombre' => 'Microsoft Office 2021'],
+            ['nombre' => 'Microsoft Office365'],
         ];
 
         foreach ($versiones as $version) {
