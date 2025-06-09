@@ -9,6 +9,7 @@ use App\Models\Modelo;
 use App\Models\CatVersionesDeOffice;
 use App\Models\CatSistemaOperativo;
 use App\Models\AsignacionComputadora;
+use App\Models\ComponenteComputadora;
 use App\Models\Diputado;
 use App\Models\CatCubiculos;
 use App\Models\CatProcesador;
@@ -91,11 +92,14 @@ class InventarioController extends Controller
         \Log::info('Datos recibidos:', $request->all());
         try {
         $validated = $request->validate([
-            'num_inv' => 'required|string|unique:datoscomputadora,num_inv|max:20',
+            'Num_inv' => 'required|string|unique:datoscomputadora,Num_inv|max:20',
             'nombre' => 'required|unique:datoscomputadora|max:50',
             'tipo_equipo_id' => 'required|exists:cattipodeequipo,id',
             'marca_id' => 'required|exists:catmarcas,id',
             'modelo_id' => 'required|exists:catmodelos,id',
+            'procesador_id' => 'required|exists:procesadores,id',
+            'disco_duro_id' => 'required|exists:catdiscosduros,id',
+            'memoria_id' => 'required|exists:catmemorias,id',
             'version_office_id' => 'required|exists:catversionesdeoffice,id',
             'sistema_operativo_id' => 'required|exists:catsistemasoperativos,id',
             'licenciaoriginal' => 'boolean',
@@ -108,7 +112,28 @@ class InventarioController extends Controller
 
 
         // Crear computadora
-        $computadora = DatosComputadora::create($validated);
+        $computadora = DatosComputadora::create([
+            'Num_inv' => $validated['Num_inv'],
+            'nombre' => $validated['nombre'],
+            'tipo_equipo_id' => $validated['tipo_equipo_id'],
+            'marca_id' => $validated['marca_id'],
+            'modelo_id' => $validated['modelo_id'],
+            'version_office_id' => $validated['version_office_id'],
+            'sistema_operativo_id' => $validated['sistema_operativo_id'],
+            'licenciaoriginal' => $validated['licenciaoriginal'],
+            'mac' => $validated['mac'] ?? null,
+            'ip' => $validated['ip'] ?? null,
+            'estado_id' => $validated['estado_id'],
+            'diputado_id' => $validated['diputado_id'] ?? null,
+            'cubiculo_id' => $validated['cubiculo_id'] ?? null,
+        ]);
+
+        ComponenteComputadora::create([
+            'computadora_id' => $computadora->id,
+            'procesador_id' => $validated['procesador_id'],
+            'disco_duro_id' => $validated['disco_duro_id'],
+            'memoria_id' => $validated['memoria_id']
+        ]);
 
         // Crear asignación inicial si hay diputado o ubicación
         if ($request->diputado_id || $request->cubiculo_id) {
@@ -120,7 +145,7 @@ class InventarioController extends Controller
             ]);
         }
 
-        return redirect()->route('inventario.index')
+        return redirect()->route('inventario.operador')
             ->with('success', 'Computadora registrada exitosamente');
         } catch (\ValidationException $e) {
             \Log::error("Error de validación: " . print_r($e->errors(), true));

@@ -1,6 +1,10 @@
 <x-app-layout>
 <div class="container mx-auto px-4 py-6">
-    <h2 class="text-2xl font-bold mb-6">Inventario de Computadoras</h2>
+     <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-lg shadow p-6 mb-6 flex items-start text-center">
+            <h2 class="text-2xl font-bold text-gray-800 text-center">Inventario de Computadoras</h2>
+        </div>
+    </div>
     
     <!-- Barra de búsqueda y filtros -->
     <div class="bg-white p-4 rounded-lg shadow mb-6">
@@ -13,26 +17,6 @@
                     value="{{ request('search') }}"
                 />
             </div>  
-            
-            <!-- Filtro por estado -->
-            <div>
-                <x-select-input 
-                    name="estado" 
-                    label="Estado"
-                    :options="[
-                        ['id' => 'activo', 'nombre' => 'Activo'],
-                        ['id' => 'mantenimiento', 'nombre' => 'Mantenimiento'],
-                        ['id' => 'baja', 'nombre' => 'Baja']
-                    ]" 
-                    optionValue="id" 
-                    optionLabel="nombre"
-                    :selected="request('estado')"
-                    withEmpty
-                />
-            </div>
-            
-            <!-- Filtros adicionales -->
-            
         </form>
     </div>
 

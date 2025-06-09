@@ -15,16 +15,13 @@ class DatosComputadora extends Model
         'marca_id',
         'modelo_id',
         'version_office_id',
-        'sistemaoperativo',
+        'sistema_operativo_id',
         'licenciaoriginal',
         'mac',
         'ip',
         'estado_id'
     ];
     
-    protected $attributes = [
-    'num_inv' => 'Num_inv',
-    ];
 
     protected $casts = [
         'licenciaoriginal' => 'boolean',

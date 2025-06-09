@@ -1,19 +1,35 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\InventarioController;
+use App\Http\Controllers\ControlController;
+use App\Http\Controllers\EquipoController;
 
+// Redirección inicial
 Route::get('/', function () {
     return redirect()->route('login');
 });
 
+// Rutas de autenticación
+require __DIR__.'/auth.php';
+
+// Dashboard
 Route::get('/inicio', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// Rutas de perfil
+Route::middleware('auth')->group(function () {
+    Route::get('/perfil', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/perfil', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/perfil', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+// Rutas de gestión de usuarios y roles
 Route::middleware(['auth', 'check.permission:cat_roles'])->group(function() {
     Route::resource('roles', RoleController::class)->except(['edit']);
     Route::get('roles/{role}/edit', [RoleController::class, 'edit'])->name('roles.edit');
@@ -23,63 +39,41 @@ Route::middleware(['auth', 'check.permission:cat_usuarios'])->group(function() {
     Route::resource('users', UserController::class);
 });
 
-Route::middleware(['auth'])->group(function () {
+// Rutas de inventario principal
+Route::middleware(['auth', 'check.permission:inventario'])->group(function() {
     Route::resource('inventario', InventarioController::class)
         ->parameters(['inventario' => 'equipo']);
-});
-Route::get('/inventario/{id}/componentes', [InventarioController::class, 'getComponentes'])
-     ->name('inventario.componentes');
-     
-
-Route::get('/operador', [InventarioController::class, 'operador'])
-    ->name('inventario.operador')
-    ->middleware(['auth', 'check.permission:inventario']);
-
-
-Route::middleware(['auth'])->group(function () {
-    // Ruta store con permiso específico
-    Route::post('/inventario', [InventarioController::class, 'store'])
-        ->name('inventario.store')
-        ->middleware('check.permission:inventario'); // Permiso específico
     
-    // Resource con permisos específicos para cada acción
-    Route::resource('inventario', InventarioController::class)
-        ->parameters(['inventario' => 'equipo'])
-        ->middleware([
-            'check.permission:inventario' // index, show
-        ]);
+    Route::get('/inventario/{id}/componentes', [InventarioController::class, 'getComponentes'])
+         ->name('inventario.componentes');
+         
+    Route::get('/operador', [InventarioController::class, 'operador'])
+        ->name('inventario.operador');
 });
 
-Route::get('/marcas', function(Request $request) {
-    return response()->json(
-        \App\Models\Marca::where('tipo_equipo_id', $request->tipo_id)->get()
-    );
-});
-Route::get('/marcas', [InventarioController::class, 'getMarcasByTipo']);
-Route::get('/modelos', [InventarioController::class, 'getModelos']);
-Route::get('/marcas', [InventarioController::class, 'getMarcas']);
-
-/*Route::resource('inventario', 'App\Http\Controllers\InventarioController')
-    ->names('inventario');
-Route::get('/inventario/{id}', [InventarioController::class, 'show']);*/
+// Rutas AJAX para selectores dependientes (con permisos)
+Route::middleware(['auth', 'check.permission:catalogos'])->group(function() {
+    Route::get('/marcas', [InventarioController::class, 'getMarcasByTipo'])
+        ->name('marcas.by.tipo');
     
-Route::get('/marcas', [InventarioController::class, 'getMarcas'])->name('marcas.by.tipo');
-Route::get('/modelos', [InventarioController::class, 'getModelos'])->name('modelos.by.marca');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/perfil', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/perfil', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/perfil', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/modelos', [InventarioController::class, 'getModelos'])
+        ->name('modelos.by.marca');
 });
 
-Route::middleware(['auth'])->group(function() {
-    Route::middleware(['check.permission:inventario'])->group(function() {
-        Route::middleware(['check.permission:catalogos'])->prefix('control')->group(function() {
-            Route::get('/tipos', [ControlController::class, 'indexTipos'])->name('control.tipos');
-            Route::post('/tipos', [ControlController::class, 'storeTipo'])->name('control.tipos.store');
-        });
-        Route::resource('equipos', EquipoController::class);
-    });
+// Rutas de control y catálogos
+Route::middleware(['auth', 'check.permission:catalogos'])->prefix('control')->group(function() {
+    Route::get('/tipos', [ControlController::class, 'indexTipos'])->name('control.tipos');
+    Route::post('/tipos', [ControlController::class, 'storeTipo'])->name('control.tipos.store');
+    
+    // Rutas para gestión de marcas y modelos (nuevas)
+    Route::get('/marcas', [ControlController::class, 'indexMarcas'])->name('control.marcas');
+    Route::post('/marcas', [ControlController::class, 'storeMarca'])->name('control.marcas.store');
+    
+    Route::get('/modelos', [ControlController::class, 'indexModelos'])->name('control.modelos');
+    Route::post('/modelos', [ControlController::class, 'storeModelo'])->name('control.modelos.store');
 });
 
-require __DIR__.'/auth.php';
+// Rutas de equipos (si son diferentes a inventario)
+Route::middleware(['auth', 'check.permission:inventario'])->group(function() {
+    Route::resource('equipos', EquipoController::class);
+});

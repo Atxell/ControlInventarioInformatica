@@ -19,11 +19,6 @@
             background: url('/imagen/foto_congreso_color.png') no-repeat center center fixed;
             background-size: cover;
         }
-        /*.bg-opacity {
-            background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente para el formulario 
-            border-radius: 10px;
-            padding: 2rem;
-        } */
         </style>
     </head>
     <body class="font-sans text-gray-900 antialiased">

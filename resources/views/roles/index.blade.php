@@ -1,11 +1,14 @@
 <x-app-layout>
 <div class="container mx-auto px-4 py-8">
-    <div class="flex justify-between items-center mb-6">
-        <h1 class="text-2xl font-bold text-gray-800">Catálogo de Roles</h1>
-        <button onclick="openCreateModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-            Crear Nuevo Rol
-        </button>
-    </div>
+    <br>       
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-lg shadow p-6 mb-6 flex items-start flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-gray-800 text-center">Catálogo de Roles</h1>
+                <button onclick="openCreateModal()" class="bg-blue-600 hover:bg-blue-700  text-gray-800 px-4 py-2 rounded-lg">
+                    Crear Nuevo Rol
+                </button>
+            </div>
+        </div>
 
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
         <table class="min-w-full">
