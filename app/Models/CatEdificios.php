@@ -8,4 +8,8 @@ class CatEdificios extends Model
 {
     protected $table = 'catedificios';
     //
+    public function zonas()
+    {
+        return $this->hasMany(CatZonas::class, 'EdificioID'); // Especifica la FK
+    }
 }

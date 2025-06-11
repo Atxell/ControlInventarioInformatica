@@ -16,6 +16,8 @@ use App\Models\CatProcesador;
 use App\Models\CatDiscosDuros;
 use App\Models\CatMemorias;
 use App\Models\EstadoEquipo;
+use App\Models\CatEdificios;
+use App\Models\CatZonas;
 use Illuminate\Http\Request;
 
 class InventarioController extends Controller
@@ -317,28 +319,49 @@ class InventarioController extends Controller
         $versiones = CatVersionesDeOffice::all();
         $sistemas = CatSistemaOperativo::all();
         $diputados = Diputado::all();
-        $cubiculos = CatCubiculos::all();
+        $edificios = CatEdificios::all(); // Nuevo
+        $zonas = collect(); // Nuevo - inicialmente vacío
+        $cubiculos = collect(); // Nuevo - inicialmente vacío
+
 
         $procesadores = CatProcesador::all(); 
         $discos = CatDiscosDuros::all(); 
         $memorias = CatMemorias::all();
-         $estados = EstadoEquipo::all();
+        $estados = EstadoEquipo::all();
 
         return view('inventario.operador', compact(
             'tipos', 'marcas', 'modelos', 'versiones', 
             'sistemas', 'diputados', 'cubiculos', 'procesadores',
-            'discos', 'memorias', 'estados'
+            'discos', 'memorias', 'estados', 'edificios', 'zonas'
         ));
     }
+    
     public function getMarcasByTipo(Request $request)
     {
         return Marca::where('tipo_equipo_id', $request->tipo_id)->get();    
     }
+
     public function getMarcas(Request $request)
     {
         // Depuración básica
         logger("Tipo ID recibido: " . $request->tipo_id);
         return Marca::where('tipo_equipo_id', $request->tipo_id)->get();
+    }
+
+    public function getZonasByEdificio(Request $request)
+    {
+        $zonas = CatZonas::where('EdificioID', $request->edificio_id)
+                        ->select('id', 'Planta as text') // Cambiamos 'nombre' por 'text'
+                        ->get();
+        return response()->json($zonas);
+    }
+
+    public function getCubiculosByZona(Request $request)
+    {
+        $cubiculos = CatCubiculos::where('ZonaID', $request->zona_id)
+                                ->select('id', 'NombreCubiculo as text') // Cambiamos aquí también
+                                ->get();
+        return response()->json($cubiculos);
     }
 
 }

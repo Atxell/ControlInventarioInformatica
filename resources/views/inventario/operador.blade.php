@@ -324,21 +324,51 @@
                         </div>
 
                         <!-- Cubículo -->
-                        <div>
-                            <label for="cubiculo_id" class="block text-sm font-medium text-gray-700 mb-2">
-                                Ubicación (Opcional)
-                            </label>
-                            <select id="cubiculo_id" 
-                                    name="cubiculo_id" 
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                                <option value="">Sin ubicación...</option>
-                                @foreach($cubiculos as $cubiculo)
-                                    <option value="{{ $cubiculo->id }}" {{ old('cubiculo_id') == $cubiculo->id ? 'selected' : '' }}>
-                                        {{ $cubiculo->NombreCubiculo }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
+                       <!-- Reemplaza la sección de ubicación con esto -->
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <!-- Edificio -->
+                                <div>
+                                    <label for="edificio_id" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Edificio (Opcional)
+                                    </label>
+                                    <select id="edificio_id" 
+                                            name="edificio_id" 
+                                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option value="">Seleccionar edificio...</option>
+                                        @foreach($edificios as $edificio)
+                                            <option value="{{ $edificio->id }}" {{ old('edificio_id') == $edificio->id ? 'selected' : '' }}>
+                                                {{ $edificio->NombreEdificio }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <!-- Zona -->
+                                <div>
+                                    <label for="zona_id" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Zona/Planta (Opcional)
+                                    </label>
+                                    <select id="zona_id" 
+                                            name="zona_id" 
+                                            disabled
+                                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option value="">Seleccionar zona...</option>
+                                    </select>
+                                </div>
+
+                                <!-- Cubículo -->
+                                <div>
+                                    <label for="cubiculo_id" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Cubículo (Opcional)
+                                    </label>
+                                    <select id="cubiculo_id" 
+                                            name="cubiculo_id" 
+                                            disabled
+                                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option value="">Seleccionar cubículo...</option>
+                                    </select>
+                                </div>
+                            </div>
                     </div>
                 </div>
 
@@ -398,14 +428,19 @@
 
 
 @push('scripts')
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    // Selectores para equipo (tipo-marca-modelo)
     const tipoSelect = document.getElementById('tipo_equipo_id');
     const marcaSelect = document.getElementById('marca_id');
     const modeloSelect = document.getElementById('modelo_id');
+    
+    // Selectores para ubicación (edificio-zona-cubiculo)
+    const edificioSelect = document.getElementById('edificio_id');
+    const zonaSelect = document.getElementById('zona_id');
+    const cubiculoSelect = document.getElementById('cubiculo_id');
 
-    // Funcionalidad de filtros en cascada
+    // 1. Funcionalidad para Tipo → Marca → Modelo
     tipoSelect.addEventListener('change', function() {
         const tipoId = this.value;
         
@@ -418,21 +453,18 @@ document.addEventListener('DOMContentLoaded', function() {
         if (tipoId) {
             fetch(`/marcas?tipo_id=${tipoId}`)
                 .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
+                    if (!response.ok) throw new Error('Error al cargar marcas');
                     return response.json();
                 })
                 .then(data => {
                     marcaSelect.disabled = false;
                     data.forEach(marca => {
-                        const option = new Option(marca.nombre, marca.id);
-                        marcaSelect.add(option);
+                        marcaSelect.add(new Option(marca.nombre, marca.id));
                     });
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('Error al cargar las marcas');
+                    alert(error.message);
                 });
         }
     });
@@ -446,83 +478,147 @@ document.addEventListener('DOMContentLoaded', function() {
         if (marcaId) {
             fetch(`/modelos?marca_id=${marcaId}`)
                 .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
+                    if (!response.ok) throw new Error('Error al cargar modelos');
                     return response.json();
                 })
                 .then(data => {
                     modeloSelect.disabled = false;
                     data.forEach(modelo => {
-                        const option = new Option(modelo.nombre, modelo.id);
-                        modeloSelect.add(option);
+                        modeloSelect.add(new Option(modelo.nombre, modelo.id));
                     });
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('Error al cargar los modelos');
+                    alert(error.message);
                 });
         }
     });
 
-    // Validación de formato MAC
+    // 2. Funcionalidad para Edificio → Zona → Cubículo
+    edificioSelect.addEventListener('change', function() {
+        const edificioId = this.value;
+        
+        // Resetear selects dependientes
+        zonaSelect.innerHTML = '<option value="">Seleccionar zona...</option>';
+        zonaSelect.disabled = true;
+        cubiculoSelect.innerHTML = '<option value="">Seleccionar cubículo...</option>';
+        cubiculoSelect.disabled = true;
+
+        if (edificioId) {
+            fetch(`/zonas?edificio_id=${edificioId}`)
+                .then(response => {
+                    if (!response.ok) throw new Error('Error al cargar zonas');
+                    return response.json();
+                })
+                .then(data => {
+                    zonaSelect.disabled = false;
+                    data.forEach(zona => {
+                        zonaSelect.add(new Option(zona.text, zona.id));
+                        
+                    });
+                    
+                    // Si hay un valor antiguo (old) para zona, seleccionarlo
+                    @if(old('zona_id'))
+                        zonaSelect.value = '{{ old('zona_id') }}';
+                        zonaSelect.dispatchEvent(new Event('change'));
+                    @endif
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert(error.message);
+                });
+        }
+    });
+
+    zonaSelect.addEventListener('change', function() {
+        const zonaId = this.value;
+        
+        cubiculoSelect.innerHTML = '<option value="">Seleccionar cubículo...</option>';
+        cubiculoSelect.disabled = true;
+
+        if (zonaId) {
+            fetch(`/cubiculos?zona_id=${zonaId}`)
+                .then(response => {
+                    if (!response.ok) throw new Error('Error al cargar cubículos');
+                    return response.json();
+                })
+                .then(data => {
+                    cubiculoSelect.disabled = false;
+                    data.forEach(cubiculo => {
+                        cubiculoSelect.add(new Option(cubiculo.text, cubiculo.id));
+                    });
+                    
+                    // Si hay un valor antiguo (old) para cubículo, seleccionarlo
+                    @if(old('cubiculo_id'))
+                        cubiculoSelect.value = '{{ old('cubiculo_id') }}';
+                    @endif
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert(error.message);
+                });
+        }
+    });
+
+    // 3. Cargar valores iniciales si existen (para cuando hay error de validación)
+    @if(old('edificio_id'))
+        // Disparar el evento change para cargar las zonas
+        edificioSelect.value = '{{ old('edificio_id') }}';
+        edificioSelect.dispatchEvent(new Event('change'));
+    @endif
+
+    // 4. Validaciones de formato
     const macInput = document.getElementById('mac');
     macInput.addEventListener('input', function() {
         let value = this.value.replace(/[^0-9A-Fa-f]/g, '');
         if (value.length > 12) value = value.substring(0, 12);
-        
-        // Formatear con dos puntos
         value = value.match(/.{1,2}/g)?.join(':') || value;
-        if (value !== this.value) {
-            this.value = value;
-        }
+        if (value !== this.value) this.value = value;
     });
 
-    // Validación básica de IP
     const ipInput = document.getElementById('ip');
     ipInput.addEventListener('blur', function() {
         const ipPattern = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
-        if (this.value && !ipPattern.test(this.value)) {
-            this.setCustomValidity('Por favor ingrese una dirección IP válida');
+        this.setCustomValidity(this.value && !ipPattern.test(this.value) 
+            ? 'Por favor ingrese una dirección IP válida' 
+            : '');
+    });
+
+    // 5. Mostrar modal de éxito si existe
+    @if(session('success'))
+        document.getElementById('successModal').classList.remove('hidden');
+    @endif
+
+    // 6. Validación del formulario
+    document.getElementById('computerForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const requiredFields = [
+            'Num_inv', 'nombre', 'tipo_equipo_id', 'marca_id', 'modelo_id',
+            'procesador_id', 'disco_duro_id', 'memoria_id', 
+            'sistema_operativo_id', 'version_office_id', 'estado_id'
+        ];
+        
+        const isValid = requiredFields.every(field => {
+            const element = document.querySelector(`[name="${field}"]`);
+            if (!element.value) {
+                element.focus();
+                return false;
+            }
+            return true;
+        });
+        
+        if (isValid) {
+            this.submit();
         } else {
-            this.setCustomValidity('');
+            alert("Por favor complete todos los campos requeridos");
         }
     });
-    @if(session('success'))
-            document.getElementById('successModal').classList.remove('hidden');
-        @endif
 });
 
-document.getElementById('computerForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    console.log("Formulario interceptado - Validando datos...");
-    
-    // Validar campos requeridos manualmente
-    let isValid = true;
-    const requiredFields = [
-        'Num_inv', 'nombre', 'tipo_equipo_id', 'marca_id', 'modelo_id',
-        'procesador_id', 'disco_duro_id', 'memoria_id', 
-        'sistema_operativo_id', 'version_office_id', 'estado_id'
-    ];
-    
-    requiredFields.forEach(field => {
-        const element = document.querySelector(`[name="${field}"]`);
-        if (!element.value) {
-            console.error(`Campo requerido vacío: ${field}`);
-            isValid = false;
-        }
-    });
-    
-    if (isValid) {
-        console.log("Todos los campos requeridos están llenos. Enviando formulario...");
-        this.submit();
-    } else {
-        alert("Por favor complete todos los campos requeridos");
-    }
-});
-    function closeSuccessModal() {
-        document.getElementById('successModal').classList.add('hidden');
-    }
+function closeSuccessModal() {
+    document.getElementById('successModal').classList.add('hidden');
+}
 </script>
 @endpush
 </x-app-layout>

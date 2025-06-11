@@ -8,4 +8,10 @@ class CatCubiculos extends Model
 {
     protected $table = 'catcubiculos';
     //
+    protected $fillable = ['ZonaID', 'NombreCubiculo'];
+
+    public function zona()
+    {
+        return $this->belongsTo(CatZonas::class, 'ZonaID');
+    }
 }

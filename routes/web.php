@@ -49,6 +49,8 @@ Route::middleware(['auth', 'check.permission:inventario'])->group(function() {
          
     Route::get('/operador', [InventarioController::class, 'operador'])
         ->name('inventario.operador');
+    Route::get('/zonas', [InventarioController::class, 'getZonasByEdificio'])->name('zonas.by.edificio');
+    Route::get('/cubiculos', [InventarioController::class, 'getCubiculosByZona'])->name('cubiculos.by.zona');
 });
 
 // Rutas AJAX para selectores dependientes (con permisos)
@@ -73,6 +75,8 @@ Route::middleware(['auth', 'check.permission:catalogos'])->prefix('control')->gr
     Route::post('/modelos', [ControlController::class, 'storeModelo'])->name('control.modelos.store');
 });
 
+Route::get('/api/zonas', [InventarioController::class, 'getZonasByEdificio']);
+Route::get('/api/cubiculos', [InventarioController::class, 'getCubiculosByZona']);
 // Rutas de equipos (si son diferentes a inventario)
 Route::middleware(['auth', 'check.permission:inventario'])->group(function() {
     Route::resource('equipos', EquipoController::class);
