@@ -68,7 +68,7 @@
                                     {{ $computadora->asignacionActual->diputado->nombre ?? 'Sin diputado' }}
                                 </div>
                                 <div class="text-sm text-gray-500">
-                                    {{ $computadora->asignacionActual->cubiculo->NombreCubiculo ?? 'Sin ubicación' }}
+                                    {{ $computadora->asignacionActual->cubiculo->codigo ?? 'Sin ubicación' }}
                                 </div>
                             @else
                                 <span class="text-gray-400">No asignada</span>
