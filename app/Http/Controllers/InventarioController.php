@@ -171,37 +171,67 @@ class InventarioController extends Controller
         return view('inventario.modal-show', compact('computadora'));
     }
 
-    public function edit(DatosComputadora $computadora)
-    {
-        $tipos = TipoEquipo::all();
-        $marcas = Marca::all();
-        $modelos = Modelo::where('marca_id', $computadora->marca_id)->get();
-        $versiones = CatVersionesDeDeOffice::all();
-        $sistemas = CatSistemaOperativo::all();
-        $diputados = Diputado::where('activo', true)->get();
-        $cubiculos = CatCubiculos::all();
+   public function edit(DatosComputadora $computadora)
+{
+    // Cargar relaciones para evitar problemas si no existen
+    $computadora->load(['componentes', 'tipoEquipo', 'marca', 'modelo', 'asignacionActual']);
+    
+    $zonas = $computadora->edificio_id ? 
+        CatZonas::where('EdificioID', $computadora->edificio_id)->get() : collect();
+    
+    $cubiculos = $computadora->zona_id ? 
+        CatCubiculos::where('ZonaID', $computadora->zona_id)->get() : collect();
 
-        return view('inventario.edit', compact(
-            'computadora', 'tipos', 'marcas', 'modelos', 
-            'versiones', 'sistemas', 'diputados', 'cubiculos'
-        ));
-    }
+    return view('inventario.edit', [
+        'computadora' => $computadora,
+        'tipos' => TipoEquipo::all(),
+        'marcas' => Marca::where('tipo_equipo_id', $computadora->tipo_equipo_id)->get(),
+        'modelos' => Modelo::where('marca_id', $computadora->marca_id)->get(),
+        'versiones' => CatVersionesDeOffice::all(),
+        'sistemas' => CatSistemaOperativo::all(),
+        'diputados' => Diputado::all(),
+        'edificios' => CatEdificios::all(),
+        'zonas' => $zonas,
+        'cubiculos' => $cubiculos,
+        'procesadores' => CatProcesador::all(),
+        'discos' => CatDiscosDuros::all(),
+        'memorias' => CatMemorias::all(),
+        'estados' => EstadoEquipo::all()
+    ]);
+}
 
     public function update(Request $request, DatosComputadora $computadora)
     {
         $validated = $request->validate([
-            'num_inv' => 'required|string|max:20|unique:datoscomputadora,num_inv,'.$computadora->id,
+            // Cambia 'num_inv' para que coincida con el nombre en el formulario (Num_inv)
+            'Num_inv' => 'required|string|max:20|unique:datoscomputadora,Num_inv,'.$computadora->id,
             'nombre' => 'required|unique:datoscomputadora,nombre,'.$computadora->id,
             'tipo_equipo_id' => 'required|exists:cattipodeequipo,id',
             'marca_id' => 'required|exists:catmarcas,id',
             'modelo_id' => 'required|exists:catmodelos,id',
+            'procesador_id' => 'required|exists:procesadores,id',
+            'disco_duro_id' => 'required|exists:catdiscosduros,id',
+            'memoria_id' => 'required|exists:catmemorias,id',
             'version_office_id' => 'required|exists:catversionesdeoffice,id',
             'sistema_operativo_id' => 'required|exists:catsistemasoperativos,id',
             'licenciaoriginal' => 'boolean',
             'mac' => 'nullable|unique:datoscomputadora,mac,'.$computadora->id,
             'ip' => 'nullable|unique:datoscomputadora,ip,'.$computadora->id,
-            'estado' => 'required|in:activo,mantenimiento,baja'
+            'estado_id' => 'required|exists:estados_equipo,id',
+            'diputado_id' => 'nullable|exists:diputados,id',
+            'edificio_id' => 'nullable|exists:catedificios,id',
+            'zona_id' => 'nullable|exists:catzonas,id',
+            'cubiculo_id' => 'nullable|exists:catcubiculos,id'
         ]);
+
+        // Actualizar componentes si es necesario
+        if($computadora->componentes) {
+            $computadora->componentes->update([
+                'procesador_id' => $validated['procesador_id'],
+                'disco_duro_id' => $validated['disco_duro_id'],
+                'memoria_id' => $validated['memoria_id']
+            ]);
+        }
 
         $computadora->update($validated);
 
@@ -211,10 +241,20 @@ class InventarioController extends Controller
 
     public function destroy(DatosComputadora $computadora)
     {
-        $computadora->delete();
-        
-        return redirect()->route('inventario.index')
-            ->with('success', 'Computadora eliminada correctamente');
+        try {
+            // Eliminar componentes primero si existe la relación
+            if($computadora->componentes) {
+                $computadora->componentes->delete();
+            }
+            
+            $computadora->delete();
+            
+            return redirect()->route('inventario.index')
+                ->with('success', 'Computadora eliminada correctamente');
+        } catch (\Exception $e) {
+            return redirect()->back()
+                ->with('error', 'No se pudo eliminar la computadora: ' . $e->getMessage());
+        }
     }
 
     // Métodos para AJAX

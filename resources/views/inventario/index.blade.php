@@ -101,6 +101,17 @@
                             </a>
                             <button onclick="openModal({{ $computadora->id }})">
                             @endcan
+
+                            <button onclick="openEditModal({{ $computadora->id }})" class="text-yellow-600 hover:text-yellow-900">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <form action="{{ route('inventario.destroy', $computadora->id) }}" method="POST" class="inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-red-600 hover:text-red-900" onclick="return confirm('¿Estás seguro de eliminar este registro?')">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                     @empty
@@ -188,6 +199,31 @@
                 <button onclick="closeModal()" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
                     Cerrar
                 </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="editModal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+    <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <!-- Fondo -->
+        <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+            <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+        </div>
+        
+        <!-- Contenido -->
+        <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
+            <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Editar Computadora</h3>
+                <div id="editFormContainer">
+                    <!-- El formulario se cargará aquí via AJAX -->
+                    <div class="flex justify-center items-center h-40">
+                        <svg class="animate-spin h-8 w-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -313,6 +349,157 @@ function closeModal() {
     document.getElementById('computerModal').classList.add('hidden');
 }
 
+let currentEditId = null;
+
+function openEditModal(id) {
+    currentEditId = id;
+    const modal = document.getElementById('editModal');
+    const formContainer = document.getElementById('editFormContainer');
+    
+    // Mostrar loader
+    formContainer.innerHTML = `
+        <div class="flex justify-center items-center h-40">
+            <svg class="animate-spin h-8 w-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+        </div>
+    `;
+    
+    modal.classList.remove('hidden');
+    
+    // Cargar formulario via AJAX
+    fetch(`/inventario/${id}/edit`)
+        .then(response => response.text())
+        .then(html => {
+            formContainer.innerHTML = html;
+            // Inicializar selects dependientes si es necesario
+            initDependentSelects();
+        })
+        .catch(error => {
+            formContainer.innerHTML = `
+                <div class="text-red-500 p-4">
+                    Error al cargar el formulario. 
+                    <button onclick="openEditModal(${id})" class="text-blue-500">Reintentar</button>
+                </div>
+            `;
+        });
+}
+
+function closeEditModal() {
+    document.getElementById('editModal').classList.add('hidden');
+}
+
+function submitEditForm() {
+    const form = document.getElementById('editComputerForm');
+    if (form) {
+        form.submit();
+    }
+}
+
+function initDependentSelects() {
+    // Selectores dentro del modal
+    const tipoSelect = document.querySelector('#editModal select[name="tipo_equipo_id"]');
+    const marcaSelect = document.querySelector('#editModal select[name="marca_id"]');
+    const modeloSelect = document.querySelector('#editModal select[name="modelo_id"]');
+    const edificioSelect = document.querySelector('#editModal select[name="edificio_id"]');
+    const zonaSelect = document.querySelector('#editModal select[name="zona_id"]');
+    const cubiculoSelect = document.querySelector('#editModal select[name="cubiculo_id"]');
+
+    // Lógica para Tipo → Marca → Modelo
+    if (tipoSelect) {
+        tipoSelect.addEventListener('change', function() {
+            const tipoId = this.value;
+            
+            marcaSelect.innerHTML = '<option value="">Seleccionar marca...</option>';
+            marcaSelect.disabled = true;
+            modeloSelect.innerHTML = '<option value="">Seleccionar modelo...</option>';
+            modeloSelect.disabled = true;
+
+            if (tipoId) {
+                fetch(`/marcas?tipo_id=${tipoId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        marcaSelect.disabled = false;
+                        data.forEach(marca => {
+                            marcaSelect.add(new Option(marca.nombre, marca.id));
+                        });
+                    });
+            }
+        });
+    }
+
+    if (marcaSelect) {
+        marcaSelect.addEventListener('change', function() {
+            const marcaId = this.value;
+            
+            modeloSelect.innerHTML = '<option value="">Seleccionar modelo...</option>';
+            modeloSelect.disabled = true;
+
+            if (marcaId) {
+                fetch(`/modelos?marca_id=${marcaId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        modeloSelect.disabled = false;
+                        data.forEach(modelo => {
+                            modeloSelect.add(new Option(modelo.nombre, modelo.id));
+                        });
+                    });
+            }
+        });
+    }
+
+    // Lógica para Edificio → Zona → Cubículo
+    if (edificioSelect) {
+        edificioSelect.addEventListener('change', function() {
+            const edificioId = this.value;
+            
+            zonaSelect.innerHTML = '<option value="">Seleccionar zona...</option>';
+            zonaSelect.disabled = true;
+            cubiculoSelect.innerHTML = '<option value="">Seleccionar cubículo...</option>';
+            cubiculoSelect.disabled = true;
+
+            if (edificioId) {
+                fetch(`/zonas?edificio_id=${edificioId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        zonaSelect.disabled = false;
+                        data.forEach(zona => {
+                            zonaSelect.add(new Option(zona.Planta, zona.id));
+                        });
+                    });
+            }
+        });
+    }
+
+    if (zonaSelect) {
+        zonaSelect.addEventListener('change', function() {
+            const zonaId = this.value;
+            
+            cubiculoSelect.innerHTML = '<option value="">Seleccionar cubículo...</option>';
+            cubiculoSelect.disabled = true;
+
+            if (zonaId) {
+                fetch(`/cubiculos?zona_id=${zonaId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        cubiculoSelect.disabled = false;
+                        data.forEach(cubiculo => {
+                            cubiculoSelect.add(new Option(cubiculo.NombreCubiculo, cubiculo.id));
+                        });
+                    });
+            }
+        });
+    }
+
+    // Disparar eventos change si hay valores seleccionados
+    if (tipoSelect && tipoSelect.value) {
+        tipoSelect.dispatchEvent(new Event('change'));
+    }
+    if (edificioSelect && edificioSelect.value) {
+        edificioSelect.dispatchEvent(new Event('change'));
+    }
+}
 
 </script>
 @endpush

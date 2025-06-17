@@ -42,7 +42,7 @@ Route::middleware(['auth', 'check.permission:cat_usuarios'])->group(function() {
 // Rutas de inventario principal
 Route::middleware(['auth', 'check.permission:inventario'])->group(function() {
     Route::resource('inventario', InventarioController::class)
-        ->parameters(['inventario' => 'equipo']);
+        ->parameters(['inventario' => 'computadora']);
     
     Route::get('/inventario/{id}/componentes', [InventarioController::class, 'getComponentes'])
          ->name('inventario.componentes');
@@ -75,8 +75,8 @@ Route::middleware(['auth', 'check.permission:catalogos'])->prefix('control')->gr
     Route::post('/modelos', [ControlController::class, 'storeModelo'])->name('control.modelos.store');
 });
 
-Route::get('/api/zonas', [InventarioController::class, 'getZonasByEdificio']);
-Route::get('/api/cubiculos', [InventarioController::class, 'getCubiculosByZona']);
+Route::get('/zonas', [InventarioController::class, 'getZonasByEdificio']);
+Route::get('/cubiculos', [InventarioController::class, 'getCubiculosByZona']);
 // Rutas de equipos (si son diferentes a inventario)
 Route::middleware(['auth', 'check.permission:inventario'])->group(function() {
     Route::resource('equipos', EquipoController::class);
