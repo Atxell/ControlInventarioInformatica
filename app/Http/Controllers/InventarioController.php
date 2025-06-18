@@ -171,34 +171,46 @@ class InventarioController extends Controller
         return view('inventario.modal-show', compact('computadora'));
     }
 
-   public function edit(DatosComputadora $computadora)
-{
-    // Cargar relaciones para evitar problemas si no existen
-    $computadora->load(['componentes', 'tipoEquipo', 'marca', 'modelo', 'asignacionActual']);
-    
-    $zonas = $computadora->edificio_id ? 
-        CatZonas::where('EdificioID', $computadora->edificio_id)->get() : collect();
-    
-    $cubiculos = $computadora->zona_id ? 
-        CatCubiculos::where('ZonaID', $computadora->zona_id)->get() : collect();
+    public function edit(DatosComputadora $computadora)
+    {
+        // Cargar relaciones necesarias
+        $computadora->load([
+            'componentes',
+            'tipoEquipo',
+            'marca',
+            'modelo',
+            'asignacionActual.cubiculo.zona.edificio'
+        ]);
 
-    return view('inventario.edit', [
-        'computadora' => $computadora,
-        'tipos' => TipoEquipo::all(),
-        'marcas' => Marca::where('tipo_equipo_id', $computadora->tipo_equipo_id)->get(),
-        'modelos' => Modelo::where('marca_id', $computadora->marca_id)->get(),
-        'versiones' => CatVersionesDeOffice::all(),
-        'sistemas' => CatSistemaOperativo::all(),
-        'diputados' => Diputado::all(),
-        'edificios' => CatEdificios::all(),
-        'zonas' => $zonas,
-        'cubiculos' => $cubiculos,
-        'procesadores' => CatProcesador::all(),
-        'discos' => CatDiscosDuros::all(),
-        'memorias' => CatMemorias::all(),
-        'estados' => EstadoEquipo::all()
-    ]);
-}
+        // Obtener IDs de ubicación
+        $edificio_id = optional($computadora->asignacionActual->cubiculo->zona->edificio)->id ?? null;
+        $zona_id = optional($computadora->asignacionActual->cubiculo->zona)->id ?? null;
+        $cubiculo_id = optional($computadora->asignacionActual)->cubiculo_id ?? null;
+
+        // Obtener zonas y cubículos basados en la ubicación actual
+        $zonas = $edificio_id ? CatZonas::where('EdificioID', $edificio_id)->get() : collect();
+        $cubiculos = $zona_id ? CatCubiculos::where('ZonaID', $zona_id)->get() : collect();
+
+        return view('inventario.edit', [
+            'computadora' => $computadora,
+            'tipos' => TipoEquipo::all(),
+            'marcas' => Marca::where('tipo_equipo_id', $computadora->tipo_equipo_id)->get(),
+            'modelos' => Modelo::where('marca_id', $computadora->marca_id)->get(),
+            'versiones' => CatVersionesDeOffice::all(),
+            'sistemas' => CatSistemaOperativo::all(),
+            'diputados' => Diputado::all(),
+            'edificios' => CatEdificios::all(),
+            'zonas' => $zonas,
+            'cubiculos' => $cubiculos,
+            'procesadores' => CatProcesador::all(),
+            'discos' => CatDiscosDuros::all(),
+            'memorias' => CatMemorias::all(),
+            'estados' => EstadoEquipo::all(),
+            'edificio_id' => $edificio_id,
+            'zona_id' => $zona_id,
+            'cubiculo_id' => $cubiculo_id
+        ]);
+    }
 
     public function update(Request $request, DatosComputadora $computadora)
     {
@@ -391,7 +403,7 @@ class InventarioController extends Controller
     public function getZonasByEdificio(Request $request)
     {
         $zonas = CatZonas::where('EdificioID', $request->edificio_id)
-                        ->select('id', 'Planta as text') // Cambiamos 'nombre' por 'text'
+                        ->select('id', 'Planta as text', 'Planta') // Mantener ambos formatos
                         ->get();
         return response()->json($zonas);
     }
@@ -399,7 +411,7 @@ class InventarioController extends Controller
     public function getCubiculosByZona(Request $request)
     {
         $cubiculos = CatCubiculos::where('ZonaID', $request->zona_id)
-                                ->select('id', 'NombreCubiculo as text') // Cambiamos aquí también
+                                ->select('id', 'NombreCubiculo as text', 'NombreCubiculo') // Mantener ambos formatos
                                 ->get();
         return response()->json($cubiculos);
     }

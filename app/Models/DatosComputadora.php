@@ -70,8 +70,7 @@ class DatosComputadora extends Model
     public function asignacionActual()
     {
         return $this->hasOne(AsignacionComputadora::class, 'computadora_id')
-                    ->whereNull('fecha_retiro')
-                    ->latest();
+                    ->latestOfMany();
     }
     
     public function componentes()

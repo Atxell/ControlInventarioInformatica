@@ -117,7 +117,8 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <!-- Edificio -->
         <div>
-            <label for="edificio_id" class="block text-sm font-medium text-gray-700 mb-2">
+<!-- Edificio -->
+            <label for="ip" class="block text-sm font-medium text-gray-700 mb-2">
                 Edificio
             </label>
             <select id="edificio_id" 
@@ -125,7 +126,8 @@
                     class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                 <option value="">Seleccionar edificio...</option>
                 @foreach($edificios as $edificio)
-                    <option value="{{ $edificio->id }}" {{ old('edificio_id', $computadora->edificio_id) == $edificio->id ? 'selected' : '' }}>
+                    <option value="{{ $edificio->id }}" 
+                        {{ $edificio->id == $edificio_id ? 'selected' : '' }}>
                         {{ $edificio->NombreEdificio }}
                     </option>
                 @endforeach
@@ -134,16 +136,17 @@
 
         <!-- Zona -->
         <div>
-            <label for="zona_id" class="block text-sm font-medium text-gray-700 mb-2">
-                Zona/Planta
+            <label for="ip" class="block text-sm font-medium text-gray-700 mb-2">
+                Zona
             </label>
             <select id="zona_id" 
                     name="zona_id" 
                     class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    {{ !$computadora->edificio_id ? 'disabled' : '' }}>
+                    {{ !$edificio_id ? 'disabled' : '' }}>
                 <option value="">Seleccionar zona...</option>
                 @foreach($zonas as $zona)
-                    <option value="{{ $zona->id }}" {{ old('zona_id', $computadora->zona_id) == $zona->id ? 'selected' : '' }}>
+                    <option value="{{ $zona->id }}" 
+                        {{ $zona->id == $zona_id ? 'selected' : '' }}>
                         {{ $zona->Planta }}
                     </option>
                 @endforeach
@@ -152,16 +155,17 @@
 
         <!-- Cubículo -->
         <div>
-            <label for="cubiculo_id" class="block text-sm font-medium text-gray-700 mb-2">
+            <label for="ip" class="block text-sm font-medium text-gray-700 mb-2">
                 Cubículo
             </label>
             <select id="cubiculo_id" 
                     name="cubiculo_id" 
                     class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    {{ !$computadora->zona_id ? 'disabled' : '' }}>
+                    {{ !$zona_id ? 'disabled' : '' }}>
                 <option value="">Seleccionar cubículo...</option>
                 @foreach($cubiculos as $cubiculo)
-                    <option value="{{ $cubiculo->id }}" {{ old('cubiculo_id', $computadora->cubiculo_id) == $cubiculo->id ? 'selected' : '' }}>
+                    <option value="{{ $cubiculo->id }}" 
+                        {{ $cubiculo->id == $cubiculo_id ? 'selected' : '' }}>
                         {{ $cubiculo->NombreCubiculo }}
                     </option>
                 @endforeach
@@ -433,162 +437,46 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initDependentSelects() {
-    // Selectores dentro del modal
-    const tipoSelect = document.querySelector('#editModal select[name="tipo_equipo_id"]');
-    const marcaSelect = document.querySelector('#editModal select[name="marca_id"]');
-    const modeloSelect = document.querySelector('#editModal select[name="modelo_id"]');
     const edificioSelect = document.querySelector('#editModal select[name="edificio_id"]');
     const zonaSelect = document.querySelector('#editModal select[name="zona_id"]');
     const cubiculoSelect = document.querySelector('#editModal select[name="cubiculo_id"]');
 
-    // Cargar marcas basadas en el tipo seleccionado
-    if (tipoSelect && tipoSelect.value) {
-        fetch(`/marcas?tipo_id=${tipoSelect.value}`)
-            .then(response => response.json())
-            .then(data => {
-                marcaSelect.innerHTML = '<option value="">Seleccionar marca...</option>';
-                data.forEach(marca => {
-                    const option = new Option(marca.nombre, marca.id);
-                    if (marca.id == marcaSelect.value) {
-                        option.selected = true;
-                    }
-                    marcaSelect.add(option);
-                });
-                marcaSelect.disabled = false;
-
-                // Si hay marca seleccionada, cargar modelos
-                if (marcaSelect.value) {
-                    fetch(`/modelos?marca_id=${marcaSelect.value}`)
-                        .then(response => response.json())
-                        .then(data => {
-                            modeloSelect.innerHTML = '<option value="">Seleccionar modelo...</option>';
-                            data.forEach(modelo => {
-                                const option = new Option(modelo.nombre, modelo.id);
-                                if (modelo.id == modeloSelect.value) {
-                                    option.selected = true;
-                                }
-                                modeloSelect.add(option);
-                            });
-                            modeloSelect.disabled = false;
-                        });
-                }
-            });
-    }
-
-    // Cargar zonas basadas en edificio seleccionado
-    if (edificioSelect && edificioSelect.value) {
-        fetch(`/zonas?edificio_id=${edificioSelect.value}`)
-            .then(response => response.json())
-            .then(data => {
-                zonaSelect.innerHTML = '<option value="">Seleccionar zona...</option>';
-                data.forEach(zona => {
-                    const option = new Option(zona.Planta || zona.text, zona.id);
-                    if (zona.id == zonaSelect.value) {
-                        option.selected = true;
-                    }
-                    zonaSelect.add(option);
-                });
-                zonaSelect.disabled = false;
-
-                // Si hay zona seleccionada, cargar cubículos
-                if (zonaSelect.value) {
-                    fetch(`/cubiculos?zona_id=${zonaSelect.value}`)
-                        .then(response => response.json())
-                        .then(data => {
-                            cubiculoSelect.innerHTML = '<option value="">Seleccionar cubículo...</option>';
-                            data.forEach(cubiculo => {
-                                const option = new Option(cubiculo.NombreCubiculo || cubiculo.text, cubiculo.id);
-                                if (cubiculo.id == cubiculoSelect.value) {
-                                    option.selected = true;
-                                }
-                                cubiculoSelect.add(option);
-                            });
-                            cubiculoSelect.disabled = false;
-                        });
-                }
-            });
-    }
-
-    // Event listeners para cambios futuros
-    if (tipoSelect) {
-        tipoSelect.addEventListener('change', function() {
-            const tipoId = this.value;
-            
-            marcaSelect.innerHTML = '<option value="">Seleccionar marca...</option>';
-            marcaSelect.disabled = true;
-            modeloSelect.innerHTML = '<option value="">Seleccionar modelo...</option>';
-            modeloSelect.disabled = true;
-
-            if (tipoId) {
-                fetch(`/marcas?tipo_id=${tipoId}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        marcaSelect.disabled = false;
-                        data.forEach(marca => {
-                            marcaSelect.add(new Option(marca.nombre, marca.id));
-                        });
-                    });
-            }
-        });
-    }
-
-    if (marcaSelect) {
-        marcaSelect.addEventListener('change', function() {
-            const marcaId = this.value;
-            
-            modeloSelect.innerHTML = '<option value="">Seleccionar modelo...</option>';
-            modeloSelect.disabled = true;
-
-            if (marcaId) {
-                fetch(`/modelos?marca_id=${marcaId}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        modeloSelect.disabled = false;
-                        data.forEach(modelo => {
-                            modeloSelect.add(new Option(modelo.nombre, modelo.id));
-                        });
-                    });
-            }
-        });
-    }
-
+    // Cargar zonas cuando cambia el edificio
     if (edificioSelect) {
         edificioSelect.addEventListener('change', function() {
             const edificioId = this.value;
-            
-            zonaSelect.innerHTML = '<option value="">Seleccionar zona...</option>';
             zonaSelect.disabled = true;
-            cubiculoSelect.innerHTML = '<option value="">Seleccionar cubículo...</option>';
             cubiculoSelect.disabled = true;
-
+            
             if (edificioId) {
-                fetch(`/zonas?edificio_id=${edificioId}`)
+                fetch(`/api/zonas?edificio_id=${edificioId}`)
                     .then(response => response.json())
                     .then(data => {
-                        zonaSelect.disabled = false;
+                        zonaSelect.innerHTML = '<option value="">Seleccionar zona...</option>';
                         data.forEach(zona => {
-                            zonaSelect.add(new Option(zona.Planta || zona.text, zona.id));
+                            zonaSelect.add(new Option(zona.Planta, zona.id));
                         });
+                        zonaSelect.disabled = false;
                     });
             }
         });
     }
 
+    // Cargar cubículos cuando cambia la zona
     if (zonaSelect) {
         zonaSelect.addEventListener('change', function() {
             const zonaId = this.value;
-            
-            cubiculoSelect.innerHTML = '<option value="">Seleccionar cubículo...</option>';
             cubiculoSelect.disabled = true;
-
+            
             if (zonaId) {
-                fetch(`/cubiculos?zona_id=${zonaId}`)
+                fetch(`/api/cubiculos?zona_id=${zonaId}`)
                     .then(response => response.json())
                     .then(data => {
-                        cubiculoSelect.disabled = false;
+                        cubiculoSelect.innerHTML = '<option value="">Seleccionar cubículo...</option>';
                         data.forEach(cubiculo => {
-                            cubiculoSelect.add(new Option(cubiculo.NombreCubiculo || cubiculo.text, cubiculo.id));
+                            cubiculoSelect.add(new Option(cubiculo.NombreCubiculo, cubiculo.id));
                         });
+                        cubiculoSelect.disabled = false;
                     });
             }
         });
