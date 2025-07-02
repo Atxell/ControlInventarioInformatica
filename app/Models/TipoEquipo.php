@@ -11,4 +11,8 @@ class TipoEquipo extends Model {
     public function marcas() {
         return $this->hasMany(Marca::class, 'tipo_equipo_id');
     }
+    public function computadoras()
+    {
+        return $this->hasMany(DatosComputadora::class, 'tipo_equipo_id');
+    }
 }

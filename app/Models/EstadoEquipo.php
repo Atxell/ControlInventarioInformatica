@@ -13,4 +13,5 @@ class EstadoEquipo extends Model
     {
         return $this->hasMany(DatosComputadora::class, 'estado_id');
     }
+    
 }

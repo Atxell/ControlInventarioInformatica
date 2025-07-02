@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\InventarioController;
 use App\Http\Controllers\ControlController;
 use App\Http\Controllers\EquipoController;
+use App\Http\Controllers\DashboardController;
 
 // Redirección inicial
 Route::get('/', function () {
@@ -18,9 +19,9 @@ Route::get('/', function () {
 require __DIR__.'/auth.php';
 
 // Dashboard
-Route::get('/inicio', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/inicio', [DashboardController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
 
 // Rutas de perfil
 Route::middleware('auth')->group(function () {

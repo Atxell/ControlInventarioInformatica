@@ -15,4 +15,8 @@ class Marca extends Model {
     public function modelos() {
         return $this->hasMany(Modelo::class);
     }
+    public function computadoras()
+    {
+        return $this->hasMany(DatosComputadora::class, 'marca_id');
+    }
 }
