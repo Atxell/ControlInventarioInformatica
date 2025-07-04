@@ -61,7 +61,7 @@
                         <ul class="list-group list-group-flush">
                             @foreach($equipmentTypes as $type)
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    {{ $type->nombre }}
+                                    {{ $type->name }}
                                     <span class="badge bg-primary rounded-pill">{{ $type->count }}</span>
                                 </li>
                             @endforeach
@@ -85,7 +85,7 @@
                                 <div class="col-md-6 mb-3">
                                     <div class="card border-left-{{ getStatusColor($status->estado) }} shadow">
                                         <div class="card-body py-2">
-                                            <h6 class="text-uppercase">{{ $status->estado }}</h6>
+                                            <h6 class="text-uppercase">{{ $status->nombre }}</h6>
                                             <p class="h4">{{ $status->computadoras_count }}</p>
                                         </div>
                                     </div>

@@ -9,6 +9,7 @@ use App\Http\Controllers\InventarioController;
 use App\Http\Controllers\ControlController;
 use App\Http\Controllers\EquipoController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CatalogosController;
 
 // Redirección inicial
 Route::get('/', function () {
@@ -81,4 +82,14 @@ Route::get('/cubiculos', [InventarioController::class, 'getCubiculosByZona']);
 // Rutas de equipos (si son diferentes a inventario)
 Route::middleware(['auth', 'check.permission:inventario'])->group(function() {
     Route::resource('equipos', EquipoController::class);
+});
+
+Route::prefix('catalogos')->group(function() {
+    Route::get('/', [CatalogosController::class, 'portal'])->name('catalogos.portal');
+    Route::get('/{catalogo}', [CatalogosController::class, 'index'])->name('catalogos.index');
+    Route::get('/{catalogo}/create', [CatalogosController::class, 'create'])->name('catalogos.create');
+    Route::post('/{catalogo}', [CatalogosController::class, 'store'])->name('catalogos.store');
+    Route::get('/{catalogo}/{id}/edit', [CatalogosController::class, 'edit'])->name('catalogos.edit');
+    Route::put('/{catalogo}/{id}', [CatalogosController::class, 'update'])->name('catalogos.update');
+    Route::delete('/{catalogo}/{id}', [CatalogosController::class, 'destroy'])->name('catalogos.destroy');
 });
