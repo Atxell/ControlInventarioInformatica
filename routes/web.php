@@ -10,6 +10,7 @@ use App\Http\Controllers\ControlController;
 use App\Http\Controllers\EquipoController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CatalogosController;
+use App\Http\Controllers\OtrosEquiposController;
 
 // Redirección inicial
 Route::get('/', function () {
@@ -82,6 +83,18 @@ Route::get('/cubiculos', [InventarioController::class, 'getCubiculosByZona']);
 // Rutas de equipos (si son diferentes a inventario)
 Route::middleware(['auth', 'check.permission:inventario'])->group(function() {
     Route::resource('equipos', EquipoController::class);
+});
+
+// Rutas para Otros Equipos (con mismo permiso de inventario)
+Route::middleware(['auth', 'check.permission:inventario'])->group(function() {
+    // Rutas para "otros-equipos" con la misma estructura que tus catálogos
+    Route::get('otros-equipos', [OtrosEquiposController::class, 'index'])->name('otros-equipos.index');
+    Route::get('otros-equipos/create', [OtrosEquiposController::class, 'create'])->name('otros-equipos.create');
+    Route::post('otros-equipos', [OtrosEquiposController::class, 'store'])->name('otros-equipos.store');
+    Route::get('otros-equipos/{id}', [OtrosEquiposController::class, 'show'])->name('otros-equipos.show');
+    Route::get('otros-equipos/{id}/edit', [OtrosEquiposController::class, 'edit'])->name('otros-equipos.edit');
+    Route::put('otros-equipos/{id}', [OtrosEquiposController::class, 'update'])->name('otros-equipos.update');
+    Route::delete('otros-equipos/{id}', [OtrosEquiposController::class, 'destroy'])->name('otros-equipos.destroy');
 });
 
 Route::prefix('catalogos')->group(function() {
