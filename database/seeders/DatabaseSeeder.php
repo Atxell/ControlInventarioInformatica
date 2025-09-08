@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             CatTipoEquipoSeeder::class,
             CatMarcasSeeder::class,
             CatModelosSeeder::class,
-            //DatosComputadoraSeeder::class,
+            DatosComputadoraSeeder::class,
             UbicacionesSeeder::class,
             //DiputadosPrueba::class,
             //AsignacionesComputadorasSeeder::class,

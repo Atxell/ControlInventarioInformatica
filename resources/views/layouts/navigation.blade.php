@@ -16,15 +16,48 @@
                         {{ __('Inicio') }}
                     </x-nav-link>
                     
-                    <!-- Ruta para Inventario -->
+                    <!-- Ruta para Inventario (si tiene permiso) -->
+                    @hasPermission('inventario')
                     <x-nav-link :href="route('inventario.index')" :active="request()->routeIs(['inventario.index', 'inventario.create', 'inventario.edit'])">
                         {{ __('Inventario') }}
                     </x-nav-link>
+                    @endhasPermission
                     
-                    <!-- Ruta para Operador -->
+                    <!-- Ruta para Operador (si tiene permiso de inventario) -->
+                    @hasPermission('inventario')
                     <x-nav-link :href="route('inventario.operador')" :active="request()->routeIs('inventario.operador')">
-                        {{ __('Operador') }}
+                        {{ __('Registro') }}
                     </x-nav-link>
+                    @endhasPermission
+                    
+                    <!-- Ruta para Otros Equipos (si tiene permiso de inventario) -->
+                    @hasPermission('inventario')
+                    <x-nav-link :href="route('otros-equipos.index')" :active="request()->routeIs(['otros-equipos.index', 'otros-equipos.create', 'otros-equipos.edit'])">
+                        {{ __('Registro +') }}
+                    </x-nav-link>
+                    @endhasPermission
+                    
+                    <!-- Ruta para Catálogos (si tiene permiso) -->
+                    @hasPermission('catalogos')
+                    <x-nav-link :href="route('catalogos.portal')" :active="request()->routeIs(['catalogos.portal', 'catalogos.index', 'catalogos.create', 'catalogos.edit'])">
+                        {{ __('Catálogos') }}
+                    </x-nav-link>
+                    @endhasPermission
+                    
+                    <!-- Ruta para Users (si tiene permiso) -->
+                    @hasPermission('cat_usuarios')
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs(['users.index', 'users.create', 'users.edit'])">
+                        {{ __('Usuarios') }}
+                    </x-nav-link>
+                    @endhasPermission
+                    
+                    <!-- Ruta para Roles (si tiene permiso) -->
+                    @hasPermission('cat_roles')
+                    <x-nav-link :href="route('roles.index')" :active="request()->routeIs(['roles.index', 'roles.create', 'roles.edit'])">
+                        {{ __('Roles') }}
+                    </x-nav-link>
+                    @endhasPermission
+
                 </div>
             </div>
 
@@ -79,13 +112,38 @@
                 {{ __('Inicio') }}
             </x-responsive-nav-link>
             
+            <!-- Versión móvil con permisos -->
+            @hasPermission('inventario')
             <x-responsive-nav-link :href="route('inventario.index')" :active="request()->routeIs(['inventario.index', 'inventario.create', 'inventario.edit'])">
                 {{ __('Inventario') }}
             </x-responsive-nav-link>
             
             <x-responsive-nav-link :href="route('inventario.operador')" :active="request()->routeIs('inventario.operador')">
-                {{ __('Operador') }}
+                {{ __('Registro') }}
             </x-responsive-nav-link>
+            
+            <x-responsive-nav-link :href="route('otros-equipos.index')" :active="request()->routeIs(['otros-equipos.index', 'otros-equipos.create', 'otros-equipos.edit'])">
+                {{ __('Registro +') }}
+            </x-responsive-nav-link>
+            @endhasPermission
+            
+            @hasPermission('catalogos')
+            <x-responsive-nav-link :href="route('catalogos.portal')" :active="request()->routeIs(['catalogos.portal', 'catalogos.index', 'catalogos.create', 'catalogos.edit'])">
+                {{ __('Catálogos') }}
+            </x-responsive-nav-link>
+            @endhasPermission
+            
+            @hasPermission('cat_usuarios')
+            <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs(['users.index', 'users.create', 'users.edit'])">
+                {{ __('Usuarios') }}
+            </x-responsive-nav-link>
+            @endhasPermission
+            
+            @hasPermission('cat_roles')
+            <x-responsive-nav-link :href="route('roles.index')" :active="request()->routeIs(['roles.index', 'roles.create', 'roles.edit'])">
+                {{ __('Roles') }}
+            </x-responsive-nav-link>
+            @endhasPermission
         </div>
 
         <!-- Responsive Settings Options -->
