@@ -59,6 +59,7 @@ class OtrosEquiposController extends Controller
             'edificio_id' => 'nullable|exists:catedificios,id',
             'zona_id' => 'nullable|exists:catzonas,id',
             'cubiculo_id' => 'nullable|exists:catcubiculos,id',
+            'codigo_cubiculo' => 'nullable|string|max:25', // Nuevo campo
             'observaciones' => 'nullable|string'
         ]);
 
@@ -74,11 +75,18 @@ class OtrosEquiposController extends Controller
         }
     }
 
-    public function show($id)
-    {
-        $equipo = CatOtrosEquipos::findOrFail($id);
+   public function show($id)
+{
+    try {
+        $equipo = CatOtrosEquipos::with(['tipoEquipo', 'estado', 'cubiculo.zona.edificio'])->findOrFail($id);
+        \Log::info('Equipo encontrado: ', ['equipo' => $equipo->toArray()]);
         return view('otros-equipos.show', compact('equipo'));
+    } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+        \Log::error('Equipo no encontrado: ' . $id);
+        return redirect()->route('otros-equipos.index')
+            ->with('error', 'El equipo no existe.');
     }
+}
 
     public function edit($id)
     {
@@ -121,6 +129,7 @@ class OtrosEquiposController extends Controller
             'edificio_id' => 'nullable|exists:catedificios,id',
             'zona_id' => 'nullable|exists:catzonas,id',
             'cubiculo_id' => 'nullable|exists:catcubiculos,id',
+            'codigo_cubiculo' => 'nullable|string|max:25', // Nuevo campo
             'observaciones' => 'nullable|string'
         ]);
 
@@ -136,9 +145,10 @@ class OtrosEquiposController extends Controller
         }
     }
 
-    public function destroy(CatOtrosEquipos $equipo)
+    public function destroy($id)
     {
         try {
+            $equipo = CatOtrosEquipos::findOrFail($id);
             $equipo->delete();
             
             return redirect()->route('otros-equipos.index')

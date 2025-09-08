@@ -134,7 +134,7 @@
                         </div>
                     </div>
 
-                    <!-- Ubicación -->
+                    <!-- Ubicación -->  
                     <div class="mb-8">
                         <h3 class="text-lg font-semibold mb-4 border-b pb-2">Ubicación</h3>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -148,7 +148,7 @@
                                         class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                                     <option value="">Seleccionar edificio...</option>
                                     @foreach($edificios as $edificio)
-                                        <option value="{{ $edificio->id }}" {{ old('edificio_id', $equipo->edificio_id) == $edificio->id ? 'selected' : '' }}>
+                                        <option value="{{ $edificio->id }}" {{ old('edificio_id', $equipo->edificio_id ?? '') == $edificio->id ? 'selected' : '' }}>
                                             {{ $edificio->NombreEdificio }}
                                         </option>
                                     @endforeach
@@ -166,7 +166,7 @@
                                         class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                                     <option value="">Seleccionar zona...</option>
                                     @foreach($zonas as $zona)
-                                        <option value="{{ $zona->id }}" {{ old('zona_id', $equipo->zona_id) == $zona->id ? 'selected' : '' }}>
+                                        <option value="{{ $zona->id }}" {{ old('zona_id', $equipo->zona_id ?? '') == $zona->id ? 'selected' : '' }}>
                                             {{ $zona->Planta }}
                                         </option>
                                     @endforeach
@@ -184,8 +184,8 @@
                                         class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                                     <option value="">Seleccionar cubículo...</option>
                                     @foreach($cubiculos as $cubiculo)
-                                        <option value="{{ $cubiculo->id }}" {{ old('cubiculo_id', $equipo->cubiculo_id) == $cubiculo->id ? 'selected' : '' }}>
-                                            {{ $cubiculo->NombreCubiculo }}
+                                        <option value="{{ $cubiculo->id }}" {{ old('cubiculo_id', $equipo->cubiculo_id ?? '') == $cubiculo->id ? 'selected' : '' }}>
+                                            {{ $cubiculo->NombreCubiculo }} ({{ $cubiculo->codigo }})
                                         </option>
                                     @endforeach
                                 </select>
@@ -281,7 +281,8 @@
                     .then(data => {
                         cubiculoSelect.disabled = false;
                         data.forEach(cubiculo => {
-                            cubiculoSelect.add(new Option(cubiculo.text, cubiculo.id));
+                            // Mostrar tanto el nombre como el código en el option
+                            cubiculoSelect.add(new Option(`${cubiculo.text} (${cubiculo.codigo})`, cubiculo.id));
                         });
                         
                         // Si hay un valor antiguo (old) para cubículo, seleccionarlo

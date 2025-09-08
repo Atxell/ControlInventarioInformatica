@@ -3,9 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class CatOtrosEquipos extends Model
 {
+
+    
     protected $table = 'cat_otros_equipos';
     
     protected $fillable = [
@@ -15,9 +19,11 @@ class CatOtrosEquipos extends Model
         'Asignacion',
         'estado_id',
         'tipo_equipo_id',
+        'codigo_cubiculo',
         'observaciones'
     ];
     
+
     // Relaciones
     public function estado()
     {
@@ -29,6 +35,19 @@ class CatOtrosEquipos extends Model
     {
         return $this->belongsTo(TipoEquipo::class, 'tipo_equipo_id')
             ->withDefault(['nombre' => 'Sin tipo']);
+    }
+    public function cubiculo()
+    {
+        return $this->belongsTo(CatCubiculos::class, 'cubiculo_id');
+    }
+    public function zona()
+    {
+        return $this->belongsTo(CatZonas::class, 'zona_id');
+    }
+
+    public function edificio()
+    {
+        return $this->belongsTo(CatEdificios::class, 'edificio_id');
     }
     
     // Scopes útiles
