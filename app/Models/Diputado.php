@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Diputado extends Model
 {
     protected $table = 'Diputados';
-
+    protected $fillable = ['nombre'];
 
     public function asignacionesComputadoras()
     {

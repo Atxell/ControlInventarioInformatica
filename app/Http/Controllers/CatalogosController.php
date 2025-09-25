@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Models\{
     TipoEquipo, Marca, Modelo, CatVersionesDeOffice,
     CatSistemaOperativo, CatProcesador, CatDiscosDuros,
-    CatMemorias, EstadoEquipo, CatEdificios, CatZonas, CatCubiculos
+    CatMemorias, EstadoEquipo, CatEdificios, CatZonas, CatCubiculos, Diputado
 };
 
 class CatalogosController extends Controller
@@ -22,7 +22,8 @@ class CatalogosController extends Controller
         'estados-equipo' => EstadoEquipo::class,
         'edificios' => CatEdificios::class,
         'zonas' => CatZonas::class,
-        'cubiculos' => CatCubiculos::class
+        'cubiculos' => CatCubiculos::class,
+        'diputados' => Diputado::class
     ];
 
     public function index($catalogo)
@@ -33,11 +34,14 @@ class CatalogosController extends Controller
 
         $modelClass = $this->modelMap[$catalogo];
         $items = $modelClass::paginate(10);
+        $modelInstance = new $modelClass;
+        $fillable = $modelInstance->getFillable();
         
         return view('catalogos.index', [
             'items' => $items,
             'catalogo' => $catalogo,
-            'nombreCatalogo' => ucwords(str_replace('-', ' ', $catalogo))
+            'nombreCatalogo' => ucwords(str_replace('-', ' ', $catalogo)),
+            'fillable' => $fillable
         ]);
     }
 
@@ -169,7 +173,8 @@ class CatalogosController extends Controller
             'estados-equipo' => 'Estados de Equipo',
             'edificios' => 'Edificios',
             'zonas' => 'Zonas',
-            'cubiculos' => 'Cubículos'
+            'cubiculos' => 'Cubículos',
+            'diputados' => 'Diputados'
         ];
 
         return view('catalogos.portal', compact('catalogos'));

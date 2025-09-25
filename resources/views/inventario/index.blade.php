@@ -31,6 +31,7 @@
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tipo</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Marca/Modelo</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sistema Operativo</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Grupo Trabajo</th> 
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Asignación</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Estado</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acciones</th>
@@ -61,6 +62,9 @@
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
                             {{ $computadora->sistemaOperativo->nombre }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            {{ $computadora->grupo_trabajo ?: 'Sin grupo' }} <!-- ← Nueva celda -->
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
                             @if($computadora->asignacionActual)

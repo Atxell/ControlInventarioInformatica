@@ -19,7 +19,8 @@ class DatosComputadora extends Model
         'licenciaoriginal',
         'mac',
         'ip',
-        'estado_id'
+        'estado_id',
+        'grupo_trabajo'
     ];
     
 

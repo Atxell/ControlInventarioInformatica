@@ -108,6 +108,7 @@ class InventarioController extends Controller
             'mac' => 'nullable|unique:datoscomputadora|max:17',
             'ip' => 'nullable|unique:datoscomputadora|max:15',
             'estado_id' => 'required|exists:estados_equipo,id',
+            'grupo_trabajo' => 'nullable|string|max:50',
             'diputado_id' => 'nullable|exists:diputados,id',
             'cubiculo_id' => 'nullable|exists:catcubiculos,id'
         ]);
@@ -126,6 +127,7 @@ class InventarioController extends Controller
             'mac' => $validated['mac'] ?? null,
             'ip' => $validated['ip'] ?? null,
             'estado_id' => $validated['estado_id'],
+            'grupo_trabajo' => $validated['grupo_trabajo'] ?? null,
             'diputado_id' => $validated['diputado_id'] ?? null,
             'cubiculo_id' => $validated['cubiculo_id'] ?? null,
         ]);
@@ -230,6 +232,7 @@ class InventarioController extends Controller
             'mac' => 'nullable|unique:datoscomputadora,mac,'.$computadora->id,
             'ip' => 'nullable|unique:datoscomputadora,ip,'.$computadora->id,
             'estado_id' => 'required|exists:estados_equipo,id',
+            'grupo_trabajo' => 'nullable|string|max:50',
             'diputado_id' => 'nullable|exists:diputados,id',
             'edificio_id' => 'nullable|exists:catedificios,id',
             'zona_id' => 'nullable|exists:catzonas,id',

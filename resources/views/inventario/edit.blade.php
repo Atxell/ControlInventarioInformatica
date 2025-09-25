@@ -110,6 +110,21 @@
             </div>
         </div>
     </div>
+    <!-- Grupo de Trabajo -->
+    <div>
+        <label for="grupo_trabajo" class="block text-sm font-medium text-gray-700 mb-2">
+            Grupo de Trabajo (Opcional)
+        </label>
+        <input type="text" 
+            id="grupo_trabajo" 
+            name="grupo_trabajo" 
+            value="{{ old('grupo_trabajo', $computadora->grupo_trabajo) }}"
+            placeholder="Ej: Administración, Contabilidad, etc."
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+        @error('grupo_trabajo')
+            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+        @enderror
+    </div>
 
    <!-- Ubicación -->
 <div class="mb-8">

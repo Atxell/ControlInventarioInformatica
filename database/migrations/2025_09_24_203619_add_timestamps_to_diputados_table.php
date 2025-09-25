@@ -9,20 +9,20 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('Diputados', function (Blueprint $table) {
-            $table->id(); 
-            $table->string('nombre');
-            $table->timestamps();
+        Schema::table('diputados', function (Blueprint $table) {
+            //
         });
     }
 
     /**
      * Reverse the migrations.
      */
-    public function down()
+    public function down(): void
     {
-       Schema::dropIfExists('Diputados');
+        Schema::table('diputados', function (Blueprint $table) {
+            //
+        });
     }
 };
