@@ -58,7 +58,12 @@ class CatModelosSeeder extends Seeder
             ['marca_id' => 3, 'nombre' => 'THINKCENTRE'],
             ['marca_id' => 3, 'nombre' => 'ENSAMBLE'],
             ['marca_id' => 4, 'nombre' => 'TITAN 4010'],
-            ['marca_id' => 4, 'nombre' => 'TITAN 3140']
+            ['marca_id' => 4, 'nombre' => 'TITAN 3140'],
+            ['marca_id' => 5, 'nombre' => 'Aspire X1430'], // Acer Desktop
+            ['marca_id' => 2, 'nombre' => 'HP Compaq Pro 6305 MT'], // HP Desktop
+            ['marca_id' => 2, 'nombre' => 'HP COMPAQ PRO 6305 MICROTOWER'], // HP Desktop
+            ['marca_id' => 8, 'nombre' => '32643N2'], // Lenovo Laptop
+            ['marca_id' => 4, 'nombre' => 'To be filled by O.E.M.'], // LANIX para Gigabyte
         ];
         
         foreach ($modelos as $modelo) {

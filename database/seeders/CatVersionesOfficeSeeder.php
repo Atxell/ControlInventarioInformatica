@@ -18,6 +18,7 @@ class CatVersionesOfficeSeeder extends Seeder
             ['nombre' => 'Microsoft Office 2016'],
             ['nombre' => 'Microsoft Office 2021'],
             ['nombre' => 'Microsoft Office365'],
+            ['nombre' => 'Ninguna'],
         ];
 
         foreach ($versiones as $version) {

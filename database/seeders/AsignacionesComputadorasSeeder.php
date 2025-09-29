@@ -10,30 +10,14 @@ class AsignacionesComputadorasSeeder extends Seeder
 {
     public function run()
     {
-        // Asignación a diputado
-       AsignacionComputadora::create([
-            'computadora_id' => 1,
-            'diputado_id' => 1,
-            'cubiculo_id' => 1,
-            'fecha_asignacion' => now()->subMonths(6),
-            'notas' => 'Asignación inicial'
-        ]);
-        
-        // Computadora en sistemas (sin diputado)
-        AsignacionComputadora::create([
-            'computadora_id' => 2,
-            'cubiculo_id' => 1, // ID del área de sistemas
-            'fecha_asignacion' => now()->subMonth(),
-            'notas' => 'En mantenimiento'
-        ]);
-        
-        // Computadora retirada
-        AsignacionComputadora::create([
-            'computadora_id' => 3,
-            'diputado_id' => 2,
-            'cubiculo_id' => 2,
-            'fecha_asignacion' => now()->subYear(),
-            'notas' => 'Equipo dado de baja'
-        ]);
+        for ($i = 1; $i <= 44; $i++) {
+            AsignacionComputadora::create([
+                'computadora_id' => $i,
+                'diputado_id' => null,
+                'cubiculo_id' => 1,
+                'fecha_asignacion' => now()->subMonths(6),
+                'notas' => 'Asignación inicial'
+            ]);
+        }
     }
 }

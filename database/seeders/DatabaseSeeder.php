@@ -26,11 +26,12 @@ class DatabaseSeeder extends Seeder
             DatosComputadoraSeeder::class,
             UbicacionesSeeder::class,
             //DiputadosPrueba::class,
-            //AsignacionesComputadorasSeeder::class,
+            
             DiscosDuroSeeder::class,
             MemoriaSeeder::class,
             ProcesadoresSeeder::class,
-            //ComponenteComputadoraSeeder::class,
+            ComponenteComputadoraSeeder::class,
+            AsignacionesComputadorasSeeder::class,
         ]);
 
         User::factory()->create([
