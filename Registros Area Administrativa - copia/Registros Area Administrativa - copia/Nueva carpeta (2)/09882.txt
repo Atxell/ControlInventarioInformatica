@@ -1,0 +1,69 @@
+=== Nombre de equipo ===
+DE7AE4A0
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+7a:f5:ea:d4:a9:52
+
+=== Dirección IP ===
+172.16.21.88
+
+=== Grupo de trabajo ===
+EAPAC09
+
+=== Procesador ===
+Intel(R) Celeron(R) CPU  J1800  @ 2.41GHz
+
+=== Fabricante ===
+Dell Inc.
+
+=== Modelo ===
+Inspiron 3646
+
+=== Discos físicos ===
+Modelo: Generic- Multi-Card USB Device
+Tamaño: Desconocido
+Interfaz: USB
+Serial: 2012062914345300
+
+Modelo: WDC WD5000AAKX-75U6AA0
+Tamaño: 465.76 GB
+Interfaz: IDE
+Serial:      WD-WCC2EC8NU54P
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 193.74 GB
+Espacio usado: 54.24 GB
+Espacio libre: 139.50 GB
+Porcentaje usado: 28.0%
+
+Dispositivo: G:\
+Punto de montaje: G:\
+Sistema de archivos: FAT32
+Espacio total: 57.72 GB
+Espacio usado: 0.03 GB
+Espacio libre: 57.69 GB
+Porcentaje usado: 0.0%
+
+
+=== Memoria RAM ===
+Total: 3.90 GB
+Disponible: 0.48 GB
+Usada: 3.41 GB
+Porcentaje usado: 87.6%
+Slots: {'Slots totales': 1, 'Slots usados': 1, 'Slots libres': 0, 'Total memoria instalada': '4.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '4.00 GB', 'Tipo físico': 'SODIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'SK Hynix', 'Número de serie': '0C1176C2', 'Posición': 'DIMM1', 'Tecnología': 24}]}
+
+=== Microsoft Office ===
+No se encontró Microsoft Office instalado
+

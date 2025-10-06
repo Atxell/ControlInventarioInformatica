@@ -1,0 +1,98 @@
+=== Nombre de equipo ===
+H76DA2E0
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+17:2e:5c:b8:70:e0
+
+=== Dirección IP ===
+172.16.20.40
+
+=== Grupo de trabajo ===
+EAPBC08
+
+=== Procesador ===
+AMD PRO A8-8650B R7, 10 Compute Cores 4C+6G
+
+=== Fabricante ===
+HP
+
+=== Modelo ===
+HP EliteDesk 705 G2 SFF
+
+=== Discos físicos ===
+Modelo: KINGSTON SA400S37480G
+Tamaño: 447.13 GB
+Interfaz: IDE
+Serial: 50026B778554D9F7
+
+Modelo: TOSHIBA DT01ACA050
+Tamaño: 465.76 GB
+Interfaz: IDE
+Serial:            X5AZ7VRGS
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 14.43 GB
+Interfaz: USB
+Serial: 6E03A24143C6
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 446.55 GB
+Espacio usado: 76.14 GB
+Espacio libre: 370.42 GB
+Porcentaje usado: 17.0%
+
+Dispositivo: D:\
+Punto de montaje: D:\
+Sistema de archivos: NTFS
+Espacio total: 0.05 GB
+Espacio usado: 0.03 GB
+Espacio libre: 0.02 GB
+Porcentaje usado: 61.0%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: NTFS
+Espacio total: 249.42 GB
+Espacio usado: 54.55 GB
+Espacio libre: 194.87 GB
+Porcentaje usado: 21.9%
+
+Dispositivo: G:\
+Punto de montaje: G:\
+Sistema de archivos: FAT32
+Espacio total: 14.43 GB
+Espacio usado: 0.07 GB
+Espacio libre: 14.35 GB
+Porcentaje usado: 0.5%
+
+Dispositivo: H:\
+Punto de montaje: H:\
+Sistema de archivos: FAT32
+Espacio total: 57.72 GB
+Espacio usado: 0.03 GB
+Espacio libre: 57.69 GB
+Porcentaje usado: 0.1%
+
+
+=== Memoria RAM ===
+Total: 6.95 GB
+Disponible: 2.59 GB
+Usada: 4.36 GB
+Porcentaje usado: 62.7%
+Slots: {'Slots totales': 4, 'Slots usados': 2, 'Slots libres': 2, 'Total memoria instalada': '8.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Hynix/Hyundai', 'Número de serie': '02C2AA62', 'Posición': 'DIMM1', 'Tecnología': 24}, {'Módulo': 2, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Samsung', 'Número de serie': '94A44D36', 'Posición': 'DIMM3', 'Tecnología': 24}]}
+
+=== Microsoft Office ===
+No se encontró Microsoft Office instalado
+

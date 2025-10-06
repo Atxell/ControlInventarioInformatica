@@ -1,0 +1,114 @@
+=== Nombre de equipo ===
+DESKTOP-C4F375H
+
+=== Sistema operativo ===
+Windows 11 10.0.26100
+
+=== Dirección MAC ===
+38:70:e0:c1:82:05
+
+=== Dirección IP ===
+172.16.6.216
+
+=== Grupo de trabajo ===
+WORKGROUP
+
+=== Procesador ===
+Intel(R) Core(TM) i5-10500 CPU @ 3.10GHz
+
+=== Fabricante ===
+Dell Inc.
+
+=== Modelo ===
+OptiPlex 3080
+
+=== Discos físicos ===
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+Modelo: NVMe KINGSTON SNV2S500G
+Tamaño: 465.76 GB
+Interfaz: SCSI
+Serial: 0000_0000_0000_0000_0026_B768_5F8A_DF65.
+
+Modelo: JMicron Tech SCSI Disk Device
+Tamaño: 465.76 GB
+Interfaz: SCSI
+Serial: K94PT9325BHV    
+
+Modelo: ADATA USB Flash Drive USB Device
+Tamaño: 14.45 GB
+Interfaz: USB
+Serial: AA00000000000489
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 179.72 GB
+Espacio usado: 165.01 GB
+Espacio libre: 14.71 GB
+Porcentaje usado: 91.8%
+
+Dispositivo: D:\
+Punto de montaje: D:\
+Sistema de archivos: NTFS
+Espacio total: 283.48 GB
+Espacio usado: 3.37 GB
+Espacio libre: 280.11 GB
+Porcentaje usado: 1.2%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: NTFS
+Espacio total: 18.18 GB
+Espacio usado: 0.05 GB
+Espacio libre: 18.13 GB
+Porcentaje usado: 0.3%
+
+Dispositivo: F:\
+Punto de montaje: F:\
+Sistema de archivos: FAT32
+Espacio total: 14.44 GB
+Espacio usado: 6.05 GB
+Espacio libre: 8.38 GB
+Porcentaje usado: 41.9%
+
+Dispositivo: G:\
+Punto de montaje: G:\
+Sistema de archivos: exFAT
+Espacio total: 57.70 GB
+Espacio usado: 36.84 GB
+Espacio libre: 20.87 GB
+Porcentaje usado: 63.8%
+
+Dispositivo: H:\
+Punto de montaje: H:\
+Sistema de archivos: NTFS
+Espacio total: 445.35 GB
+Espacio usado: 31.84 GB
+Espacio libre: 413.51 GB
+Porcentaje usado: 7.1%
+
+Dispositivo: I:\
+Punto de montaje: I:\
+Sistema de archivos: FAT
+Espacio total: 0.03 GB
+Espacio usado: 0.03 GB
+Espacio libre: 0.00 GB
+Porcentaje usado: 87.2%
+
+
+=== Memoria RAM ===
+Total: 7.75 GB
+Disponible: 2.99 GB
+Usada: 4.77 GB
+Porcentaje usado: 61.5%
+Slots: {'Slots totales': 2, 'Slots usados': 1, 'Slots libres': 1, 'Total memoria instalada': '8.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '2666 MHz', 'Fabricante': '80AD000080AD', 'Número de serie': '5381E54F', 'Posición': 'DIMM2', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+Office O365HomePremRetail,ProPlusRetail (Versión 16.0.19127.20240)
+

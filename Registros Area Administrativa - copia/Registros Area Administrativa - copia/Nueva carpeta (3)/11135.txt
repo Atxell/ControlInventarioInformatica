@@ -1,0 +1,77 @@
+=== Nombre de equipo ===
+h153FF4C
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+fa:f4:e9:d3:a6:4c
+
+=== Dirección IP ===
+172.16.22.51
+
+=== Grupo de trabajo ===
+ECPAC03
+
+=== Procesador ===
+Intel(R) Core(TM) i3-8130U CPU @ 2.20GHz
+
+=== Fabricante ===
+HP
+
+=== Modelo ===
+HP 200 G3 AiO
+
+=== Discos físicos ===
+Modelo: ADATA SU630
+Tamaño: 447.13 GB
+Interfaz: IDE
+Serial: 2M42291H5ECF
+
+Modelo: ADATA USB Flash Drive USB Device
+Tamaño: 14.45 GB
+Interfaz: USB
+Serial: AA00000000000489
+
+Modelo: SDXC Card
+Tamaño: 59.48 GB
+Interfaz: USB
+Serial: No disponible
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 446.38 GB
+Espacio usado: 343.01 GB
+Espacio libre: 103.37 GB
+Porcentaje usado: 76.8%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: exFAT
+Espacio total: 59.45 GB
+Espacio usado: 3.90 GB
+Espacio libre: 55.55 GB
+Porcentaje usado: 6.6%
+
+Dispositivo: F:\
+Punto de montaje: F:\
+Sistema de archivos: FAT32
+Espacio total: 14.44 GB
+Espacio usado: 6.05 GB
+Espacio libre: 8.38 GB
+Porcentaje usado: 41.9%
+
+
+=== Memoria RAM ===
+Total: 11.86 GB
+Disponible: 5.47 GB
+Usada: 6.39 GB
+Porcentaje usado: 53.8%
+Slots: {'Slots totales': 2, 'Slots usados': 2, 'Slots libres': 0, 'Total memoria instalada': '12.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '8.00 GB', 'Tipo físico': 'SODIMM', 'Generación DDR': 'DDR4', 'Velocidad': '2666 MHz', 'Fabricante': 'ADATA', 'Número de serie': '44780200', 'Posición': 'DIMM0', 'Tecnología': 0}, {'Módulo': 2, 'Capacidad': '4.00 GB', 'Tipo físico': 'SODIMM', 'Generación DDR': 'DDR4', 'Velocidad': '2666 MHz', 'Fabricante': 'Samsung', 'Número de serie': '34C9AFAC', 'Posición': 'DIMM1', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+No se encontró Microsoft Office instalado
+

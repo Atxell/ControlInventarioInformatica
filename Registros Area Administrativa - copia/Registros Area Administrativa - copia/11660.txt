@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+L8696C28
+
+=== Sistema operativo ===
+Windows 11 10.0.22621
+
+=== Dirección MAC ===
+85:0b:17:2f:5f:be
+
+=== Dirección IP ===
+172.16.55.28
+
+=== Grupo de trabajo ===
+EAPBC12
+
+=== Procesador ===
+12th Gen Intel(R) Core(TM) i7-12700
+
+=== Fabricante ===
+LENOVO
+
+=== Modelo ===
+11SWS2A400
+
+=== Discos físicos ===
+Modelo: SAMSUNG MZVL4512HBLU-00BL7
+Tamaño: 476.94 GB
+Interfaz: SCSI
+Serial: 0025_38E2_31BA_1603.
+
+Modelo: ADATA USB Flash Drive USB Device
+Tamaño: 14.45 GB
+Interfaz: USB
+Serial: AA00000000000489
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 474.72 GB
+Espacio usado: 89.96 GB
+Espacio libre: 384.76 GB
+Porcentaje usado: 18.9%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: FAT32
+Espacio total: 14.44 GB
+Espacio usado: 6.05 GB
+Espacio libre: 8.38 GB
+Porcentaje usado: 41.9%
+
+
+=== Memoria RAM ===
+Total: 15.72 GB
+Disponible: 10.48 GB
+Usada: 5.25 GB
+Porcentaje usado: 33.4%
+Slots: {'Slots totales': 2, 'Slots usados': 1, 'Slots libres': 1, 'Total memoria instalada': '16.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '16.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '3200 MHz', 'Fabricante': 'Ramaxel Technology', 'Número de serie': '1290DBF8', 'Posición': 'DIMM1', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+Office ProjectProRetail,ProPlusRetail,VisioProRetail (Versión 16.0.19127.20240)
+

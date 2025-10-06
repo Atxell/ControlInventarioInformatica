@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+L125056C
+
+=== Sistema operativo ===
+Windows 10 10.0.19044
+
+=== Dirección MAC ===
+c4:88:10:21:42:84
+
+=== Dirección IP ===
+192.168.1.181
+
+=== Grupo de trabajo ===
+ECPAC02
+
+=== Procesador ===
+Intel(R) Celeron(R) CPU J3355 @ 2.00GHz
+
+=== Fabricante ===
+LENOVO
+
+=== Modelo ===
+F0CL000BLD
+
+=== Discos físicos ===
+Modelo: ADATA USB Flash Drive USB Device
+Tamaño: 14.45 GB
+Interfaz: USB
+Serial: AA00000000000489
+
+Modelo: WDC WD10JPVX-08JC3T6
+Tamaño: 931.51 GB
+Interfaz: IDE
+Serial:      WD-WXG1A97LP49K
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 930.16 GB
+Espacio usado: 54.38 GB
+Espacio libre: 875.78 GB
+Porcentaje usado: 5.8%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: FAT32
+Espacio total: 14.44 GB
+Espacio usado: 6.05 GB
+Espacio libre: 8.38 GB
+Porcentaje usado: 41.9%
+
+
+=== Memoria RAM ===
+Total: 3.83 GB
+Disponible: 0.91 GB
+Usada: 2.93 GB
+Porcentaje usado: 76.4%
+Slots: {'Slots totales': 1, 'Slots usados': 1, 'Slots libres': 0, 'Total memoria instalada': '4.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '4.00 GB', 'Tipo físico': 'SODIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Unde', 'Número de serie': '430F8135', 'Posición': 'ChannelA-DIMM0', 'Tecnología': 24}]}
+
+=== Microsoft Office ===
+No se encontró Microsoft Office instalado
+

@@ -1,0 +1,85 @@
+=== Nombre de equipo ===
+DDB87748
+
+=== Sistema operativo ===
+Windows 11 10.0.26100
+
+=== Dirección MAC ===
+ba:74:e9:d2:a4:48
+
+=== Dirección IP ===
+172.16.17.20
+
+=== Grupo de trabajo ===
+EBPAC04
+
+=== Procesador ===
+Intel(R) Core(TM) i5-10500 CPU @ 3.10GHz
+
+=== Fabricante ===
+Dell Inc.
+
+=== Modelo ===
+OptiPlex 3080
+
+=== Discos físicos ===
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+Modelo: KINGSTON SA400S37480G
+Tamaño: 447.13 GB
+Interfaz: SCSI
+Serial: 50026B7785D5228E
+
+Modelo: Kingston DataTraveler 2.0 USB Device
+Tamaño: 7.27 GB
+Interfaz: USB
+Serial: CB806500010A
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 172.49 GB
+Espacio usado: 88.74 GB
+Espacio libre: 83.75 GB
+Porcentaje usado: 51.4%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: FAT32
+Espacio total: 7.26 GB
+Espacio usado: 1.94 GB
+Espacio libre: 5.32 GB
+Porcentaje usado: 26.7%
+
+Dispositivo: F:\
+Punto de montaje: F:\
+Sistema de archivos: FAT32
+Espacio total: 57.72 GB
+Espacio usado: 0.03 GB
+Espacio libre: 57.69 GB
+Porcentaje usado: 0.0%
+
+Dispositivo: G:\
+Punto de montaje: G:\
+Sistema de archivos: NTFS
+Espacio total: 272.08 GB
+Espacio usado: 0.10 GB
+Espacio libre: 271.98 GB
+Porcentaje usado: 0.0%
+
+
+=== Memoria RAM ===
+Total: 15.75 GB
+Disponible: 11.60 GB
+Usada: 4.16 GB
+Porcentaje usado: 26.4%
+Slots: {'Slots totales': 2, 'Slots usados': 2, 'Slots libres': 0, 'Total memoria instalada': '16.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '2666 MHz', 'Fabricante': '80AD000080AD', 'Número de serie': '836B88BE', 'Posición': 'DIMM1', 'Tecnología': 0}, {'Módulo': 2, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '2666 MHz', 'Fabricante': '04CB000002B5', 'Número de serie': '9F370000', 'Posición': 'DIMM2', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+Office O365HomePremRetail,ProPlusRetail (Versión 16.0.18730.20186)
+

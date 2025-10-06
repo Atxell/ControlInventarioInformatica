@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+D5028E20
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+3c:78:f1:e2:c5:8a
+
+=== Dirección IP ===
+172.16.24.21
+
+=== Grupo de trabajo ===
+EAPBC07
+
+=== Procesador ===
+12th Gen Intel(R) Core(TM) i7-12700
+
+=== Fabricante ===
+Dell Inc.
+
+=== Modelo ===
+Vostro 3710
+
+=== Discos físicos ===
+Modelo: NVMe Micron 2210S NVMe 512GB
+Tamaño: 476.94 GB
+Interfaz: SCSI
+Serial: 0000_0000_0000_0001_00A0_7522_3A23_4753.
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 409.29 GB
+Espacio usado: 169.54 GB
+Espacio libre: 239.75 GB
+Porcentaje usado: 41.4%
+
+Dispositivo: D:\
+Punto de montaje: D:\
+Sistema de archivos: FAT32
+Espacio total: 57.72 GB
+Espacio usado: 0.03 GB
+Espacio libre: 57.69 GB
+Porcentaje usado: 0.1%
+
+
+=== Memoria RAM ===
+Total: 15.70 GB
+Disponible: 7.99 GB
+Usada: 7.71 GB
+Porcentaje usado: 49.1%
+Slots: {'Slots totales': 2, 'Slots usados': 1, 'Slots libres': 1, 'Total memoria instalada': '16.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '16.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '3200 MHz', 'Fabricante': '80CE000080CE', 'Número de serie': '148152E0', 'Posición': 'DIMM1', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+Office VisioPro2019Volume,ProPlus2019Volume,ProjectPro2019Volume (Versión 16.0.10417.20051)
+

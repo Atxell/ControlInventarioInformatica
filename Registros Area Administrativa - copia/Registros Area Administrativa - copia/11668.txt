@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+DESKTOP-4VN1KFO
+
+=== Sistema operativo ===
+Windows 11 10.0.26100
+
+=== Dirección MAC ===
+a5:4b:96:2d:5b:b6
+
+=== Dirección IP ===
+172.16.6.1
+
+=== Grupo de trabajo ===
+WORKGROUP
+
+=== Procesador ===
+Intel(R) Core(TM) i5-10505 CPU @ 3.20GHz
+
+=== Fabricante ===
+HP
+
+=== Modelo ===
+HP 280 G5 Small Form Factor PC
+
+=== Discos físicos ===
+Modelo: MTFDKBA512TFK-1BC1AABHA
+Tamaño: 476.94 GB
+Interfaz: SCSI
+Serial: 0000_0000_0000_0001_00A0_7522_3D08_219F.
+
+Modelo: ADATA USB Flash Drive USB Device
+Tamaño: 57.81 GB
+Interfaz: USB
+Serial: AA00000000000489
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 475.97 GB
+Espacio usado: 239.62 GB
+Espacio libre: 236.35 GB
+Porcentaje usado: 50.3%
+
+Dispositivo: D:\
+Punto de montaje: D:\
+Sistema de archivos: FAT32
+Espacio total: 57.80 GB
+Espacio usado: 20.09 GB
+Espacio libre: 37.70 GB
+Porcentaje usado: 34.8%
+
+
+=== Memoria RAM ===
+Total: 7.72 GB
+Disponible: 2.28 GB
+Usada: 5.44 GB
+Porcentaje usado: 70.5%
+Slots: {'Slots totales': 4, 'Slots usados': 1, 'Slots libres': 3, 'Total memoria instalada': '8.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '3200 MHz', 'Fabricante': 'Samsung', 'Número de serie': '35007F85', 'Posición': 'DIMM1', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+Office ProjectPro2019Retail,VisioPro2019Retail,Proplus2019Retail (Versión 16.0.18827.20128)
+

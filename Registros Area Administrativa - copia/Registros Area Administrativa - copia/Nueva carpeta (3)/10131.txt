@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+H76C764B
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+b2:64:c9:92:25:4b
+
+=== Dirección IP ===
+172.16.14.12
+
+=== Grupo de trabajo ===
+EDPBC11
+
+=== Procesador ===
+AMD PRO A8-8650B R7, 10 Compute Cores 4C+6G
+
+=== Fabricante ===
+HP
+
+=== Modelo ===
+HP EliteDesk 705 G2 SFF
+
+=== Discos físicos ===
+Modelo: ST500DM002-1BD142
+Tamaño: 465.76 GB
+Interfaz: IDE
+Serial: Z6EQ8FQK
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 446.39 GB
+Espacio usado: 84.09 GB
+Espacio libre: 362.31 GB
+Porcentaje usado: 18.8%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: FAT32
+Espacio total: 57.72 GB
+Espacio usado: 0.03 GB
+Espacio libre: 57.69 GB
+Porcentaje usado: 0.1%
+
+
+=== Memoria RAM ===
+Total: 6.95 GB
+Disponible: 2.73 GB
+Usada: 4.22 GB
+Porcentaje usado: 60.8%
+Slots: {'Slots totales': 4, 'Slots usados': 2, 'Slots libres': 2, 'Total memoria instalada': '8.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Hynix/Hyundai', 'Número de serie': '02220B2B', 'Posición': 'DIMM1', 'Tecnología': 24}, {'Módulo': 2, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Kingston', 'Número de serie': '963C19C1', 'Posición': 'DIMM3', 'Tecnología': 24}]}
+
+=== Microsoft Office ===
+Office ProjectProRetail,VisioProRetail,ProplusRetail (Versión 16.0.19127.20240)
+

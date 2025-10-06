@@ -1,0 +1,84 @@
+=== Nombre de equipo ===
+DC53A6F0
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+37:6f:de:bc:78:f0
+
+=== Dirección IP ===
+172.16.60.51
+
+=== Grupo de trabajo ===
+EAPAC20
+
+=== Procesador ===
+Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz
+
+=== Fabricante ===
+Dell Inc.
+
+=== Modelo ===
+Precision Tower 3620
+
+=== Discos físicos ===
+Modelo: Generic- SM/xD-Picture USB Device
+Tamaño: Desconocido
+Interfaz: USB
+Serial: 20100818841300001
+
+Modelo: SK hynix SC300 SATA 512GB
+Tamaño: 476.94 GB
+Interfaz: SCSI
+Serial: EJ75N527610905E2X
+
+Modelo: Generic- SD/MMC USB Device
+Tamaño: Desconocido
+Interfaz: USB
+Serial: 20100818841300002
+
+Modelo: Generic- Compact Flash USB Device
+Tamaño: Desconocido
+Interfaz: USB
+Serial: 20100818841300000
+
+Modelo: Generic- M.S./M.S.Pro/HG USB Device
+Tamaño: Desconocido
+Interfaz: USB
+Serial: 20100818841300003
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 475.32 GB
+Espacio usado: 191.73 GB
+Espacio libre: 283.59 GB
+Porcentaje usado: 40.3%
+
+Dispositivo: D:\
+Punto de montaje: D:\
+Sistema de archivos: FAT32
+Espacio total: 57.72 GB
+Espacio usado: 0.03 GB
+Espacio libre: 57.69 GB
+Porcentaje usado: 0.0%
+
+
+=== Memoria RAM ===
+Total: 7.89 GB
+Disponible: 3.47 GB
+Usada: 4.43 GB
+Porcentaje usado: 56.1%
+Slots: {'Slots totales': 4, 'Slots usados': 1, 'Slots libres': 3, 'Total memoria instalada': '8.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '2400 MHz', 'Fabricante': '01980000802C', 'Número de serie': 'E91C7E0E', 'Posición': 'DIMM1', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+No se encontró Microsoft Office instalado
+

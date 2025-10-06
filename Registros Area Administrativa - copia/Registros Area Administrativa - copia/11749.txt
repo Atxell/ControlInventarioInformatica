@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+D1343944
+
+=== Sistema operativo ===
+Windows 11 10.0.26100
+
+=== Dirección MAC ===
+d2:a4:48:90:20:40
+
+=== Dirección IP ===
+172.16.32.19
+
+=== Grupo de trabajo ===
+EAPAC24
+
+=== Procesador ===
+12th Gen Intel(R) Core(TM) i5-12500
+
+=== Fabricante ===
+Dell Inc.
+
+=== Modelo ===
+OptiPlex SFF 7020
+
+=== Discos físicos ===
+Modelo: NVMe 2400A NVMe Micron 512GB
+Tamaño: 476.94 GB
+Interfaz: SCSI
+Serial: 0000_0000_0000_0001_00A0_7524_497E_1893.
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 28.82 GB
+Interfaz: USB
+Serial: 0
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 474.10 GB
+Espacio usado: 102.12 GB
+Espacio libre: 371.98 GB
+Porcentaje usado: 21.5%
+
+Dispositivo: D:\
+Punto de montaje: D:\
+Sistema de archivos: exFAT
+Espacio total: 28.81 GB
+Espacio usado: 0.01 GB
+Espacio libre: 28.80 GB
+Porcentaje usado: 0.0%
+
+
+=== Memoria RAM ===
+Total: 15.69 GB
+Disponible: 11.16 GB
+Usada: 4.53 GB
+Porcentaje usado: 28.9%
+Slots: {'Slots totales': 2, 'Slots usados': 2, 'Slots libres': 0, 'Total memoria instalada': '16.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR5', 'Velocidad': '5600 MHz', 'Fabricante': '80CE000080CE', 'Número de serie': '490F354F', 'Posición': 'DIMM1', 'Tecnología': 0}, {'Módulo': 2, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR5', 'Velocidad': '5600 MHz', 'Fabricante': '01980000802C', 'Número de serie': 'DC08A584', 'Posición': 'DIMM2', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+Office OneNoteFreeRetail,ProPlus2019Retail (Versión 16.0.19127.20222)
+

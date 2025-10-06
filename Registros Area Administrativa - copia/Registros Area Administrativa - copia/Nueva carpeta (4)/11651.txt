@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+L86B64D3
+
+=== Sistema operativo ===
+Windows 11 10.0.26100
+
+=== Dirección MAC ===
+26:4d:9a:34:69:d3
+
+=== Dirección IP ===
+172.16.60.58
+
+=== Grupo de trabajo ===
+EAPAC20
+
+=== Procesador ===
+12th Gen Intel(R) Core(TM) i7-12700
+
+=== Fabricante ===
+LENOVO
+
+=== Modelo ===
+11SWS2A400
+
+=== Discos físicos ===
+Modelo: SAMSUNG MZVL4512HBLU-00BL7
+Tamaño: 476.94 GB
+Interfaz: SCSI
+Serial: 0025_38E3_31D7_8ADB.
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 474.72 GB
+Espacio usado: 100.45 GB
+Espacio libre: 374.27 GB
+Porcentaje usado: 21.2%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: FAT32
+Espacio total: 57.72 GB
+Espacio usado: 0.03 GB
+Espacio libre: 57.69 GB
+Porcentaje usado: 0.0%
+
+
+=== Memoria RAM ===
+Total: 15.72 GB
+Disponible: 11.80 GB
+Usada: 3.92 GB
+Porcentaje usado: 24.9%
+Slots: {'Slots totales': 2, 'Slots usados': 1, 'Slots libres': 1, 'Total memoria instalada': '16.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '16.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '3200 MHz', 'Fabricante': 'Samsung', 'Número de serie': '458C59C7', 'Posición': 'DIMM1', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+Office ProjectProRetail,VisioProRetail,ProplusRetail (Versión 16.0.19127.20240)
+

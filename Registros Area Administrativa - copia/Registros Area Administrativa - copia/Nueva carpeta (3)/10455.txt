@@ -1,0 +1,72 @@
+=== Nombre de equipo ===
+DC53AE64
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+73:e6:cc:99:32:64
+
+=== Dirección IP ===
+172.16.60.56
+
+=== Grupo de trabajo ===
+EAPAC21
+
+=== Procesador ===
+Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz
+
+=== Fabricante ===
+Dell Inc.
+
+=== Modelo ===
+Precision Tower 3620
+
+=== Discos físicos ===
+Modelo: SK hynix SC300 SATA 512GB
+Tamaño: 476.94 GB
+Interfaz: IDE
+Serial: EJ75N527610905E2Z
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 475.32 GB
+Espacio usado: 131.66 GB
+Espacio libre: 343.66 GB
+Porcentaje usado: 27.7%
+
+Dispositivo: D:\
+Punto de montaje: D:\
+Sistema de archivos: exFAT
+Espacio total: 57.70 GB
+Espacio usado: 37.48 GB
+Espacio libre: 20.22 GB
+Porcentaje usado: 65.0%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: FAT
+Espacio total: 0.03 GB
+Espacio usado: 0.03 GB
+Espacio libre: 0.00 GB
+Porcentaje usado: 84.8%
+
+
+=== Memoria RAM ===
+Total: 7.89 GB
+Disponible: 3.77 GB
+Usada: 4.12 GB
+Porcentaje usado: 52.2%
+Slots: {'Slots totales': 4, 'Slots usados': 1, 'Slots libres': 3, 'Total memoria instalada': '8.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '2400 MHz', 'Fabricante': '01980000802C', 'Número de serie': 'E91C230F', 'Posición': 'DIMM1', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+No se encontró Microsoft Office instalado
+

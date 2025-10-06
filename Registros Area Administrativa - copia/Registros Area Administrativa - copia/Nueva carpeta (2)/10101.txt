@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+H76D7BAD
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+dd:ba:75:eb:d6:ad
+
+=== Dirección IP ===
+172.16.18.16
+
+=== Grupo de trabajo ===
+ECPSC02
+
+=== Procesador ===
+AMD PRO A8-8650B R7, 10 Compute Cores 4C+6G
+
+=== Fabricante ===
+HP
+
+=== Modelo ===
+HP EliteDesk 705 G2 SFF
+
+=== Discos físicos ===
+Modelo: TOSHIBA DT01ACA050
+Tamaño: 465.76 GB
+Interfaz: IDE
+Serial:            X5A2AASAS
+
+Modelo: ADATA USB Flash Drive USB Device
+Tamaño: 14.45 GB
+Interfaz: USB
+Serial: AA00000000000489
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 465.14 GB
+Espacio usado: 54.00 GB
+Espacio libre: 411.14 GB
+Porcentaje usado: 11.6%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: FAT32
+Espacio total: 14.44 GB
+Espacio usado: 6.05 GB
+Espacio libre: 8.38 GB
+Porcentaje usado: 41.9%
+
+
+=== Memoria RAM ===
+Total: 3.45 GB
+Disponible: 0.69 GB
+Usada: 2.76 GB
+Porcentaje usado: 80.1%
+Slots: {'Slots totales': 4, 'Slots usados': 1, 'Slots libres': 3, 'Total memoria instalada': '4.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Kingston', 'Número de serie': 'EB30C248', 'Posición': 'DIMM1', 'Tecnología': 24}]}
+
+=== Microsoft Office ===
+No se encontró Microsoft Office instalado
+

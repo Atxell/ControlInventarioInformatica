@@ -1,0 +1,80 @@
+=== Nombre de equipo ===
+H76B0BAC
+
+=== Sistema operativo ===
+Windows 10 10.0.19043
+
+=== Dirección MAC ===
+5d:ba:75:eb:d6:ac
+
+=== Dirección IP ===
+172.16.34.15
+
+=== Grupo de trabajo ===
+EAPAC23
+
+=== Procesador ===
+AMD PRO A8-8650B R7, 10 Compute Cores 4C+6G
+
+=== Fabricante ===
+HP
+
+=== Modelo ===
+HP EliteDesk 705 G2 SFF
+
+=== Discos físicos ===
+Modelo: TOSHIBA DT01ACA050
+Tamaño: 465.76 GB
+Interfaz: IDE
+Serial:            X5A2TDNAS
+
+Modelo: ADATA USB Flash Drive USB Device
+Tamaño: 14.45 GB
+Interfaz: USB
+Serial: AA00000000000489
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 449.12 GB
+Espacio usado: 49.64 GB
+Espacio libre: 399.48 GB
+Porcentaje usado: 11.1%
+
+Dispositivo: D:\
+Punto de montaje: D:\
+Sistema de archivos: NTFS
+Espacio total: 15.54 GB
+Espacio usado: 13.80 GB
+Espacio libre: 1.73 GB
+Porcentaje usado: 88.9%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: FAT32
+Espacio total: 0.10 GB
+Espacio usado: 0.05 GB
+Espacio libre: 0.05 GB
+Porcentaje usado: 49.9%
+
+Dispositivo: G:\
+Punto de montaje: G:\
+Sistema de archivos: FAT32
+Espacio total: 14.44 GB
+Espacio usado: 6.05 GB
+Espacio libre: 8.38 GB
+Porcentaje usado: 41.9%
+
+
+=== Memoria RAM ===
+Total: 6.95 GB
+Disponible: 3.32 GB
+Usada: 3.63 GB
+Porcentaje usado: 52.3%
+Slots: {'Slots totales': 4, 'Slots usados': 2, 'Slots libres': 2, 'Total memoria instalada': '8.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Samsung', 'Número de serie': '141166C9', 'Posición': 'DIMM1', 'Tecnología': 24}, {'Módulo': 2, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Kingston', 'Número de serie': '953CE4C0', 'Posición': 'DIMM3', 'Tecnología': 24}]}
+
+=== Microsoft Office ===
+No se encontró Microsoft Office instalado
+

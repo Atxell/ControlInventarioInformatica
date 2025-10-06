@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+H76B0BE2
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+48:91:22:44:89:13
+
+=== Dirección IP ===
+172.16.34.11
+
+=== Grupo de trabajo ===
+EAPAC23
+
+=== Procesador ===
+AMD PRO A8-8650B R7, 10 Compute Cores 4C+6G
+
+=== Fabricante ===
+HP
+
+=== Modelo ===
+HP EliteDesk 705 G2 SFF
+
+=== Discos físicos ===
+Modelo: TOSHIBA DT01ACA050
+Tamaño: 465.76 GB
+Interfaz: IDE
+Serial:            X5A2E7HAS
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 465.14 GB
+Espacio usado: 68.70 GB
+Espacio libre: 396.44 GB
+Porcentaje usado: 14.8%
+
+Dispositivo: D:\
+Punto de montaje: D:\
+Sistema de archivos: FAT32
+Espacio total: 57.72 GB
+Espacio usado: 0.03 GB
+Espacio libre: 57.69 GB
+Porcentaje usado: 0.0%
+
+
+=== Memoria RAM ===
+Total: 6.95 GB
+Disponible: 3.00 GB
+Usada: 3.95 GB
+Porcentaje usado: 56.8%
+Slots: {'Slots totales': 4, 'Slots usados': 2, 'Slots libres': 2, 'Total memoria instalada': '8.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Samsung', 'Número de serie': '141B1584', 'Posición': 'DIMM1', 'Tecnología': 24}, {'Módulo': 2, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Kingston', 'Número de serie': '903CAAC0', 'Posición': 'DIMM3', 'Tecnología': 24}]}
+
+=== Microsoft Office ===
+Office OneNoteFreeRetail,ProPlusRetail (Versión 16.0.19127.20240)
+

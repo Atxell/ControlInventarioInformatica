@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+DDB7BBD9_11167
+
+=== Sistema operativo ===
+Windows 11 10.0.22621
+
+=== Dirección MAC ===
+de:bd:7b:f6:ec:d9
+
+=== Dirección IP ===
+172.16.60.134
+
+=== Grupo de trabajo ===
+EAPAC20
+
+=== Procesador ===
+Intel(R) Core(TM) i5-10500 CPU @ 3.10GHz
+
+=== Fabricante ===
+Dell Inc.
+
+=== Modelo ===
+OptiPlex 3080
+
+=== Discos físicos ===
+Modelo: ST1000DM010-2EP102
+Tamaño: 931.51 GB
+Interfaz: SCSI
+Serial:             ZN1J4Q3W
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 28.82 GB
+Interfaz: USB
+Serial: 0
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 928.94 GB
+Espacio usado: 134.05 GB
+Espacio libre: 794.89 GB
+Porcentaje usado: 14.4%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: exFAT
+Espacio total: 28.81 GB
+Espacio usado: 0.01 GB
+Espacio libre: 28.80 GB
+Porcentaje usado: 0.0%
+
+
+=== Memoria RAM ===
+Total: 7.75 GB
+Disponible: 1.36 GB
+Usada: 6.40 GB
+Porcentaje usado: 82.5%
+Slots: {'Slots totales': 2, 'Slots usados': 1, 'Slots libres': 1, 'Total memoria instalada': '8.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '2666 MHz', 'Fabricante': '80AD000080AD', 'Número de serie': '736EBB65', 'Posición': 'DIMM1', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+No se encontró Microsoft Office instalado
+

@@ -1,0 +1,72 @@
+=== Nombre de equipo ===
+HP03D88A1
+
+=== Sistema operativo ===
+Windows 10 10.0.19044
+
+=== Dirección MAC ===
+45:8a:14:28:50:a1
+
+=== Dirección IP ===
+172.16.16.15
+
+=== Grupo de trabajo ===
+EAPBC16
+
+=== Procesador ===
+Intel(R) Core(TM) i3-4330 CPU @ 3.50GHz
+
+=== Fabricante ===
+Hewlett-Packard
+
+=== Modelo ===
+HP ProDesk 600 G1 SFF
+
+=== Discos físicos ===
+Modelo: ST500DM002-1BD142
+Tamaño: 465.76 GB
+Interfaz: IDE
+Serial: Z6E53KHN
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 465.20 GB
+Espacio usado: 51.52 GB
+Espacio libre: 413.68 GB
+Porcentaje usado: 11.1%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: exFAT
+Espacio total: 57.70 GB
+Espacio usado: 36.84 GB
+Espacio libre: 20.86 GB
+Porcentaje usado: 63.8%
+
+Dispositivo: F:\
+Punto de montaje: F:\
+Sistema de archivos: FAT
+Espacio total: 0.03 GB
+Espacio usado: 0.03 GB
+Espacio libre: 0.00 GB
+Porcentaje usado: 87.2%
+
+
+=== Memoria RAM ===
+Total: 3.91 GB
+Disponible: 1.46 GB
+Usada: 2.46 GB
+Porcentaje usado: 62.8%
+Slots: {'Slots totales': 4, 'Slots usados': 1, 'Slots libres': 3, 'Total memoria instalada': '4.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Samsung', 'Número de serie': '22161418', 'Posición': 'DIMM1', 'Tecnología': 24}]}
+
+=== Microsoft Office ===
+No se encontró Microsoft Office instalado
+

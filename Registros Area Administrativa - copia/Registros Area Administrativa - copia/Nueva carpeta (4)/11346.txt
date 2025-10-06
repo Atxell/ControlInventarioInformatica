@@ -1,0 +1,77 @@
+=== Nombre de equipo ===
+D50290EE
+
+=== Sistema operativo ===
+Windows 11 10.0.26100
+
+=== Dirección MAC ===
+28:51:a2:45:8a:14
+
+=== Dirección IP ===
+172.16.54.11
+
+=== Grupo de trabajo ===
+EAPBC03
+
+=== Procesador ===
+12th Gen Intel(R) Core(TM) i7-12700
+
+=== Fabricante ===
+Dell Inc.
+
+=== Modelo ===
+Vostro 3710
+
+=== Discos físicos ===
+Modelo: Generic Flash Disk USB Device
+Tamaño: 15.23 GB
+Interfaz: USB
+Serial: 7A652EFD
+
+Modelo: Micron 2210S NVMe 512GB
+Tamaño: 476.94 GB
+Interfaz: SCSI
+Serial: 0000_0000_0000_0001_00A0_7522_3A23_61C2.
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 432.10 GB
+Espacio usado: 331.00 GB
+Espacio libre: 101.10 GB
+Porcentaje usado: 76.6%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: FAT32
+Espacio total: 15.22 GB
+Espacio usado: 0.86 GB
+Espacio libre: 14.36 GB
+Porcentaje usado: 5.6%
+
+Dispositivo: F:\
+Punto de montaje: F:\
+Sistema de archivos: FAT32
+Espacio total: 57.72 GB
+Espacio usado: 0.03 GB
+Espacio libre: 57.69 GB
+Porcentaje usado: 0.1%
+
+
+=== Memoria RAM ===
+Total: 31.70 GB
+Disponible: 20.19 GB
+Usada: 11.50 GB
+Porcentaje usado: 36.3%
+Slots: {'Slots totales': 2, 'Slots usados': 2, 'Slots libres': 0, 'Total memoria instalada': '32.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '16.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '3200 MHz', 'Fabricante': '80CE000080CE', 'Número de serie': '14415FEB', 'Posición': 'DIMM1', 'Tecnología': 0}, {'Módulo': 2, 'Capacidad': '16.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '3200 MHz', 'Fabricante': '80CE000080CE', 'Número de serie': '1430B07B', 'Posición': 'DIMM2', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+Office ProjectPro2021Volume,Standard2021Volume,VisioPro2021Volume (Versión 16.0.14334.20296)
+

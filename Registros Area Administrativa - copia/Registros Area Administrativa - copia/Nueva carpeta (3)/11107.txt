@@ -1,0 +1,72 @@
+=== Nombre de equipo ===
+D8
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+7a:f4:e9:d3:a6:4c
+
+=== Dirección IP ===
+172.16.19.30
+
+=== Grupo de trabajo ===
+EAPBC01
+
+=== Procesador ===
+Intel(R) Core(TM) i3-9100 CPU @ 3.60GHz
+
+=== Fabricante ===
+Dell Inc.
+
+=== Modelo ===
+Vostro 3471
+
+=== Discos físicos ===
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+Modelo: ST1000DM010-2EP102
+Tamaño: 931.51 GB
+Interfaz: SCSI
+Serial:             W9AGJNAN
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 930.89 GB
+Espacio usado: 68.66 GB
+Espacio libre: 862.23 GB
+Porcentaje usado: 7.4%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: exFAT
+Espacio total: 57.70 GB
+Espacio usado: 36.84 GB
+Espacio libre: 20.87 GB
+Porcentaje usado: 63.8%
+
+Dispositivo: F:\
+Punto de montaje: F:\
+Sistema de archivos: FAT
+Espacio total: 0.03 GB
+Espacio usado: 0.03 GB
+Espacio libre: 0.00 GB
+Porcentaje usado: 87.2%
+
+
+=== Memoria RAM ===
+Total: 3.84 GB
+Disponible: 0.99 GB
+Usada: 2.85 GB
+Porcentaje usado: 74.3%
+Slots: {'Slots totales': 2, 'Slots usados': 1, 'Slots libres': 1, 'Total memoria instalada': '4.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '2666 MHz', 'Fabricante': '802C0000802C', 'Número de serie': '209CB169', 'Posición': 'DIMM1', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+No se encontró Microsoft Office instalado
+

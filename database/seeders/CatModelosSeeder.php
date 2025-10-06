@@ -64,6 +64,13 @@ class CatModelosSeeder extends Seeder
             ['marca_id' => 2, 'nombre' => 'HP COMPAQ PRO 6305 MICROTOWER'], // HP Desktop
             ['marca_id' => 8, 'nombre' => '32643N2'], // Lenovo Laptop
             ['marca_id' => 4, 'nombre' => 'To be filled by O.E.M.'], // LANIX para Gigabyte
+            ['marca_id' => 1, 'nombre' => 'OptiPlex SFF 7020'], // Dell Desktop
+            ['marca_id' => 1, 'nombre' => 'Vostro 430'], // Dell Desktop
+            ['marca_id' => 8, 'nombre' => 'F0CL000ALD'], // Lenovo Laptop
+            ['marca_id' => 8, 'nombre' => 'F0CL000BLD'], // Lenovo Laptop
+            ['marca_id' => 2, 'nombre' => 'HP ProDesk 600 G1 SFF'], // HP Desktop
+            ['marca_id' => 1, 'nombre' => 'OptiPlex 3080'], // Dell Desktop
+            ['marca_id' => 7, 'nombre' => 'HP ProDesk 600 G1 SFF'], // Dell Desktop
         ];
         
         foreach ($modelos as $modelo) {

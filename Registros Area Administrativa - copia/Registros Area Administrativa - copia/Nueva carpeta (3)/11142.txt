@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+h1540184
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+0c:18:30:61:c2:84
+
+=== Dirección IP ===
+172.20.213.88
+
+=== Grupo de trabajo ===
+ECPAC03
+
+=== Procesador ===
+Intel(R) Core(TM) i3-8130U CPU @ 2.20GHz
+
+=== Fabricante ===
+HP
+
+=== Modelo ===
+HP 200 G3 AiO
+
+=== Discos físicos ===
+Modelo: ADATA SU630
+Tamaño: 447.13 GB
+Interfaz: IDE
+Serial: 2M4229A7JCUG
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 446.38 GB
+Espacio usado: 89.87 GB
+Espacio libre: 356.51 GB
+Porcentaje usado: 20.1%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: FAT32
+Espacio total: 57.72 GB
+Espacio usado: 0.03 GB
+Espacio libre: 57.69 GB
+Porcentaje usado: 0.0%
+
+
+=== Memoria RAM ===
+Total: 11.86 GB
+Disponible: 7.60 GB
+Usada: 4.26 GB
+Porcentaje usado: 35.9%
+Slots: {'Slots totales': 2, 'Slots usados': 2, 'Slots libres': 0, 'Total memoria instalada': '12.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '8.00 GB', 'Tipo físico': 'SODIMM', 'Generación DDR': 'DDR4', 'Velocidad': '2666 MHz', 'Fabricante': 'ADATA', 'Número de serie': 'CC750200', 'Posición': 'DIMM0', 'Tecnología': 0}, {'Módulo': 2, 'Capacidad': '4.00 GB', 'Tipo físico': 'SODIMM', 'Generación DDR': 'DDR4', 'Velocidad': '2666 MHz', 'Fabricante': 'Samsung', 'Número de serie': '34C9AF60', 'Posición': 'DIMM1', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+No se encontró Microsoft Office instalado
+

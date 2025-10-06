@@ -1,0 +1,77 @@
+=== Nombre de equipo ===
+DESKTOP-FROP7S4
+
+=== Sistema operativo ===
+Windows 11 10.0.26100
+
+=== Dirección MAC ===
+03:07:0e:1c:39:73
+
+=== Dirección IP ===
+172.16.34.4
+
+=== Grupo de trabajo ===
+EAPAC23
+
+=== Procesador ===
+12th Gen Intel(R) Core(TM) i5-12500
+
+=== Fabricante ===
+Dell Inc.
+
+=== Modelo ===
+OptiPlex SFF 7020
+
+=== Discos físicos ===
+Modelo: Generic Flash Disk USB Device
+Tamaño: 7.50 GB
+Interfaz: USB
+Serial: 9
+
+Modelo: NVMe 2400A NVMe Micron 512GB
+Tamaño: 476.94 GB
+Interfaz: SCSI
+Serial: 0000_0000_0000_0001_00A0_7524_496D_70CB.
+
+Modelo: ADATA USB Flash Drive USB Device
+Tamaño: 14.45 GB
+Interfaz: USB
+Serial: AA00000000000489
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 474.10 GB
+Espacio usado: 93.99 GB
+Espacio libre: 380.11 GB
+Porcentaje usado: 19.8%
+
+Dispositivo: D:\
+Punto de montaje: D:\
+Sistema de archivos: FAT32
+Espacio total: 7.48 GB
+Espacio usado: 0.20 GB
+Espacio libre: 7.28 GB
+Porcentaje usado: 2.7%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: FAT32
+Espacio total: 14.44 GB
+Espacio usado: 6.05 GB
+Espacio libre: 8.38 GB
+Porcentaje usado: 41.9%
+
+
+=== Memoria RAM ===
+Total: 15.69 GB
+Disponible: 6.35 GB
+Usada: 9.34 GB
+Porcentaje usado: 59.5%
+Slots: {'Slots totales': 2, 'Slots usados': 2, 'Slots libres': 0, 'Total memoria instalada': '16.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR5', 'Velocidad': '5600 MHz', 'Fabricante': '80CE000080CE', 'Número de serie': '49382F22', 'Posición': 'DIMM1', 'Tecnología': 0}, {'Módulo': 2, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR5', 'Velocidad': '5600 MHz', 'Fabricante': '01980000802C', 'Número de serie': 'D408A277', 'Posición': 'DIMM2', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+Office ProjectProRetail,VisioProRetail,ProplusRetail (Versión 16.0.19127.20240)
+

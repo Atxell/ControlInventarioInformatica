@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+HA318168
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+fd:fa:f5:ea:d5:ab
+
+=== Dirección IP ===
+172.16.21.102
+
+=== Grupo de trabajo ===
+EAPAC12
+
+=== Procesador ===
+Intel(R) Core(TM) i5-10505 CPU @ 3.20GHz
+
+=== Fabricante ===
+HP
+
+=== Modelo ===
+HP 280 G5 Small Form Factor PC
+
+=== Discos físicos ===
+Modelo: KBG50ZNV256G KIOXIA
+Tamaño: 238.47 GB
+Interfaz: SCSI
+Serial: 0000_0000_0000_0000_8CE3_8E10_009E_0248.
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 237.70 GB
+Espacio usado: 97.39 GB
+Espacio libre: 140.31 GB
+Porcentaje usado: 41.0%
+
+Dispositivo: D:\
+Punto de montaje: D:\
+Sistema de archivos: FAT32
+Espacio total: 57.72 GB
+Espacio usado: 0.03 GB
+Espacio libre: 57.69 GB
+Porcentaje usado: 0.0%
+
+
+=== Memoria RAM ===
+Total: 7.72 GB
+Disponible: 1.26 GB
+Usada: 6.46 GB
+Porcentaje usado: 83.7%
+Slots: {'Slots totales': 4, 'Slots usados': 1, 'Slots libres': 3, 'Total memoria instalada': '8.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '3200 MHz', 'Fabricante': 'Samsung', 'Número de serie': '3316B62D', 'Posición': 'DIMM1', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+Office ProjectProRetail,VisioProRetail,ProplusRetail (Versión 16.0.19127.20222)
+

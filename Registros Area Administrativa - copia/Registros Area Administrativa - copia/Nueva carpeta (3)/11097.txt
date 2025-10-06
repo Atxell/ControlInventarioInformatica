@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+D8B9C963
+
+=== Sistema operativo ===
+Windows 11 10.0.26100
+
+=== Dirección MAC ===
+5f:be:7c:f9:f3:e6
+
+=== Dirección IP ===
+172.16.27.26
+
+=== Grupo de trabajo ===
+EAPAC04
+
+=== Procesador ===
+Intel(R) Core(TM) i3-9100 CPU @ 3.60GHz
+
+=== Fabricante ===
+Dell Inc.
+
+=== Modelo ===
+Vostro 3471
+
+=== Discos físicos ===
+Modelo: ST1000DM010-2EP102
+Tamaño: 931.51 GB
+Interfaz: SCSI
+Serial:             ZN1A3FE7
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 930.68 GB
+Espacio usado: 68.42 GB
+Espacio libre: 862.26 GB
+Porcentaje usado: 7.4%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: FAT32
+Espacio total: 57.72 GB
+Espacio usado: 0.03 GB
+Espacio libre: 57.69 GB
+Porcentaje usado: 0.0%
+
+
+=== Memoria RAM ===
+Total: 7.84 GB
+Disponible: 2.66 GB
+Usada: 5.18 GB
+Porcentaje usado: 66.1%
+Slots: {'Slots totales': 2, 'Slots usados': 2, 'Slots libres': 0, 'Total memoria instalada': '8.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '2666 MHz', 'Fabricante': '802C0000802C', 'Número de serie': '20997E92', 'Posición': 'DIMM1', 'Tecnología': 0}, {'Módulo': 2, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '2666 MHz', 'Fabricante': '01980000802C', 'Número de serie': '7D2650CA', 'Posición': 'DIMM2', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+No se encontró Microsoft Office instalado
+

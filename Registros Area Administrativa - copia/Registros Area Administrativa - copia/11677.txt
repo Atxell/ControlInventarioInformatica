@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+DESKTOP-R6IOS7N
+
+=== Sistema operativo ===
+Windows 11 10.0.26100
+
+=== Dirección MAC ===
+e4:c8:91:23:46:8c
+
+=== Dirección IP ===
+172.16.12.184
+
+=== Grupo de trabajo ===
+WORKGROUP
+
+=== Procesador ===
+Intel(R) Core(TM) i5-10505 CPU @ 3.20GHz
+
+=== Fabricante ===
+HP
+
+=== Modelo ===
+HP 280 G5 Small Form Factor PC
+
+=== Discos físicos ===
+Modelo: MTFDKBA512TFK-1BC1AABHA
+Tamaño: 476.94 GB
+Interfaz: SCSI
+Serial: 0000_0000_0000_0001_00A0_7522_3D08_255A.
+
+Modelo: ADATA USB Flash Drive USB Device
+Tamaño: 14.45 GB
+Interfaz: USB
+Serial: AA00000000000489
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 475.94 GB
+Espacio usado: 68.81 GB
+Espacio libre: 407.13 GB
+Porcentaje usado: 14.5%
+
+Dispositivo: D:\
+Punto de montaje: D:\
+Sistema de archivos: FAT32
+Espacio total: 14.44 GB
+Espacio usado: 6.05 GB
+Espacio libre: 8.38 GB
+Porcentaje usado: 41.9%
+
+
+=== Memoria RAM ===
+Total: 7.72 GB
+Disponible: 3.05 GB
+Usada: 4.67 GB
+Porcentaje usado: 60.5%
+Slots: {'Slots totales': 4, 'Slots usados': 1, 'Slots libres': 3, 'Total memoria instalada': '8.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '3200 MHz', 'Fabricante': 'Samsung', 'Número de serie': '34FF1D9B', 'Posición': 'DIMM1', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+Office O365HomePremRetail (Versión 16.0.19127.20240)
+

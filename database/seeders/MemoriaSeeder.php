@@ -31,6 +31,7 @@ class MemoriaSeeder extends Seeder
 
             ['Capacidad' => '16GB',  'Frecuencia' => '4800MHz', 'Generación' => 'DDR5'],
             ['Capacidad' => '16GB',  'Frecuencia' => '5200MHz', 'Generación' => 'DDR5'],
+            ['Capacidad' => '16GB',  'Frecuencia' => '5600MHz', 'Generación' => 'DDR5'],
         ];
 
         foreach ($memorias as $memoria) {

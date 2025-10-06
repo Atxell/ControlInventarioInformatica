@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+H04902B7
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+08:11:22:44:88:11
+
+=== Dirección IP ===
+172.16.27.41
+
+=== Grupo de trabajo ===
+EAPAC06
+
+=== Procesador ===
+AMD PRO A8-8650B R7, 10 Compute Cores 4C+6G
+
+=== Fabricante ===
+HP
+
+=== Modelo ===
+HP EliteDesk 705 G2 SFF
+
+=== Discos físicos ===
+Modelo: ST1000DM010-2EP102
+Tamaño: 931.51 GB
+Interfaz: IDE
+Serial:             ZN18JJSP
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 446.39 GB
+Espacio usado: 95.38 GB
+Espacio libre: 351.02 GB
+Porcentaje usado: 21.4%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: FAT32
+Espacio total: 57.72 GB
+Espacio usado: 0.03 GB
+Espacio libre: 57.69 GB
+Porcentaje usado: 0.0%
+
+
+=== Memoria RAM ===
+Total: 10.95 GB
+Disponible: 7.69 GB
+Usada: 3.26 GB
+Porcentaje usado: 29.8%
+Slots: {'Slots totales': 4, 'Slots usados': 2, 'Slots libres': 2, 'Total memoria instalada': '12.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Kingston', 'Número de serie': 'EF309448', 'Posición': 'DIMM1', 'Tecnología': 24}, {'Módulo': 2, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Kingston', 'Número de serie': '8D10164D', 'Posición': 'DIMM3', 'Tecnología': 24}]}
+
+=== Microsoft Office ===
+Office ProjectProRetail,VisioProRetail,ProplusRetail (Versión 16.0.19127.20240)
+

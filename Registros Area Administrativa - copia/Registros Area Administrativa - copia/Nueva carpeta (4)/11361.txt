@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+HA3184EE
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+02:05:0b:16:2d:5a
+
+=== Dirección IP ===
+172.16.21.54
+
+=== Grupo de trabajo ===
+EAPAC10
+
+=== Procesador ===
+Intel(R) Core(TM) i5-10505 CPU @ 3.20GHz
+
+=== Fabricante ===
+HP
+
+=== Modelo ===
+HP 280 G5 Small Form Factor PC
+
+=== Discos físicos ===
+Modelo: ADATA USB Flash Drive USB Device
+Tamaño: 14.45 GB
+Interfaz: USB
+Serial: AA00000000000489
+
+Modelo: KBG50ZNV256G KIOXIA
+Tamaño: 238.47 GB
+Interfaz: SCSI
+Serial: 0000_0000_0000_0000_8CE3_8E10_009E_0469.
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 237.70 GB
+Espacio usado: 71.98 GB
+Espacio libre: 165.73 GB
+Porcentaje usado: 30.3%
+
+Dispositivo: D:\
+Punto de montaje: D:\
+Sistema de archivos: FAT32
+Espacio total: 14.44 GB
+Espacio usado: 6.05 GB
+Espacio libre: 8.38 GB
+Porcentaje usado: 41.9%
+
+
+=== Memoria RAM ===
+Total: 7.72 GB
+Disponible: 3.09 GB
+Usada: 4.63 GB
+Porcentaje usado: 59.9%
+Slots: {'Slots totales': 4, 'Slots usados': 1, 'Slots libres': 3, 'Total memoria instalada': '8.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '3200 MHz', 'Fabricante': 'Samsung', 'Número de serie': '3321D48D', 'Posición': 'DIMM1', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+No se encontró Microsoft Office instalado
+

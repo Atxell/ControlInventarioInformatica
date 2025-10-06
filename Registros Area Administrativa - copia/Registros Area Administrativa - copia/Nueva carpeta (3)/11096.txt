@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+D8B9C872
+
+=== Sistema operativo ===
+Windows 11 10.0.22621
+
+=== Dirección MAC ===
+0c:19:33:66:cc:98
+
+=== Dirección IP ===
+172.16.29.70
+
+=== Grupo de trabajo ===
+ECPSC05
+
+=== Procesador ===
+Intel(R) Core(TM) i3-9100 CPU @ 3.60GHz
+
+=== Fabricante ===
+Dell Inc.
+
+=== Modelo ===
+Vostro 3471
+
+=== Discos físicos ===
+Modelo: ST1000DM010-2EP102
+Tamaño: 223.57 GB
+Interfaz: SCSI
+Serial: 50026B7784E4CEE1
+
+Modelo: ADATA USB Flash Drive USB Device
+Tamaño: 14.45 GB
+Interfaz: USB
+Serial: AA00000000000489
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 207.69 GB
+Espacio usado: 99.67 GB
+Espacio libre: 108.03 GB
+Porcentaje usado: 48.0%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: FAT32
+Espacio total: 14.44 GB
+Espacio usado: 6.05 GB
+Espacio libre: 8.38 GB
+Porcentaje usado: 41.9%
+
+
+=== Memoria RAM ===
+Total: 3.84 GB
+Disponible: 1.17 GB
+Usada: 2.67 GB
+Porcentaje usado: 69.6%
+Slots: {'Slots totales': 2, 'Slots usados': 1, 'Slots libres': 1, 'Total memoria instalada': '4.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '2666 MHz', 'Fabricante': '802C0000802C', 'Número de serie': '2098E643', 'Posición': 'DIMM1', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+Office ProjectProRetail,VisioProRetail,ProplusRetail (Versión 16.0.19127.20240)
+

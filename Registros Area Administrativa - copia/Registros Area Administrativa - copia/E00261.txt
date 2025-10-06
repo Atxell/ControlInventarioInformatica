@@ -1,0 +1,84 @@
+=== Nombre de equipo ===
+DBFD3643
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+b2:64:c8:90:21:43
+
+=== Dirección IP ===
+172.16.49.1
+
+=== Grupo de trabajo ===
+EBPAC01
+
+=== Procesador ===
+Intel(R) Core(TM) i5 CPU         750  @ 2.67GHz
+
+=== Fabricante ===
+Dell Inc.
+
+=== Modelo ===
+Vostro 430
+
+=== Discos físicos ===
+Modelo: Generic- Compact Flash USB Device
+Tamaño: Desconocido
+Interfaz: USB
+Serial: 058F63626421
+
+Modelo: Generic- SD/MMC USB Device
+Tamaño: Desconocido
+Interfaz: USB
+Serial: 058F63626420
+
+Modelo: Generic- SM/xD Picture USB Device
+Tamaño: Desconocido
+Interfaz: USB
+Serial: 058F63626422
+
+Modelo: WDC WD5000AAKX-60U6AA0
+Tamaño: 465.76 GB
+Interfaz: IDE
+Serial:      WD-WCC2EKN53522
+
+Modelo: Generic- MS/MS-Pro USB Device
+Tamaño: Desconocido
+Interfaz: USB
+Serial: 058F63626423
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 446.55 GB
+Espacio usado: 54.06 GB
+Espacio libre: 392.49 GB
+Porcentaje usado: 12.1%
+
+Dispositivo: H:\
+Punto de montaje: H:\
+Sistema de archivos: FAT32
+Espacio total: 57.72 GB
+Espacio usado: 0.03 GB
+Espacio libre: 57.69 GB
+Porcentaje usado: 0.0%
+
+
+=== Memoria RAM ===
+Total: 3.96 GB
+Disponible: 1.79 GB
+Usada: 2.17 GB
+Porcentaje usado: 54.7%
+Slots: {'Slots totales': 4, 'Slots usados': 2, 'Slots libres': 2, 'Total memoria instalada': '4.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '2.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Hynix', 'Número de serie': '1E8ECFE4', 'Posición': 'DIMM0', 'Tecnología': 1}, {'Módulo': 2, 'Capacidad': '2.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Hynix', 'Número de serie': '1E6ECFEC', 'Posición': 'DIMM2', 'Tecnología': 1}]}
+
+=== Microsoft Office ===
+Office ProjectProRetail,VisioProRetail,ProplusRetail (Versión 16.0.19127.20240)
+

@@ -1,0 +1,80 @@
+=== Nombre de equipo ===
+DDB7BB5E
+
+=== Sistema operativo ===
+Windows 11 10.0.26100
+
+=== Dirección MAC ===
+da:b5:6b:d7:af:5e
+
+=== Dirección IP ===
+172.16.62.17
+
+=== Grupo de trabajo ===
+EAPAC26
+
+=== Procesador ===
+Intel(R) Core(TM) i5-10500 CPU @ 3.10GHz
+
+=== Fabricante ===
+Dell Inc.
+
+=== Modelo ===
+OptiPlex 3080
+
+=== Discos físicos ===
+Modelo: KINGSTON SA400S37480G
+Tamaño: 447.13 GB
+Interfaz: SCSI
+Serial: 50026B7785D52549
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 172.49 GB
+Espacio usado: 138.88 GB
+Espacio libre: 33.61 GB
+Porcentaje usado: 80.5%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: FAT32
+Espacio total: 172.49 GB
+Espacio usado: 140.56 GB
+Espacio libre: 31.92 GB
+Porcentaje usado: 81.5%
+
+Dispositivo: F:\
+Punto de montaje: F:\
+Sistema de archivos: FAT32
+Espacio total: 57.72 GB
+Espacio usado: 0.03 GB
+Espacio libre: 57.69 GB
+Porcentaje usado: 0.0%
+
+Dispositivo: G:\
+Punto de montaje: G:\
+Sistema de archivos: NTFS
+Espacio total: 272.08 GB
+Espacio usado: 1.24 GB
+Espacio libre: 270.84 GB
+Porcentaje usado: 0.5%
+
+
+=== Memoria RAM ===
+Total: 15.75 GB
+Disponible: 8.33 GB
+Usada: 7.43 GB
+Porcentaje usado: 47.1%
+Slots: {'Slots totales': 2, 'Slots usados': 2, 'Slots libres': 0, 'Total memoria instalada': '16.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '2666 MHz', 'Fabricante': '04CB000002B5', 'Número de serie': '9D370000', 'Posición': 'DIMM1', 'Tecnología': 0}, {'Módulo': 2, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '2666 MHz', 'Fabricante': '80AD000080AD', 'Número de serie': '736EBB61', 'Posición': 'DIMM2', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+Office O365HomePremRetail,ProPlusRetail (Versión 16.0.19127.20240)
+

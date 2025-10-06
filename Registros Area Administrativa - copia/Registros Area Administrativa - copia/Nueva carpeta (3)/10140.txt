@@ -1,0 +1,77 @@
+=== Nombre de equipo ===
+H735A58F
+
+=== Sistema operativo ===
+Windows 10 10.0.19044
+
+=== Dirección MAC ===
+2c:58:b1:63:c7:8f
+
+=== Dirección IP ===
+172.16.21.67
+
+=== Grupo de trabajo ===
+EAPAC10
+
+=== Procesador ===
+Intel(R) Core(TM) i7-4770 CPU @ 3.40GHz
+
+=== Fabricante ===
+Hewlett-Packard
+
+=== Modelo ===
+HP EliteDesk 800 G1 TWR
+
+=== Discos físicos ===
+Modelo: ADATA USB Flash Drive USB Device
+Tamaño: 14.45 GB
+Interfaz: USB
+Serial: AA00000000000489
+
+Modelo: WDC WD5000AAKX-60U6AA0
+Tamaño: 465.76 GB
+Interfaz: IDE
+Serial:      WD-WCC2E4SAR1DR
+
+Modelo: Kingston DataTraveler 2.0 USB Device
+Tamaño: 14.43 GB
+Interfaz: USB
+Serial: A
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 465.18 GB
+Espacio usado: 84.48 GB
+Espacio libre: 380.70 GB
+Porcentaje usado: 18.2%
+
+Dispositivo: D:\
+Punto de montaje: D:\
+Sistema de archivos: FAT32
+Espacio total: 14.42 GB
+Espacio usado: 5.15 GB
+Espacio libre: 9.27 GB
+Porcentaje usado: 35.7%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: FAT32
+Espacio total: 14.44 GB
+Espacio usado: 6.05 GB
+Espacio libre: 8.38 GB
+Porcentaje usado: 41.9%
+
+
+=== Memoria RAM ===
+Total: 7.89 GB
+Disponible: 4.18 GB
+Usada: 3.72 GB
+Porcentaje usado: 47.1%
+Slots: {'Slots totales': 4, 'Slots usados': 2, 'Slots libres': 2, 'Total memoria instalada': '8.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Samsung', 'Número de serie': '958654C8', 'Posición': 'DIMM3', 'Tecnología': 24}, {'Módulo': 2, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Samsung', 'Número de serie': '958654CB', 'Posición': 'DIMM1', 'Tecnología': 24}]}
+
+=== Microsoft Office ===
+No se encontró Microsoft Office instalado
+

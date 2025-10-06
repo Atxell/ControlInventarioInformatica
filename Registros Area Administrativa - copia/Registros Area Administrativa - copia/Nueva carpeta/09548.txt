@@ -1,0 +1,63 @@
+=== Nombre de equipo ===
+H1251802
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+c0:80:00:00:01:02
+
+=== Dirección IP ===
+172.16.30.69
+
+=== Grupo de trabajo ===AREA-OPERATIVA
+
+=== Procesador ===
+Intel(R) Core(TM) i3-4330 CPU @ 3.50GHz
+
+=== Fabricante ===
+Hewlett-Packard
+
+=== Modelo ===
+HP ProDesk 600 G1 SFF
+
+=== Discos físicos ===
+Modelo: KINGSTON SA400S37480G
+Tamaño: 447.13 GB
+Interfaz: IDE
+Serial: 50026B728327E5EF
+
+Modelo: ADATA USB Flash Drive USB Device
+Tamaño: 14.45 GB
+Interfaz: USB
+Serial: AA00000000000489
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 446.57 GB
+Espacio usado: 87.59 GB
+Espacio libre: 358.98 GB
+Porcentaje usado: 19.6%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: FAT32
+Espacio total: 14.44 GB
+Espacio usado: 6.05 GB
+Espacio libre: 8.38 GB
+Porcentaje usado: 41.9%
+
+
+=== Memoria RAM ===
+Total: 7.91 GB
+Disponible: 4.91 GB
+Usada: 3.01 GB
+Porcentaje usado: 38.0%
+Slots: {'Slots totales': 4, 'Slots usados': 2, 'Slots libres': 2, 'Total memoria instalada': '8.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Ramaxel', 'Número de serie': '42E31998', 'Posición': 'DIMM3', 'Tecnología': 24}, {'Módulo': 2, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Kingston', 'Número de serie': '4B10DB12', 'Posición': 'DIMM1', 'Tecnología': 24}]}
+
+=== Microsoft Office ===
+Office ProjectProRetail,VisioProRetail,ProplusRetail (Versión 16.0.19127.20240)
+

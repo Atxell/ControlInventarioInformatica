@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+H8875099
+
+=== Sistema operativo ===
+Windows 11 10.0.22631
+
+=== Dirección MAC ===
+84:09:13:26:4d:9a
+
+=== Dirección IP ===
+172.17.247.86
+
+=== Grupo de trabajo ===
+EAPAC15
+
+=== Procesador ===
+12th Gen Intel(R) Core(TM) i7-1255U
+
+=== Fabricante ===
+HP
+
+=== Modelo ===
+HP ProBook 440 14 inch G9 Notebook PC
+
+=== Discos físicos ===
+Modelo: Micron MTFDKBA512TFK
+Tamaño: 476.94 GB
+Interfaz: SCSI
+Serial: 00A0_7501_3DAE_5D51.
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 475.65 GB
+Espacio usado: 103.48 GB
+Espacio libre: 372.17 GB
+Porcentaje usado: 21.8%
+
+Dispositivo: D:\
+Punto de montaje: D:\
+Sistema de archivos: FAT32
+Espacio total: 57.72 GB
+Espacio usado: 0.03 GB
+Espacio libre: 57.69 GB
+Porcentaje usado: 0.1%
+
+
+=== Memoria RAM ===
+Total: 15.64 GB
+Disponible: 7.20 GB
+Usada: 8.44 GB
+Porcentaje usado: 54.0%
+Slots: {'Slots totales': 2, 'Slots usados': 1, 'Slots libres': 1, 'Total memoria instalada': '16.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '16.00 GB', 'Tipo físico': 'SODIMM', 'Generación DDR': 'DDR4', 'Velocidad': '3200 MHz', 'Fabricante': 'Samsung', 'Número de serie': '345A89D9', 'Posición': 'Bottom-Slot 2(right)', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+Office O365HomePremRetail,OneNoteFreeRetail (Versión 16.0.15128.20246)
+

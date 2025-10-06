@@ -1,0 +1,77 @@
+=== Nombre de equipo ===
+H0478E10
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+70:e1:c2:84:08:10
+
+=== Dirección IP ===
+127.0.0.1
+
+=== Grupo de trabajo ===
+EAPBC10
+
+=== Procesador ===
+Intel(R) Core(TM) i3-4330 CPU @ 3.50GHz
+
+=== Fabricante ===
+Hewlett-Packard
+
+=== Modelo ===
+HP ProDesk 600 G1 SFF
+
+=== Discos físicos ===
+Modelo: KINGSTON SA400S37480G
+Tamaño: 447.13 GB
+Interfaz: IDE
+Serial: 50026B728327EB94
+
+Modelo: ST500DM002-1BD142
+Tamaño: 465.76 GB
+Interfaz: IDE
+Serial: Z6E54B2K
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 446.39 GB
+Espacio usado: 62.33 GB
+Espacio libre: 384.06 GB
+Porcentaje usado: 14.0%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: NTFS
+Espacio total: 465.76 GB
+Espacio usado: 0.11 GB
+Espacio libre: 465.65 GB
+Porcentaje usado: 0.0%
+
+Dispositivo: F:\
+Punto de montaje: F:\
+Sistema de archivos: FAT32
+Espacio total: 57.72 GB
+Espacio usado: 0.03 GB
+Espacio libre: 57.69 GB
+Porcentaje usado: 0.1%
+
+
+=== Memoria RAM ===
+Total: 7.91 GB
+Disponible: 5.91 GB
+Usada: 2.00 GB
+Porcentaje usado: 25.3%
+Slots: {'Slots totales': 4, 'Slots usados': 2, 'Slots libres': 2, 'Total memoria instalada': '8.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Kingston', 'Número de serie': '75162118', 'Posición': 'DIMM3', 'Tecnología': 24}, {'Módulo': 2, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Samsung', 'Número de serie': '22166918', 'Posición': 'DIMM1', 'Tecnología': 24}]}
+
+=== Microsoft Office ===
+Office ProjectProRetail,VisioProRetail,ProplusRetail (Versión 16.0.19127.20240)
+

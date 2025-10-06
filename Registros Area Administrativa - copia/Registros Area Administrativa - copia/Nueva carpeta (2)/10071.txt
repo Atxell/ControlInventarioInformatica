@@ -1,0 +1,72 @@
+=== Nombre de equipo ===
+H76B0C0C
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+60:c0:81:03:06:0c
+
+=== Dirección IP ===
+172.16.24.23
+
+=== Grupo de trabajo ===
+EAPBC04
+
+=== Procesador ===
+AMD PRO A8-8650B R7, 10 Compute Cores 4C+6G
+
+=== Fabricante ===
+HP
+
+=== Modelo ===
+HP EliteDesk 705 G2 SFF
+
+=== Discos físicos ===
+Modelo: KINGSTON SA400S37480G
+Tamaño: 447.13 GB
+Interfaz: IDE
+Serial: 50026B778539E6A7
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 446.39 GB
+Espacio usado: 47.44 GB
+Espacio libre: 398.96 GB
+Porcentaje usado: 10.6%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: exFAT
+Espacio total: 57.70 GB
+Espacio usado: 37.48 GB
+Espacio libre: 20.22 GB
+Porcentaje usado: 65.0%
+
+Dispositivo: F:\
+Punto de montaje: F:\
+Sistema de archivos: FAT
+Espacio total: 0.03 GB
+Espacio usado: 0.03 GB
+Espacio libre: 0.00 GB
+Porcentaje usado: 84.8%
+
+
+=== Memoria RAM ===
+Total: 4.95 GB
+Disponible: 1.11 GB
+Usada: 3.83 GB
+Porcentaje usado: 77.5%
+Slots: {'Slots totales': 4, 'Slots usados': 3, 'Slots libres': 1, 'Total memoria instalada': '8.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Samsung', 'Número de serie': '141162F6', 'Posición': 'DIMM1', 'Tecnología': 24}, {'Módulo': 2, 'Capacidad': '2.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Hynix/Hyundai', 'Número de serie': '49C07760', 'Posición': 'DIMM2', 'Tecnología': 24}, {'Módulo': 3, 'Capacidad': '2.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Hynix/Hyundai', 'Número de serie': '49507762', 'Posición': 'DIMM4', 'Tecnología': 24}]}
+
+=== Microsoft Office ===
+Office ProjectProRetail,VisioProRetail,ProplusRetail (Versión 16.0.19127.20240)
+

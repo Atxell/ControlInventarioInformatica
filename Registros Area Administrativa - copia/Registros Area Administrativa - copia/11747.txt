@@ -1,0 +1,77 @@
+=== Nombre de equipo ===
+NOMINAPROC
+
+=== Sistema operativo ===
+Windows 11 10.0.26100
+
+=== Dirección MAC ===
+c7:8f:1f:3f:7e:fd
+
+=== Dirección IP ===
+172.16.54.21
+
+=== Grupo de trabajo ===
+EAPBC03
+
+=== Procesador ===
+12th Gen Intel(R) Core(TM) i5-12500
+
+=== Fabricante ===
+Dell Inc.
+
+=== Modelo ===
+OptiPlex SFF 7020
+
+=== Discos físicos ===
+Modelo: WDC WD10EZEX-75WN4A1
+Tamaño: 931.51 GB
+Interfaz: SCSI
+Serial:      WD-WCC6Y6YPZ2X3
+
+Modelo: NVMe 2400A NVMe Micron 512GB
+Tamaño: 476.94 GB
+Interfaz: SCSI
+Serial: 0000_0000_0000_0001_00A0_7524_497E_14FA.
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 474.10 GB
+Espacio usado: 204.50 GB
+Espacio libre: 269.60 GB
+Porcentaje usado: 43.1%
+
+Dispositivo: D:\
+Punto de montaje: D:\
+Sistema de archivos: NTFS
+Espacio total: 914.87 GB
+Espacio usado: 321.49 GB
+Espacio libre: 593.38 GB
+Porcentaje usado: 35.1%
+
+Dispositivo: F:\
+Punto de montaje: F:\
+Sistema de archivos: FAT32
+Espacio total: 57.72 GB
+Espacio usado: 0.03 GB
+Espacio libre: 57.69 GB
+Porcentaje usado: 0.1%
+
+
+=== Memoria RAM ===
+Total: 15.69 GB
+Disponible: 1.98 GB
+Usada: 13.72 GB
+Porcentaje usado: 87.4%
+Slots: {'Slots totales': 2, 'Slots usados': 2, 'Slots libres': 0, 'Total memoria instalada': '16.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR5', 'Velocidad': '5600 MHz', 'Fabricante': '80CE000080CE', 'Número de serie': '490F3574', 'Posición': 'DIMM1', 'Tecnología': 0}, {'Módulo': 2, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR5', 'Velocidad': '5600 MHz', 'Fabricante': '01980000802C', 'Número de serie': 'D008A26E', 'Posición': 'DIMM2', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+Office ProPlus2021Volume (Versión 16.0.14334.20296)
+

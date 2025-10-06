@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+H04902B7
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+54:a9:53:a7:4f:9f
+
+=== Dirección IP ===
+172.16.28.15
+
+=== Grupo de trabajo ===
+EDPBC17
+
+=== Procesador ===
+Intel(R) Core(TM) i3-4330 CPU @ 3.50GHz
+
+=== Fabricante ===
+Hewlett-Packard
+
+=== Modelo ===
+HP ProDesk 600 G1 SFF
+
+=== Discos físicos ===
+Modelo: ST500DM002-1BD142
+Tamaño: 465.76 GB
+Interfaz: IDE
+Serial: Z6E5VHKB
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 28.82 GB
+Interfaz: USB
+Serial: 0
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 446.39 GB
+Espacio usado: 319.45 GB
+Espacio libre: 126.94 GB
+Porcentaje usado: 71.6%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: exFAT
+Espacio total: 28.81 GB
+Espacio usado: 0.01 GB
+Espacio libre: 28.80 GB
+Porcentaje usado: 0.0%
+
+
+=== Memoria RAM ===
+Total: 5.91 GB
+Disponible: 2.31 GB
+Usada: 3.60 GB
+Porcentaje usado: 61.0%
+Slots: {'Slots totales': 4, 'Slots usados': 3, 'Slots libres': 1, 'Total memoria instalada': '6.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '1.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1333 MHz', 'Fabricante': 'Kingston', 'Número de serie': '14382510', 'Posición': 'DIMM4', 'Tecnología': 24}, {'Módulo': 2, 'Capacidad': '1.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1333 MHz', 'Fabricante': 'Kingston', 'Número de serie': '14381510', 'Posición': 'DIMM2', 'Tecnología': 24}, {'Módulo': 3, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1333 MHz', 'Fabricante': 'Samsung', 'Número de serie': '14167815', 'Posición': 'DIMM1', 'Tecnología': 24}]}
+
+=== Microsoft Office ===
+Office ProjectProRetail,VisioProRetail,ProplusRetail (Versión 16.0.19127.20240)
+

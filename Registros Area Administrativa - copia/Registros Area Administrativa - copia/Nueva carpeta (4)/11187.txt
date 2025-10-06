@@ -1,0 +1,80 @@
+=== Nombre de equipo ===
+DDB85364
+
+=== Sistema operativo ===
+Windows 11 10.0.22621
+
+=== Dirección MAC ===
+9b:36:6c:d9:b2:64
+
+=== Dirección IP ===
+172.16.24.67
+
+=== Grupo de trabajo ===
+EAPBC07
+
+=== Procesador ===
+Intel(R) Core(TM) i5-10500 CPU @ 3.10GHz
+
+=== Fabricante ===
+Dell Inc.
+
+=== Modelo ===
+OptiPlex 3080
+
+=== Discos físicos ===
+Modelo: KINGSTON SA400S37480G
+Tamaño: 447.13 GB
+Interfaz: IDE
+Serial: 50026B778554E365
+
+Modelo: Kingston DataTraveler 3.0 USB Device
+Tamaño: 57.73 GB
+Interfaz: USB
+Serial: 0000000005
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 172.49 GB
+Espacio usado: 99.78 GB
+Espacio libre: 72.71 GB
+Porcentaje usado: 57.8%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: exFAT
+Espacio total: 57.70 GB
+Espacio usado: 37.48 GB
+Espacio libre: 20.22 GB
+Porcentaje usado: 65.0%
+
+Dispositivo: F:\
+Punto de montaje: F:\
+Sistema de archivos: FAT
+Espacio total: 0.03 GB
+Espacio usado: 0.03 GB
+Espacio libre: 0.00 GB
+Porcentaje usado: 84.8%
+
+Dispositivo: G:\
+Punto de montaje: G:\
+Sistema de archivos: NTFS
+Espacio total: 272.08 GB
+Espacio usado: 0.10 GB
+Espacio libre: 271.98 GB
+Porcentaje usado: 0.0%
+
+
+=== Memoria RAM ===
+Total: 7.75 GB
+Disponible: 1.73 GB
+Usada: 6.02 GB
+Porcentaje usado: 77.6%
+Slots: {'Slots totales': 2, 'Slots usados': 1, 'Slots libres': 1, 'Total memoria instalada': '8.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '8.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '2666 MHz', 'Fabricante': '80AD000080AD', 'Número de serie': '5381E5AA', 'Posición': 'DIMM1', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+Office O365HomePremRetail,ProPlusRetail (Versión 16.0.19231.20116)
+

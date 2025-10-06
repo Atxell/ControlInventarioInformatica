@@ -10,7 +10,7 @@ class AsignacionesComputadorasSeeder extends Seeder
 {
     public function run()
     {
-        for ($i = 1; $i <= 44; $i++) {
+        for ($i = 1; $i <= 375; $i++) {
             AsignacionComputadora::create([
                 'computadora_id' => $i,
                 'diputado_id' => null,

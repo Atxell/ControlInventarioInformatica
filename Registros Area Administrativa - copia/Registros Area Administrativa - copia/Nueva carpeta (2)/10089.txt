@@ -1,0 +1,90 @@
+=== Nombre de equipo ===
+H76D7CC2
+
+=== Sistema operativo ===
+Windows 10 10.0.19045
+
+=== Dirección MAC ===
+e6:cc:98:30:61:c2
+
+=== Dirección IP ===
+172.16.25.11
+
+=== Grupo de trabajo ===
+EAPAC15
+
+=== Procesador ===
+AMD PRO A8-8650B R7, 10 Compute Cores 4C+6G
+
+=== Fabricante ===
+HP
+
+=== Modelo ===
+HP EliteDesk 705 G2 SFF
+
+=== Discos físicos ===
+Modelo: ADATA SU630
+Tamaño: 447.13 GB
+Interfaz: IDE
+Serial: 2N422L1GAGWD
+
+Modelo: ADATA USB Flash Drive USB Device
+Tamaño: 14.45 GB
+Interfaz: USB
+Serial: AA00000000000489
+
+Modelo: VendorCo ProductCode USB Device
+Tamaño: 29.29 GB
+Interfaz: USB
+Serial: 7270091040319506030
+
+Modelo: PNY USB 3.0 FD USB Device
+Tamaño: 57.70 GB
+Interfaz: USB
+Serial: 0D7509308090
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 446.39 GB
+Espacio usado: 57.91 GB
+Espacio libre: 388.48 GB
+Porcentaje usado: 13.0%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: FAT32
+Espacio total: 14.44 GB
+Espacio usado: 6.05 GB
+Espacio libre: 8.38 GB
+Porcentaje usado: 41.9%
+
+Dispositivo: F:\
+Punto de montaje: F:\
+Sistema de archivos: FAT32
+Espacio total: 29.28 GB
+Espacio usado: 0.30 GB
+Espacio libre: 28.98 GB
+Porcentaje usado: 1.0%
+
+Dispositivo: G:\
+Punto de montaje: G:\
+Sistema de archivos: FAT32
+Espacio total: 57.66 GB
+Espacio usado: 12.77 GB
+Espacio libre: 44.89 GB
+Porcentaje usado: 22.1%
+
+
+=== Memoria RAM ===
+Total: 14.95 GB
+Disponible: 11.40 GB
+Usada: 3.55 GB
+Porcentaje usado: 23.7%
+Slots: {'Slots totales': 4, 'Slots usados': 4, 'Slots libres': 0, 'Total memoria instalada': '16.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Hynix/Hyundai', 'Número de serie': '0242AA99', 'Posición': 'DIMM1', 'Tecnología': 24}, {'Módulo': 2, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Unknown - [0xCB04]', 'Número de serie': '0AC00300', 'Posición': 'DIMM2', 'Tecnología': 24}, {'Módulo': 3, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Unknown - [0xCB04]', 'Número de serie': 'FDC10300', 'Posición': 'DIMM3', 'Tecnología': 24}, {'Módulo': 4, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR3', 'Velocidad': '1600 MHz', 'Fabricante': 'Unknown - [0xCB04]', 'Número de serie': '12C10300', 'Posición': 'DIMM4', 'Tecnología': 24}]}
+
+=== Microsoft Office ===
+Office ProjectProRetail,VisioProRetail,ProplusRetail (Versión 16.0.19127.20240)
+

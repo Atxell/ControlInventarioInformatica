@@ -1,0 +1,64 @@
+=== Nombre de equipo ===
+D8B9C816
+
+=== Sistema operativo ===
+Windows 11 10.0.26100
+
+=== Dirección MAC ===
+24:48:91:22:44:88
+
+=== Dirección IP ===
+127.0.0.1
+
+=== Grupo de trabajo ===
+EAPBC12
+
+=== Procesador ===
+Intel(R) Core(TM) i3-9100 CPU @ 3.60GHz
+
+=== Fabricante ===
+Dell Inc.
+
+=== Modelo ===
+Vostro 3471
+
+=== Discos físicos ===
+Modelo: SK hynix SC311 SATA 512GB
+Tamaño: 476.94 GB
+Interfaz: SCSI
+Serial: EJ75N527110305K45
+
+Modelo: ADATA USB Flash Drive USB Device
+Tamaño: 14.45 GB
+Interfaz: USB
+Serial: AA00000000000489
+
+
+=== Discos ===
+Dispositivo: C:\
+Punto de montaje: C:\
+Sistema de archivos: NTFS
+Espacio total: 476.09 GB
+Espacio usado: 66.38 GB
+Espacio libre: 409.71 GB
+Porcentaje usado: 13.9%
+
+Dispositivo: E:\
+Punto de montaje: E:\
+Sistema de archivos: FAT32
+Espacio total: 14.44 GB
+Espacio usado: 6.05 GB
+Espacio libre: 8.38 GB
+Porcentaje usado: 41.9%
+
+
+=== Memoria RAM ===
+Total: 3.84 GB
+Disponible: 0.80 GB
+Usada: 3.04 GB
+Porcentaje usado: 79.1%
+Slots: {'Slots totales': 2, 'Slots usados': 1, 'Slots libres': 1, 'Total memoria instalada': '4.00 GB', 'Módulos': [{'Módulo': 1, 'Capacidad': '4.00 GB', 'Tipo físico': 'DIMM', 'Generación DDR': 'DDR4', 'Velocidad': '2666 MHz', 'Fabricante': '802C0000802C', 'Número de serie': '209CD502', 'Posición': 'DIMM1', 'Tecnología': 0}]}
+
+=== Microsoft Office ===
+Office ProjectProRetail,VisioProRetail,ProplusRetail (Versión 16.0.19029.20208)
+
