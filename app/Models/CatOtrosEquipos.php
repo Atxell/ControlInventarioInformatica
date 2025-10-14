@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class CatOtrosEquipos extends Model
 {
-
-    
     protected $table = 'cat_otros_equipos';
     
     protected $fillable = [
@@ -19,35 +17,41 @@ class CatOtrosEquipos extends Model
         'Asignacion',
         'estado_id',
         'tipo_equipo_id',
-        'codigo_cubiculo',
+        'edificio_id',      // Nuevo
+        'zona_id',          // Nuevo
+        'cubiculo_id',      // Nuevo
         'observaciones'
     ];
-    
 
     // Relaciones
     public function estado()
     {
         return $this->belongsTo(EstadoEquipo::class, 'estado_id')
-            ->withDefault(['estado' => 'No especificado']);
+            ->withDefault(['nombre' => 'No especificado']);
     }
     
     public function tipoEquipo()
     {
         return $this->belongsTo(TipoEquipo::class, 'tipo_equipo_id')
-            ->withDefault(['nombre' => 'Sin tipo']);
+            ->withDefault(['name' => 'Sin tipo']);
     }
+
     public function cubiculo()
     {
-        return $this->belongsTo(CatCubiculos::class, 'cubiculo_id');
+        return $this->belongsTo(CatCubiculos::class, 'cubiculo_id')
+            ->withDefault(['NombreCubiculo' => 'Sin cubículo', 'codigo' => 'N/A']);
     }
+
     public function zona()
     {
-        return $this->belongsTo(CatZonas::class, 'zona_id');
+        return $this->belongsTo(CatZonas::class, 'zona_id')
+            ->withDefault(['Planta' => 'N/A']);
     }
 
     public function edificio()
     {
-        return $this->belongsTo(CatEdificios::class, 'edificio_id');
+        return $this->belongsTo(CatEdificios::class, 'edificio_id')
+            ->withDefault(['NombreEdificio' => 'N/A']);
     }
     
     // Scopes útiles
@@ -65,6 +69,8 @@ class CatOtrosEquipos extends Model
     {
         return $query->where('Num_inv', 'like', "%$search%")
                     ->orWhere('Nombre', 'like', "%$search%")
-                    ->orWhere('Asignacion', 'like', "%$search%");
+                    ->orWhere('Asignacion', 'like', "%$search%")
+                    ->orWhere('ip', 'like', "%$search%")
+                    ->orWhere('observaciones', 'like', "%$search%");
     }
 }

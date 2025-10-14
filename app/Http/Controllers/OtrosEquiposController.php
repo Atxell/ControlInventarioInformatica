@@ -16,15 +16,42 @@ class OtrosEquiposController extends Controller
     public function index(Request $request)
     {
         $query = CatOtrosEquipos::query()
-            ->with(['tipoEquipo', 'estado']);
+            ->with(['tipoEquipo', 'estado', 'edificio', 'zona', 'cubiculo']);
 
-        // Búsqueda general
         if ($request->has('search')) {
             $search = $request->search;
             $query->where(function($q) use ($search) {
                 $q->where('Nombre', 'like', "%$search%")
-                  ->orWhere('Num_inv', 'like', "%$search%");
+                ->orWhere('Num_inv', 'like', "%$search%")
+                ->orWhere('ip', 'like', "%$search%")
+                ->orWhere('Asignacion', 'like', "%$search%")
+                ->orWhere('observaciones', 'like', "%$search%")
+                ->orWhereHas('tipoEquipo', function($q) use ($search) {
+                    $q->where('name', 'like', "%$search%");
+                })
+                ->orWhereHas('estado', function($q) use ($search) {
+                    $q->where('nombre', 'like', "%$search%");
+                })
+                ->orWhereHas('edificio', function($q) use ($search) {
+                    $q->where('NombreEdificio', 'like', "%$search%");
+                })
+                ->orWhereHas('zona', function($q) use ($search) {
+                    $q->where('Planta', 'like', "%$search%");
+                })
+                ->orWhereHas('cubiculo', function($q) use ($search) {
+                    $q->where('NombreCubiculo', 'like', "%$search%")
+                        ->orWhere('codigo', 'like', "%$search%");
+                });
             });
+        }
+
+        // Filtros adicionales
+        if ($request->has('tipo_equipo_id') && $request->tipo_equipo_id != '') {
+            $query->where('tipo_equipo_id', $request->tipo_equipo_id);
+        }
+
+        if ($request->has('estado_id') && $request->estado_id != '') {
+            $query->where('estado_id', $request->estado_id);
         }
 
         $equipos = $query->paginate(10)->withQueryString();
@@ -52,14 +79,13 @@ class OtrosEquiposController extends Controller
         $validated = $request->validate([
             'Num_inv' => 'required|string|unique:cat_otros_equipos,Num_inv|max:20',
             'Nombre' => 'required|max:100',
-            'ip' => 'nullable|unique:cat_otros_equipos|max:15',
+            'ip' => 'nullable|max:15|unique:cat_otros_equipos,ip',
             'Asignacion' => 'nullable|max:100',
             'estado_id' => 'required|exists:estados_equipo,id',
             'tipo_equipo_id' => 'required|exists:cattipodeequipo,id',
             'edificio_id' => 'nullable|exists:catedificios,id',
             'zona_id' => 'nullable|exists:catzonas,id',
             'cubiculo_id' => 'nullable|exists:catcubiculos,id',
-            'codigo_cubiculo' => 'nullable|string|max:25', // Nuevo campo
             'observaciones' => 'nullable|string'
         ]);
 
@@ -76,17 +102,17 @@ class OtrosEquiposController extends Controller
     }
 
    public function show($id)
-{
-    try {
-        $equipo = CatOtrosEquipos::with(['tipoEquipo', 'estado', 'cubiculo.zona.edificio'])->findOrFail($id);
-        \Log::info('Equipo encontrado: ', ['equipo' => $equipo->toArray()]);
-        return view('otros-equipos.show', compact('equipo'));
-    } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
-        \Log::error('Equipo no encontrado: ' . $id);
-        return redirect()->route('otros-equipos.index')
-            ->with('error', 'El equipo no existe.');
+    {
+        try {
+            $equipo = CatOtrosEquipos::with(['tipoEquipo', 'estado', 'cubiculo.zona.edificio'])->findOrFail($id);
+            \Log::info('Equipo encontrado: ', ['equipo' => $equipo->toArray()]);
+            return view('otros-equipos.show', compact('equipo'));
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            \Log::error('Equipo no encontrado: ' . $id);
+            return redirect()->route('otros-equipos.index')
+                ->with('error', 'El equipo no existe.');
+        }
     }
-}
 
     public function edit($id)
     {
@@ -116,7 +142,7 @@ class OtrosEquiposController extends Controller
         ]);
     }
 
-    public function update(Request $request, $id)
+   public function update(Request $request, $id)
     {  
         $equipo = CatOtrosEquipos::findOrFail($id);
         $validated = $request->validate([
@@ -129,7 +155,6 @@ class OtrosEquiposController extends Controller
             'edificio_id' => 'nullable|exists:catedificios,id',
             'zona_id' => 'nullable|exists:catzonas,id',
             'cubiculo_id' => 'nullable|exists:catcubiculos,id',
-            'codigo_cubiculo' => 'nullable|string|max:25', // Nuevo campo
             'observaciones' => 'nullable|string'
         ]);
 

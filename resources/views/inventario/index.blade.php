@@ -7,18 +7,127 @@
     </div>
     
     <!-- Barra de búsqueda y filtros -->
-    <div class="bg-white p-4 rounded-lg shadow mb-6">
-        <form action="{{ route('inventario.index') }}" method="GET" class="space-y-4 md:space-y-0 md:grid md:grid-cols-4 md:gap-4">
-            <!-- Barra de búsqueda -->
-            <div class="md:col-span-2">
-                <x-search-input 
-                    name="search" 
-                    placeholder="Buscar por número de inventario o nombre" 
-                    value="{{ request('search') }}"
-                />
-            </div>  
-        </form>
-    </div>
+
+<!-- Reemplaza la sección de búsqueda y filtros con esto: -->
+<div class="bg-white p-4 rounded-lg shadow mb-6">
+    <form action="{{ route('inventario.index') }}" method="GET" class="space-y-4">
+        <!-- Barra de búsqueda principal -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <label for="search" class="block text-sm font-medium text-gray-700 mb-1">Buscar</label>
+                <input type="text" 
+                       name="search" 
+                       id="search" 
+                       value="{{ request('search') }}"
+                       placeholder="Buscar por número de inventario, nombre, MAC, IP, grupo de trabajo, etc."
+                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+            </div>
+            <div class="flex items-end space-x-2">
+                <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-200">
+                    Buscar
+                </button>
+                <a href="{{ route('inventario.index') }}" class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 transition duration-200">
+                    Limpiar
+                </a>
+            </div>
+        </div>
+
+        <!-- Filtros avanzados -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 pt-4 border-t">
+            <!-- Tipo de Equipo -->
+            <div>
+                <label for="tipo_equipo_id" class="block text-sm font-medium text-gray-700 mb-1">
+                    Tipo de Equipo
+                </label>
+                <select id="tipo_equipo_id" name="tipo_equipo_id" 
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <option value="">Todos los tipos</option>
+                    @foreach($tipos as $tipo)
+                        <option value="{{ $tipo->id }}" {{ request('tipo_equipo_id') == $tipo->id ? 'selected' : '' }}>
+                            {{ $tipo->name }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+
+            <!-- Marca -->
+            <div>
+                <label for="marca_id" class="block text-sm font-medium text-gray-700 mb-1">
+                    Marca
+                </label>
+                <select id="marca_id" name="marca_id" 
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <option value="">Todas las marcas</option>
+                    @foreach($marcas as $marca)
+                        <option value="{{ $marca->id }}" {{ request('marca_id') == $marca->id ? 'selected' : '' }}>
+                            {{ $marca->nombre }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+
+            <!-- Estado -->
+            <div>
+                <label for="estado_id" class="block text-sm font-medium text-gray-700 mb-1">
+                    Estado
+                </label>
+                <select id="estado_id" name="estado_id" 
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <option value="">Todos los estados</option>
+                    @foreach($estados as $estado)
+                        <option value="{{ $estado->id }}" {{ request('estado_id') == $estado->id ? 'selected' : '' }}>
+                            {{ $estado->nombre }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+
+            <!-- Grupo de Trabajo -->
+            <div>
+                <label for="grupo_trabajo" class="block text-sm font-medium text-gray-700 mb-1">
+                    Grupo de Trabajo
+                </label>
+                <input type="text" 
+                       id="grupo_trabajo" 
+                       name="grupo_trabajo" 
+                       value="{{ request('grupo_trabajo') }}"
+                       placeholder="Filtrar por grupo..."
+                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+            </div>
+        </div>
+
+        <!-- Filtros adicionales -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Sistema Operativo -->
+            <div>
+                <label for="sistema_operativo_id" class="block text-sm font-medium text-gray-700 mb-1">
+                    Sistema Operativo
+                </label>
+                <select id="sistema_operativo_id" name="sistema_operativo_id" 
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <option value="">Todos los SO</option>
+                    @foreach($sistemas as $sistema)
+                        <option value="{{ $sistema->id }}" {{ request('sistema_operativo_id') == $sistema->id ? 'selected' : '' }}>
+                            {{ $sistema->nombre }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+
+            <!-- Con Diputado -->
+            <div class="flex items-end">
+                <label class="flex items-center">
+                    <input type="checkbox" 
+                           name="con_diputado" 
+                           value="1" 
+                           {{ request('con_diputado') ? 'checked' : '' }}
+                           class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                    <span class="ml-2 text-sm text-gray-700">Solo con diputado asignado</span>
+                </label>
+            </div>
+        </div>
+    </form>
+</div>
 
     <!-- Tabla de resultados -->
     <div class="bg-white rounded-lg shadow overflow-hidden">
@@ -136,55 +245,6 @@
         </div>
     </div>
 </div>
-
-
-<!-- Modal para mostrar detalles -->
-<div id="computerModal2" class="fixed inset-0 z-50 hidden overflow-y-auto">
-    <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-        <!-- Fondo del modal -->
-        <div class="fixed inset-0 transition-opacity" aria-hidden="true">
-            <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
-        </div>
-        
-        <!-- Contenido del modal -->
-        <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
-            <div class="p-4">
-                <h3 class="text-xl font-bold mb-4">Componentes de {{ $computadora->nombre }}</h3>
-                
-                @if($computadora->componentes)
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <!-- Procesador -->
-                        <div class="bg-gray-50 p-3 rounded">
-                            <h4 class="font-semibold">Procesador</h4>
-                            <p>{{ $computadora->componentes->procesador->modelo ?? 'No especificado' }}</p>
-                        </div>
-                        
-                        <!-- Disco Duro -->
-                        <div class="bg-gray-50 p-3 rounded">
-                            <h4 class="font-semibold">Disco Duro</h4>
-                            <p>{{ $computadora->componentes->discoDuro->modelo ?? 'No especificado' }}</p>
-                        </div>
-                        
-                        <!-- Memoria -->
-                        <div class="bg-gray-50 p-3 rounded">
-                            <h4 class="font-semibold">Memoria RAM</h4>
-                            <p>{{ $computadora->componentes->memoria->capacidad ?? 'No especificado' }}</p>
-                        </div>
-                    </div>
-                @else
-                    <p class="text-red-500">Esta computadora no tiene componentes registrados.</p>
-                @endif
-            </div>
-            <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                <button type="button" onclick="closeModal()" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
-                    Cerrar
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 
 <!-- Modal Container (vacío, sin Blade) -->
 <div id="computerModal" class="fixed inset-0 z-50 hidden overflow-y-auto">

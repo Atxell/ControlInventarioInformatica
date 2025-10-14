@@ -52,8 +52,8 @@
                                 <h3 class="text-sm font-medium text-gray-500">Ubicación</h3>
                                 <p class="mt-1 text-sm text-gray-900">
                                     @if($equipo->cubiculo)
-                                        <strong>Edificio:</strong> {{ $equipo->cubiculo->zona->edificio->NombreEdificio ?? 'N/A' }}<br>
-                                        <strong>Zona/Planta:</strong> {{ $equipo->cubiculo->zona->Planta ?? 'N/A' }}<br>
+                                        <strong>Edificio:</strong> {{ $equipo->edificio->NombreEdificio ?? 'N/A' }}<br>
+                                        <strong>Zona/Planta:</strong> {{ $equipo->zona->Planta ?? 'N/A' }}<br>
                                         <strong>Cubículo:</strong> {{ $equipo->cubiculo->NombreCubiculo }}<br>
                                         <strong>Código:</strong> {{ $equipo->cubiculo->codigo }}
                                     @else

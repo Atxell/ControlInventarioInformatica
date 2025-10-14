@@ -32,30 +32,56 @@ class InventarioController extends Controller
                 'versionOffice',
                 'sistemaOperativo',
                 'asignacionActual.diputado',
-                'asignacionActual.cubiculo'
+                'asignacionActual.cubiculo',
+                'estadoEquipo' 
             ]);
-
         // Búsqueda general
         if ($request->has('search')) {
             $search = $request->search;
             $query->where(function($q) use ($search) {
                 $q->where('nombre', 'like', "%$search%")
-                ->orWhere('num_inv', 'like', "%$search%"); // Nueva línea agregada
+                ->orWhere('Num_inv', 'like', "%$search%") // Corregido: Num_inv
+                ->orWhere('mac', 'like', "%$search%")
+                ->orWhere('ip', 'like', "%$search%")
+                ->orWhere('grupo_trabajo', 'like', "%$search%")
+                ->orWhereHas('tipoEquipo', function($q) use ($search) {
+                    $q->where('name', 'like', "%$search%");
+                })
+                ->orWhereHas('marca', function($q) use ($search) {
+                    $q->where('nombre', 'like', "%$search%");
+                })
+                ->orWhereHas('modelo', function($q) use ($search) {
+                    $q->where('nombre', 'like', "%$search%");
+                })
+                ->orWhereHas('sistemaOperativo', function($q) use ($search) {
+                    $q->where('nombre', 'like', "%$search%");
+                })
+                ->orWhereHas('asignacionActual.diputado', function($q) use ($search) {
+                    $q->where('nombre', 'like', "%$search%");
+                });
             });
         }
 
         // Filtros avanzados
-        /*if ($request->has('tipo_equipo_id')) {
+        if ($request->has('tipo_equipo_id') && $request->tipo_equipo_id != '') {
             $query->where('tipo_equipo_id', $request->tipo_equipo_id);
         }
 
-        if ($request->has('marca_id')) {
+        if ($request->has('marca_id') && $request->marca_id != '') {
             $query->where('marca_id', $request->marca_id);
         }
 
-        if ($request->has('estado')) {
-            $query->where('estado', $request->estado);
-        }*/
+        if ($request->has('estado_id') && $request->estado_id != '') {
+            $query->where('estado_id', $request->estado_id);
+        }
+
+        if ($request->has('sistema_operativo_id') && $request->sistema_operativo_id != '') {
+            $query->where('sistema_operativo_id', $request->sistema_operativo_id);
+        }
+
+        if ($request->has('grupo_trabajo') && $request->grupo_trabajo != '') {
+            $query->where('grupo_trabajo', 'like', "%{$request->grupo_trabajo}%");
+        }
 
         if ($request->has('con_diputado')) {
             $query->whereHas('asignacionActual', function($q) {
@@ -67,9 +93,18 @@ class InventarioController extends Controller
         
         $tipos = TipoEquipo::all();
         $marcas = Marca::all();
-        $estados = ['activo', 'mantenimiento', 'baja'];
+        $estados = EstadoEquipo::all();
+        $sistemas = CatSistemaOperativo::all();
 
-        return view('inventario.index', compact('computadoras', 'tipos', 'marcas', 'estados'));
+        return view('inventario.index', compact(
+            'computadoras', 
+            'tipos', 
+            'marcas', 
+            'estados', 
+            'sistemas' // Agregar esto
+        ));
+
+ 
     }
 
     public function create()
